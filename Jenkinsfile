@@ -20,7 +20,6 @@ pipeline {
             steps {
                 dir('DiCoScanner') {
                     sh "mvn clean install -P dico-scanner-inhouse " +
-                            "'-Dios.xcTestsBuildArguments=-enableCodeCoverage YES' " +
                             "'-Dios.derivedDataPath=${env.DERIVED_DATA_PATH}' " +
                             "'-Dios.xcTestsDestination=${env.XC_TEST_DESTINATION}'"
                 }
