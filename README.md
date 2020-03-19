@@ -1,2 +1,2 @@
-# dico-scanner-app-ios
-App Repository for the WirVsVirus-Hackaton
+# ld-dico-scanner-app-ios
+

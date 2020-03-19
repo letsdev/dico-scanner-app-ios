@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A481B4542423657D00B294AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A481B4502423657D00B294AF /* main.m */; };
+		A481B4552423657D00B294AF /* DCSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A481B4512423657D00B294AF /* DCSAppDelegate.m */; };
+		A481B4582423660200B294AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4572423660200B294AF /* LaunchScreen.xib */; };
+		A481B4652423667500B294AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A481B4642423667500B294AF /* Assets.xcassets */; };
+		A481B46924237E7200B294AF /* DCSStartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A481B46724237E7200B294AF /* DCSStartVC.m */; };
+		A481B46A24237E7200B294AF /* DCSStartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B46824237E7200B294AF /* DCSStartVC.xib */; };
+		A481B46D242380DE00B294AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A481B46B242380DE00B294AF /* Localizable.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A481B42E24235D3400B294AF /* DiCoScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiCoScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A481B44F2423657D00B294AF /* DCSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSAppDelegate.h; sourceTree = "<group>"; };
+		A481B4502423657D00B294AF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A481B4512423657D00B294AF /* DCSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSAppDelegate.m; sourceTree = "<group>"; };
+		A481B4522423657D00B294AF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A481B4572423660200B294AF /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		A481B4642423667500B294AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A481B46624237E7200B294AF /* DCSStartVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCSStartVC.h; sourceTree = "<group>"; };
+		A481B46724237E7200B294AF /* DCSStartVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCSStartVC.m; sourceTree = "<group>"; };
+		A481B46824237E7200B294AF /* DCSStartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DCSStartVC.xib; sourceTree = "<group>"; };
+		A481B46C242380DE00B294AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A481B42B24235D3400B294AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A481B42524235D3400B294AF = {
+			isa = PBXGroup;
+			children = (
+				A481B43024235D3400B294AF /* DiCoScanner */,
+				A481B42F24235D3400B294AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A481B42F24235D3400B294AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A481B42E24235D3400B294AF /* DiCoScanner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A481B43024235D3400B294AF /* DiCoScanner */ = {
+			isa = PBXGroup;
+			children = (
+				A481B4632423667500B294AF /* appIcons */,
+				A481B4622423666D00B294AF /* Base.lproj */,
+				A481B44A2423657D00B294AF /* source */,
+			);
+			path = DiCoScanner;
+			sourceTree = "<group>";
+		};
+		A481B44A2423657D00B294AF /* source */ = {
+			isa = PBXGroup;
+			children = (
+				A481B44B2423657D00B294AF /* controller */,
+				A481B44E2423657D00B294AF /* supportingFiles */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		A481B44B2423657D00B294AF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A481B46624237E7200B294AF /* DCSStartVC.h */,
+				A481B46724237E7200B294AF /* DCSStartVC.m */,
+				A481B46824237E7200B294AF /* DCSStartVC.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		A481B44E2423657D00B294AF /* supportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A481B44F2423657D00B294AF /* DCSAppDelegate.h */,
+				A481B4502423657D00B294AF /* main.m */,
+				A481B4512423657D00B294AF /* DCSAppDelegate.m */,
+				A481B4522423657D00B294AF /* Info.plist */,
+				A481B4572423660200B294AF /* LaunchScreen.xib */,
+			);
+			path = supportingFiles;
+			sourceTree = "<group>";
+		};
+		A481B4622423666D00B294AF /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A481B46B242380DE00B294AF /* Localizable.strings */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		A481B4632423667500B294AF /* appIcons */ = {
+			isa = PBXGroup;
+			children = (
+				A481B4642423667500B294AF /* Assets.xcassets */,
+			);
+			path = appIcons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A481B42D24235D3400B294AF /* DiCoScanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A481B44724235D3700B294AF /* Build configuration list for PBXNativeTarget "DiCoScanner" */;
+			buildPhases = (
+				A481B42A24235D3400B294AF /* Sources */,
+				A481B42B24235D3400B294AF /* Frameworks */,
+				A481B42C24235D3400B294AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DiCoScanner;
+			productName = DiCoScanner;
+			productReference = A481B42E24235D3400B294AF /* DiCoScanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A481B42624235D3400B294AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "let's dev GmbH & Co. KG";
+				TargetAttributes = {
+					A481B42D24235D3400B294AF = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = A481B42924235D3400B294AF /* Build configuration list for PBXProject "DiCoScanner" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A481B42524235D3400B294AF;
+			productRefGroup = A481B42F24235D3400B294AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A481B42D24235D3400B294AF /* DiCoScanner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A481B42C24235D3400B294AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A481B4582423660200B294AF /* LaunchScreen.xib in Resources */,
+				A481B46D242380DE00B294AF /* Localizable.strings in Resources */,
+				A481B46A24237E7200B294AF /* DCSStartVC.xib in Resources */,
+				A481B4652423667500B294AF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A481B42A24235D3400B294AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A481B4542423657D00B294AF /* main.m in Sources */,
+				A481B4552423657D00B294AF /* DCSAppDelegate.m in Sources */,
+				A481B46924237E7200B294AF /* DCSStartVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A481B46B242380DE00B294AF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A481B46C242380DE00B294AF /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A481B44524235D3700B294AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A481B44624235D3700B294AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A481B44824235D3700B294AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 55N9D27866;
+				INFOPLIST_FILE = DiCoScanner/source/supportingFiles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.letsdev.DiCoScanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "ld-ent-wildcard-development-xcode11";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e";
+			};
+			name = Debug;
+		};
+		A481B44924235D3700B294AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 55N9D27866;
+				INFOPLIST_FILE = DiCoScanner/source/supportingFiles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.letsdev.DiCoScanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "ld-ent-wildcard-distribution";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A481B42924235D3400B294AF /* Build configuration list for PBXProject "DiCoScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A481B44524235D3700B294AF /* Debug */,
+				A481B44624235D3700B294AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A481B44724235D3700B294AF /* Build configuration list for PBXNativeTarget "DiCoScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A481B44824235D3700B294AF /* Debug */,
+				A481B44924235D3700B294AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A481B42624235D3400B294AF /* Project object */;
+}

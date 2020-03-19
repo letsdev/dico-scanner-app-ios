@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+	<groupId>de.letsdev</groupId>
+    <artifactId>DiCoScanner-Parent</artifactId>
+    <version>0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>DiCoScanner</artifactId>
+  <name>DiCoScanner</name>
+  <packaging>pom</packaging>
+
+  <profiles>
+  	<profile>
+  		<id>dico-scanner-inhouse</id>
+  		<activation>
+  			<activeByDefault>true</activeByDefault>
+  		</activation>
+  		<build>
+  			<plugins>
+  				<plugin>
+  					<groupId>de.letsdev.maven.plugins</groupId>
+  					<artifactId>ios-maven-plugin</artifactId>
+  					<extensions>true</extensions>
+  					<executions>
+  						<execution>
+  							<id>dico-scanner-inhouse-build</id>
+							<goals>
+								<goal>build</goal>
+								<goal>package</goal>
+								<goal>deploy</goal>
+							</goals>
+  							<configuration>
+  								<appName>DiCoScanner</appName>
+  								<projectName>DiCoScanner</projectName>
+  								<displayName>DiCoScanner</displayName>
+  								<scheme>DiCoScanner</scheme>
+  								<infoPlist>DiCoScanner/source/supportingFiles/Info.plist</infoPlist>
+  								<bundleIdentifier>de.letsdev.DiCoScanner</bundleIdentifier>
+  								<ipaVersion>${project.version}</ipaVersion>
+  								<buildId>${env.BUILD_NUMBER}</buildId>
+  								<configuration>Release</configuration>
+  								<xcodeVersion>/Applications/Xcode-11.app</xcodeVersion>
+								  <keychainPath>${codeSignIdentity.enterprise.keychain.path}</keychainPath>
+							      <keychainPassword>${codeSignIdentity.enterprise.keychain.password}</keychainPassword>
+  								<provisioningProfileName>ldentwildcarddistribution</provisioningProfileName>
+  							</configuration>
+  						</execution>
+  					</executions>
+  				</plugin>
+  				<plugin>
+  					<groupId>org.apache.maven.plugins</groupId>
+  					<artifactId>maven-dependency-plugin</artifactId>
+  					<executions>
+  						<execution>
+  							<id>unpack-ios-dependencies</id>
+  							<phase>validate</phase>
+  							<goals>
+  								<goal>unpack-dependencies</goal>
+  							</goals>
+  							<configuration>
+  								<outputDirectory>${project.build.directory}/ios-dependencies</outputDirectory>
+  							</configuration>	
+  						</execution>
+  					</executions>
+  				</plugin>
+  			</plugins>
+  		</build>
+  	</profile>
+  </profiles>
+
+  <dependencies>
+
+  </dependencies>
+
+</project>
