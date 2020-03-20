@@ -11,14 +11,31 @@ internal class DatabaseManager {
     internal static let shared = DatabaseManager()
 
     private init() {
-        let symptoms = ["symptom1", "symptom2", "symptom3"]
+    }
 
-        for symptom in symptoms {
-            let object = NSEntityDescription.insertNewObject(forEntityName: "Symptom", into: persistentContainer.viewContext) as! Symptom
-            object.name = symptom
+    internal func insertDummyData() {
+        // TODO update
+
+        if (SymptomDao().countAll() <= 0) {
+            let symptoms = ["symptom1", "symptom2", "symptom3"]
+
+            for symptom in symptoms {
+                let object = NSEntityDescription.insertNewObject(forEntityName: "Symptom",
+                        into: persistentContainer.viewContext) as! Symptom
+                object.name = symptom
+            }
+
+            let marker = NSEntityDescription.insertNewObject(forEntityName: "Marker",
+                    into: persistentContainer.viewContext) as! Marker
+            marker.altitude = 53.53
+            marker.lat = 7575.543
+            marker.lon = 75.53
+            marker.eventDate = Date()
+            marker.verticalAccuracy = 535353.535
+            marker.horizontalAccuracy = 535353.535
+
             saveContext()
         }
-
     }
 
     // MARK: - Core Data stack
