@@ -36,7 +36,7 @@
   								<projectName>DiCoScanner</projectName>
   								<displayName>DiCoScanner</displayName>
   								<scheme>DiCoScanner</scheme>
-  								<infoPlist>DiCoScanner/source/supportingFiles/Info.plist</infoPlist>
+  								<infoPlist>DiCoScanner/Info.plist</infoPlist>
   								<bundleIdentifier>de.letsdev.DiCoScanner</bundleIdentifier>
   								<ipaVersion>${project.version}</ipaVersion>
   								<buildId>${env.BUILD_NUMBER}</buildId>
