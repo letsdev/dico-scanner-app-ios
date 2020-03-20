@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A481B4C12425623500B294AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C02425623500B294AF /* AppDelegate.swift */; };
-		A481B4C32425623500B294AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C22425623500B294AF /* SceneDelegate.swift */; };
-		A481B4C52425623500B294AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C42425623500B294AF /* ViewController.swift */; };
-		A481B4C82425623500B294AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A481B4C62425623500B294AF /* Main.storyboard */; };
 		A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */; };
 		A481B4CD2425623600B294AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CC2425623600B294AF /* Assets.xcassets */; };
 		A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CE2425623600B294AF /* LaunchScreen.storyboard */; };
@@ -19,9 +16,6 @@
 /* Begin PBXFileReference section */
 		A481B4BD2425623500B294AF /* DiCoScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiCoScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A481B4C02425623500B294AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A481B4C22425623500B294AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A481B4C42425623500B294AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A481B4C72425623500B294AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A481B4CA2425623500B294AF /* DiCoScanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiCoScanner.xcdatamodel; sourceTree = "<group>"; };
 		A481B4CC2425623600B294AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A481B4CF2425623600B294AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,9 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				A481B4C02425623500B294AF /* AppDelegate.swift */,
-				A481B4C22425623500B294AF /* SceneDelegate.swift */,
-				A481B4C42425623500B294AF /* ViewController.swift */,
-				A481B4C62425623500B294AF /* Main.storyboard */,
 				A481B4CC2425623600B294AF /* Assets.xcassets */,
 				A481B4CE2425623600B294AF /* LaunchScreen.storyboard */,
 				A481B4D12425623600B294AF /* Info.plist */,
@@ -130,7 +121,6 @@
 			files = (
 				A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */,
 				A481B4CD2425623600B294AF /* Assets.xcassets in Resources */,
-				A481B4C82425623500B294AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +131,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A481B4C52425623500B294AF /* ViewController.swift in Sources */,
 				A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */,
 				A481B4C12425623500B294AF /* AppDelegate.swift in Sources */,
-				A481B4C32425623500B294AF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A481B4C62425623500B294AF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A481B4C72425623500B294AF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A481B4CE2425623600B294AF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +268,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 55N9D27866;
 				INFOPLIST_FILE = DiCoScanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -297,6 +279,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.letsdev.DiCoScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "ld-ent-wildcard-development-xcode11";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -306,7 +289,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 55N9D27866;
 				INFOPLIST_FILE = DiCoScanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -315,6 +300,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.letsdev.DiCoScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "ld-ent-wildcard-distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
