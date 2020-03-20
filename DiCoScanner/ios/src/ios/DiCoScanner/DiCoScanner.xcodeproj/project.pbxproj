@@ -39,6 +39,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E9797E6242562EA005CE79F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				2E9797E724256300005CE79F /* data */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		2E9797E724256300005CE79F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				2E9797E924256317005CE79F /* dao */,
+				2E9797E824256308005CE79F /* domain */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		2E9797E824256308005CE79F /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		2E9797E924256317005CE79F /* dao */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = dao;
+			sourceTree = "<group>";
+		};
 		A481B4B42425623500B294AF = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +90,7 @@
 		A481B4BF2425623500B294AF /* DiCoScanner */ = {
 			isa = PBXGroup;
 			children = (
+				2E9797E6242562EA005CE79F /* src */,
 				A481B4C02425623500B294AF /* AppDelegate.swift */,
 				A481B4C22425623500B294AF /* SceneDelegate.swift */,
 				A481B4C42425623500B294AF /* ViewController.swift */,
@@ -65,7 +98,6 @@
 				A481B4CC2425623600B294AF /* Assets.xcassets */,
 				A481B4CE2425623600B294AF /* LaunchScreen.storyboard */,
 				A481B4D12425623600B294AF /* Info.plist */,
-				A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */,
 			);
 			path = DiCoScanner;
 			sourceTree = "<group>";
