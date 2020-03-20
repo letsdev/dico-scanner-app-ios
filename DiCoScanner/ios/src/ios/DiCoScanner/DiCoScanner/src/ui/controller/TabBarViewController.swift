@@ -13,6 +13,8 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let markerVC = MarkerViewController()
+        self.viewControllers = [markerVC]
         // Do any additional setup after loading the view.
     }
 

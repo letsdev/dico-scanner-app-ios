@@ -7,34 +7,32 @@
 //
 
 import UIKit
+import CoreLocation
+import os
 
 class MarkerViewController: UIViewController {
 
-    @IBOutlet weak var headerLabel: UILabel!
-    
-    @IBOutlet weak var humanContactLabel: UILabel!
-    @IBOutlet weak var humanContactSwitch: UISwitch!
-    
-    @IBOutlet weak var crowdLabel: UILabel!
-    @IBOutlet weak var crowdSwitch: UISwitch!
-    
-    @IBOutlet weak var touchedFaceLabel: UILabel!
-    @IBOutlet weak var touchedFaceSwitch: UISwitch!
-    
-    @IBOutlet weak var sickContactLabel: UILabel!
-    @IBOutlet weak var sickContactSwitch: UISwitch!
-    
     @IBOutlet weak var markButton: UIButton!
-    
-    
+
+    private let locationProvider = LocationProvider()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Markierungen"
+
+        locationProvider.delegate = self
+
+        markButton.titleLabel?.text = "Markierung setzen"
     }
 
     @IBAction func markButtonTapped(_ sender: Any) {
-        let humanContact = humanContactSwitch.isOn
-        let crowdContact = crowdSwitch.isOn
-        let touchedFace = touchedFaceSwitch.isOn
-        let sickContact = sickContactSwitch.isOn
+        locationProvider.currentLocation()
+    }
+}
+
+extension MarkerViewController: LocationProviderDelegate {
+    func received(location: CLLocation) {
+        os_log("Received location long/lat: %d / %d", location.coordinate.latitude.description,
+                location.coordinate.longitude.binade.description)
     }
 }
