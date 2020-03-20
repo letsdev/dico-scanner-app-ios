@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29BD958E5A61B56A9AC99C23 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9E3E05235BB38E8BA1E3 /* DatabaseManager.swift */; };
+		29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9C9031377750FAEFBDEE /* SymptomDao.swift */; };
+		29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD99460BD6EC84122302EE /* BaseDao.swift */; };
 		A481B4C12425623500B294AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C02425623500B294AF /* AppDelegate.swift */; };
 		A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */; };
 		A481B4CD2425623600B294AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CC2425623600B294AF /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29BD99460BD6EC84122302EE /* BaseDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
+		29BD9C9031377750FAEFBDEE /* SymptomDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomDao.swift; sourceTree = "<group>"; };
+		29BD9E3E05235BB38E8BA1E3 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		A481B4BD2425623500B294AF /* DiCoScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiCoScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A481B4C02425623500B294AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A481B4CA2425623500B294AF /* DiCoScanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiCoScanner.xcdatamodel; sourceTree = "<group>"; };
@@ -54,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */,
+				29BD9E3E05235BB38E8BA1E3 /* DatabaseManager.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -61,6 +68,8 @@
 		2E9797E924256317005CE79F /* dao */ = {
 			isa = PBXGroup;
 			children = (
+				29BD9C9031377750FAEFBDEE /* SymptomDao.swift */,
+				29BD99460BD6EC84122302EE /* BaseDao.swift */,
 			);
 			path = dao;
 			sourceTree = "<group>";
@@ -165,6 +174,9 @@
 			files = (
 				A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */,
 				A481B4C12425623500B294AF /* AppDelegate.swift in Sources */,
+				29BD958E5A61B56A9AC99C23 /* DatabaseManager.swift in Sources */,
+				29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */,
+				29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

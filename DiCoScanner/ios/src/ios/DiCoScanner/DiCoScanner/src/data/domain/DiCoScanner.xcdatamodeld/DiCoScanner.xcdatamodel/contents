@@ -6,19 +6,15 @@
     </entity>
     <entity name="Marker" representedClassName="Marker" syncable="YES" codeGenerationType="class">
         <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="crowdContact" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="faceContact" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="horizontalAccuracy" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="humanContact" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="lant" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="sickContact" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="verticalAccuracy" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Symptom" representedClassName="Symptom" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="diary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SymptomDiaryEntry" inverseName="symptom" inverseEntity="SymptomDiaryEntry"/>
+        <relationship name="diary" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SymptomDiaryEntry" inverseName="symptom" inverseEntity="SymptomDiaryEntry"/>
     </entity>
     <entity name="SymptomDiaryEntry" representedClassName="SymptomDiaryEntry" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -26,7 +22,7 @@
     </entity>
     <elements>
         <element name="CoronaTestResult" positionX="295.609375" positionY="156.296875" width="128" height="73"/>
-        <element name="Marker" positionX="135.828125" positionY="157.40625" width="128" height="193"/>
+        <element name="Marker" positionX="135.828125" positionY="157.40625" width="128" height="133"/>
         <element name="Symptom" positionX="-26.8984375" positionY="-8.73046875" width="128" height="73"/>
         <element name="SymptomDiaryEntry" positionX="187.87109375" positionY="-8.7109375" width="128" height="73"/>
     </elements>
