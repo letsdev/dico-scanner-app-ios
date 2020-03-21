@@ -25,7 +25,7 @@ class MarkerViewController: UIViewController {
     private let minHeightLastMarkerView: CGFloat = 100 // TODO: Fix it
     private static let animationDuration: TimeInterval = 0.2
     private static let animationDurationButton: TimeInterval = 0.5
-
+    
     private let locationProvider = LocationProvider()
 
     override func viewDidLoad() {
@@ -45,7 +45,6 @@ class MarkerViewController: UIViewController {
         lastMarkerView.addGestureRecognizer(panGesture)
 
         self.markButton.tintColor = UIColor(named: "AppGreyBackground")
-        self.markButton.layer.cornerRadius = 30
 
         setButtonAnimation(state: .normal)
     }
@@ -129,11 +128,14 @@ extension MarkerViewController {
 
     private func buttonNormal() {
         self.markButton.alpha = 1
-        animateToColor(colorName: "AppDarkBlue")
+        self.markButton.layer.borderColor = UIColor(named: "AppDarkBlue")!.cgColor
+        animateToColor(colorName: "AppDarkBlue45")
     }
 
     private func buttonProgress() {
         // TODO: Use method animateToColor with optional options and completion
+        self.markButton.titleLabel?.text = "Markierung wird gesetzt..."
+        self.markButton.layer.borderColor = UIColor(named: "AppOrange")!.cgColor
         UIView.animate(withDuration: MarkerViewController.animationDurationButton, delay: 0.0,
                 animations: {
                     self.markButton.backgroundColor = UIColor(named: "AppOrange")
@@ -148,6 +150,8 @@ extension MarkerViewController {
 
     private func buttonSuccess() {
         self.markButton.alpha = 1
+        self.markButton.titleLabel?.text = "Markierung gesetzt."
+        self.markButton.layer.borderColor = UIColor(named: "AppGreen")!.cgColor
         UIView.animate(withDuration: MarkerViewController.animationDurationButton, delay: 0.0,
                 options: [.allowUserInteraction],
                 animations: {
@@ -159,6 +163,8 @@ extension MarkerViewController {
 
     private func buttonFailure() {
         self.markButton.alpha = 1
+        self.markButton.titleLabel?.text = "Markierung fehlgeschlagen."
+        self.markButton.layer.borderColor = UIColor(named: "AppRed")!.cgColor
         animateToColor(colorName: "AppRed")
     }
 
