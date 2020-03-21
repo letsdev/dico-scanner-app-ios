@@ -30,10 +30,14 @@ class SymptomGetRequest: BaseRequest, Request {
     func receivedData(data: Data) {
         do {
             if let symptoms = try JSONSerialization.jsonObject(with: data) as? [[String: Any]] {
+                let dao = SymptomDao()
                     for symptom in symptoms {
-                        let uuid = symptom["id"] as? String
-                        let dao = SymptomDao()
-                        var object = dao.findByUUID(uuid: uuid)
+                        var object: Symptom? = nil
+                        if let id = symptom["id"] as? Int {
+                            let uuid = String(id)
+                            object = dao.findByUUID(uuid: uuid)
+                        }
+                        
                         if object == nil {
                             object = dao.newEntity()
                         }
