@@ -20,7 +20,6 @@ class BaseDao<T> where T: NSManagedObject {
         return result;
     }
 
-
     internal func findAll() -> [T] {
         let request = NSFetchRequest<T>(entityName: entityName)
         let result = execute {
@@ -29,6 +28,23 @@ class BaseDao<T> where T: NSManagedObject {
         return result
     }
 
+    internal func findByUUID(uuid: String?) -> T? {
+        var result: T? = nil
+        if let uuid = uuid {
+            let request = NSFetchRequest<T>(entityName: entityName)
+            request.fetchLimit = 1
+            request.predicate = NSPredicate(format: "uuid == %@", uuid)
+            result = (execute {
+                try DatabaseManager.shared.persistentContainer.viewContext.fetch(request)
+            } as! T)
+        }
+        return result
+    }
+
+    internal func newEntity() -> T {
+        NSEntityDescription.insertNewObject(forEntityName: entityName,
+                into: DatabaseManager.shared.persistentContainer.viewContext) as! T
+    }
 
     private func execute(statement: () throws -> Any) -> Any {
         do {

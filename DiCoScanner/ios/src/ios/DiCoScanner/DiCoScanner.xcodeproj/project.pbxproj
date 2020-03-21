@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9FB52888BBA281507503 /* MarkerDao.swift */; };
-		29BD92191B3D84E566FFB53A /* MarkerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9E606104F85659D58A42 /* MarkerRequest.swift */; };
-		360131BD8B8F3F5632343187 /* LocationProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */; };
-		3601357A224E006EA0DE23C6 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360132EB1A6E05520CDBCE3C /* LocationProvider.swift */; };
+		29BD92191B3D84E566FFB53A /* MarkerPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9E606104F85659D58A42 /* MarkerPostRequest.swift */; };
+		29BD9473DAB79227727C64D7 /* SymptomGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD92A6BDE937A9F83222A8 /* SymptomGetRequest.swift */; };
 		29BD958E5A61B56A9AC99C23 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9E3E05235BB38E8BA1E3 /* DatabaseManager.swift */; };
 		29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9C9031377750FAEFBDEE /* SymptomDao.swift */; };
 		29BD9A3B4F51135C94742C5D /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9AD1E27E24B6709443F4 /* BaseRequest.swift */; };
+		29BD9CE6870A1900A0F70B20 /* CoronaTestPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD91B441F69C43B36D982A /* CoronaTestPostRequest.swift */; };
 		29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD99460BD6EC84122302EE /* BaseDao.swift */; };
 		360131BD8B8F3F5632343187 /* LocationProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */; };
 		3601357A224E006EA0DE23C6 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360132EB1A6E05520CDBCE3C /* LocationProvider.swift */; };
@@ -47,11 +47,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29BD91B441F69C43B36D982A /* CoronaTestPostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoronaTestPostRequest.swift; sourceTree = "<group>"; };
+		29BD92A6BDE937A9F83222A8 /* SymptomGetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomGetRequest.swift; sourceTree = "<group>"; };
 		29BD99460BD6EC84122302EE /* BaseDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
 		29BD9AD1E27E24B6709443F4 /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		29BD9C9031377750FAEFBDEE /* SymptomDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomDao.swift; sourceTree = "<group>"; };
 		29BD9E3E05235BB38E8BA1E3 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
-		29BD9E606104F85659D58A42 /* MarkerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerRequest.swift; sourceTree = "<group>"; };
+		29BD9E606104F85659D58A42 /* MarkerPostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerPostRequest.swift; sourceTree = "<group>"; };
 		29BD9FB52888BBA281507503 /* MarkerDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerDao.swift; sourceTree = "<group>"; };
 		360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Localization.swift"; sourceTree = "<group>"; };
 		360132EB1A6E05520CDBCE3C /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
@@ -113,7 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				29BD9AD1E27E24B6709443F4 /* BaseRequest.swift */,
-				29BD9E606104F85659D58A42 /* MarkerRequest.swift */,
+				29BD9E606104F85659D58A42 /* MarkerPostRequest.swift */,
+				29BD92A6BDE937A9F83222A8 /* SymptomGetRequest.swift */,
+				29BD91B441F69C43B36D982A /* CoronaTestPostRequest.swift */,
 			);
 			path = request;
 			sourceTree = "<group>";
@@ -354,9 +358,11 @@
 				29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */,
 				29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */,
 				29BD9A3B4F51135C94742C5D /* BaseRequest.swift in Sources */,
-				29BD92191B3D84E566FFB53A /* MarkerRequest.swift in Sources */,
+				29BD92191B3D84E566FFB53A /* MarkerPostRequest.swift in Sources */,
 				36013CB43F23F90880575A49 /* DateFormatter+Localization.swift in Sources */,
 				E28583AF2425B63B00C6BE16 /* Marker+UiModel.swift in Sources */,
+				29BD9473DAB79227727C64D7 /* SymptomGetRequest.swift in Sources */,
+				29BD9CE6870A1900A0F70B20 /* CoronaTestPostRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

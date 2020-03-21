@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         self.window!.makeKeyAndVisible()
 
         registerForPushNotifications()
-
         // TODO remove all below
         DatabaseManager.shared.insertDummyData()
         os_log("Found number of symptoms: %i", SymptomDao().countAll())
