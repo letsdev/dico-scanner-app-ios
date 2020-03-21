@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SymptomsViewController" customModule="DiCoScanner" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="1Io-7Z-h8S" id="2bN-MQ-hF3"/>
                 <outlet property="coronaTestResultLabel" destination="fTZ-TJ-8O9" id="XfB-OQ-jON"/>
                 <outlet property="startSymptomsTestButton" destination="koF-pn-oaX" id="BtI-Mu-i5t"/>
-                <outlet property="symptomsDiaryStackView" destination="q5M-hA-Ecw" id="WCH-jt-Y4F"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,226 +20,221 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8m3-4c-pPS">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXN-hr-QRe">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRo-T3-7p8" userLabel="Corona Test Container View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="211.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eZl-Wh-K14">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1631.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offizieller Corona-Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caP-gq-0E1">
-                                    <rect key="frame" x="16" y="16" width="207" height="23"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDo-SY-WiE" userLabel="Corona Test Result Container View">
-                                    <rect key="frame" x="16" y="55" width="382" height="123.5"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRo-T3-7p8" userLabel="Corona Test Container View">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="227.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SARS-CoV-2-Schnelltest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccT-pe-NZK">
-                                            <rect key="frame" x="16" y="16" width="194.5" height="19.5"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offizieller Corona-Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caP-gq-0E1">
+                                            <rect key="frame" x="20" y="20" width="374" height="43"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqm-Kv-6tQ" userLabel="Border View">
-                                            <rect key="frame" x="0.0" y="51.5" width="382" height="1"/>
-                                            <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDo-SY-WiE" userLabel="Corona Test Result Container View">
+                                            <rect key="frame" x="20" y="83" width="374" height="123.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SARS-CoV-2-Schnelltest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccT-pe-NZK">
+                                                    <rect key="frame" x="16" y="16" width="194.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqm-Kv-6tQ" userLabel="Border View">
+                                                    <rect key="frame" x="0.0" y="51.5" width="374" height="1"/>
+                                                    <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="9TQ-xg-6G1"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ergebnis:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFK-I0-EDL">
+                                                    <rect key="frame" x="16" y="68.5" width="74" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;result&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTZ-TJ-8O9">
+                                                    <rect key="frame" x="16" y="88" width="66.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="9TQ-xg-6G1"/>
+                                                <constraint firstItem="hFK-I0-EDL" firstAttribute="leading" secondItem="uDo-SY-WiE" secondAttribute="leading" constant="16" id="1EQ-on-7KY"/>
+                                                <constraint firstItem="hFK-I0-EDL" firstAttribute="top" secondItem="eqm-Kv-6tQ" secondAttribute="bottom" constant="16" id="AhP-4h-hG8"/>
+                                                <constraint firstItem="eqm-Kv-6tQ" firstAttribute="leading" secondItem="uDo-SY-WiE" secondAttribute="leading" id="I7Y-FP-unz"/>
+                                                <constraint firstItem="fTZ-TJ-8O9" firstAttribute="top" secondItem="hFK-I0-EDL" secondAttribute="bottom" id="KxL-jy-1EA"/>
+                                                <constraint firstItem="eqm-Kv-6tQ" firstAttribute="width" secondItem="uDo-SY-WiE" secondAttribute="width" id="Oxc-1K-Zul"/>
+                                                <constraint firstItem="eqm-Kv-6tQ" firstAttribute="top" secondItem="ccT-pe-NZK" secondAttribute="bottom" constant="16" id="SE3-P1-sNN"/>
+                                                <constraint firstItem="ccT-pe-NZK" firstAttribute="top" secondItem="uDo-SY-WiE" secondAttribute="top" constant="16" id="Uhz-IE-3xm"/>
+                                                <constraint firstAttribute="bottom" secondItem="fTZ-TJ-8O9" secondAttribute="bottom" constant="16" id="iGg-6T-9sU"/>
+                                                <constraint firstItem="ccT-pe-NZK" firstAttribute="leading" secondItem="uDo-SY-WiE" secondAttribute="leading" constant="16" id="thp-fa-kvL"/>
+                                                <constraint firstItem="fTZ-TJ-8O9" firstAttribute="leading" secondItem="uDo-SY-WiE" secondAttribute="leading" constant="16" id="zFR-ex-dzo"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPq-a8-FuU" userLabel="Border View">
+                                            <rect key="frame" x="0.0" y="226.5" width="414" height="1"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="vZM-Fl-Nrc"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ergebnis:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFK-I0-EDL">
-                                            <rect key="frame" x="16" y="68.5" width="74" height="19.5"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;result&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTZ-TJ-8O9">
-                                            <rect key="frame" x="16" y="88" width="66.5" height="19.5"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
-                                        <constraint firstItem="hFK-I0-EDL" firstAttribute="leading" secondItem="uDo-SY-WiE" secondAttribute="leading" constant="16" id="1EQ-on-7KY"/>
-                                        <constraint firstItem="hFK-I0-EDL" firstAttribute="top" secondItem="eqm-Kv-6tQ" secondAttribute="bottom" constant="16" id="AhP-4h-hG8"/>
-                                        <constraint firstItem="eqm-Kv-6tQ" firstAttribute="leading" secondItem="uDo-SY-WiE" secondAttribute="leading" id="I7Y-FP-unz"/>
-                                        <constraint firstItem="fTZ-TJ-8O9" firstAttribute="top" secondItem="hFK-I0-EDL" secondAttribute="bottom" id="KxL-jy-1EA"/>
-                                        <constraint firstItem="eqm-Kv-6tQ" firstAttribute="width" secondItem="uDo-SY-WiE" secondAttribute="width" id="Oxc-1K-Zul"/>
-                                        <constraint firstItem="eqm-Kv-6tQ" firstAttribute="top" secondItem="ccT-pe-NZK" secondAttribute="bottom" constant="16" id="SE3-P1-sNN"/>
-                                        <constraint firstItem="ccT-pe-NZK" firstAttribute="top" secondItem="uDo-SY-WiE" secondAttribute="top" constant="16" id="Uhz-IE-3xm"/>
-                                        <constraint firstAttribute="bottom" secondItem="fTZ-TJ-8O9" secondAttribute="bottom" constant="16" id="iGg-6T-9sU"/>
-                                        <constraint firstItem="ccT-pe-NZK" firstAttribute="leading" secondItem="uDo-SY-WiE" secondAttribute="leading" constant="16" id="thp-fa-kvL"/>
-                                        <constraint firstItem="fTZ-TJ-8O9" firstAttribute="leading" secondItem="uDo-SY-WiE" secondAttribute="leading" constant="16" id="zFR-ex-dzo"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="10"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPq-a8-FuU" userLabel="Border View">
-                                    <rect key="frame" x="0.0" y="210.5" width="414" height="1"/>
-                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="1" id="vZM-Fl-Nrc"/>
+                                        <constraint firstItem="uDo-SY-WiE" firstAttribute="top" secondItem="caP-gq-0E1" secondAttribute="bottom" constant="20" id="2NR-gm-GfZ"/>
+                                        <constraint firstItem="RPq-a8-FuU" firstAttribute="leading" secondItem="NRo-T3-7p8" secondAttribute="leading" id="7Tb-et-mC9"/>
+                                        <constraint firstAttribute="bottom" secondItem="RPq-a8-FuU" secondAttribute="bottom" id="DsT-kP-4Pu"/>
+                                        <constraint firstAttribute="trailing" secondItem="caP-gq-0E1" secondAttribute="trailing" constant="20" id="FVH-Pr-QgI"/>
+                                        <constraint firstAttribute="trailing" secondItem="uDo-SY-WiE" secondAttribute="trailing" constant="20" id="XDS-gx-02E"/>
+                                        <constraint firstItem="uDo-SY-WiE" firstAttribute="leading" secondItem="NRo-T3-7p8" secondAttribute="leading" constant="20" id="Xyf-ui-QyU"/>
+                                        <constraint firstItem="caP-gq-0E1" firstAttribute="top" secondItem="NRo-T3-7p8" secondAttribute="top" constant="20" id="ZSZ-MW-AWY"/>
+                                        <constraint firstItem="RPq-a8-FuU" firstAttribute="top" secondItem="uDo-SY-WiE" secondAttribute="bottom" constant="20" id="bdy-hP-Rdi"/>
+                                        <constraint firstAttribute="trailing" secondItem="RPq-a8-FuU" secondAttribute="trailing" id="hYY-C9-Fj3"/>
+                                        <constraint firstItem="caP-gq-0E1" firstAttribute="leading" secondItem="NRo-T3-7p8" secondAttribute="leading" constant="20" id="qdb-OD-2CW"/>
                                     </constraints>
                                 </view>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="RPq-a8-FuU" firstAttribute="leading" secondItem="NRo-T3-7p8" secondAttribute="leading" id="0Zf-lh-ibN"/>
-                                <constraint firstItem="caP-gq-0E1" firstAttribute="leading" secondItem="NRo-T3-7p8" secondAttribute="leading" constant="16" id="6r0-jd-3SX"/>
-                                <constraint firstItem="uDo-SY-WiE" firstAttribute="centerX" secondItem="NRo-T3-7p8" secondAttribute="centerX" id="Awm-mw-aP1"/>
-                                <constraint firstItem="RPq-a8-FuU" firstAttribute="top" secondItem="uDo-SY-WiE" secondAttribute="bottom" constant="32" id="GhT-47-JiZ"/>
-                                <constraint firstItem="uDo-SY-WiE" firstAttribute="top" secondItem="caP-gq-0E1" secondAttribute="bottom" constant="16" id="Ieg-cu-r6N"/>
-                                <constraint firstItem="RPq-a8-FuU" firstAttribute="width" secondItem="NRo-T3-7p8" secondAttribute="width" id="Oot-m7-q9x"/>
-                                <constraint firstItem="uDo-SY-WiE" firstAttribute="width" secondItem="NRo-T3-7p8" secondAttribute="width" constant="-32" id="XBR-R6-6Ym"/>
-                                <constraint firstItem="caP-gq-0E1" firstAttribute="top" secondItem="NRo-T3-7p8" secondAttribute="top" constant="16" id="XYa-Qz-As9"/>
-                                <constraint firstAttribute="bottom" secondItem="RPq-a8-FuU" secondAttribute="bottom" id="bHj-q0-S24"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vi-3e-CAL" userLabel="Symptoms Test Container View">
-                            <rect key="frame" x="0.0" y="211.5" width="414" height="405"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mach einen Symptome-Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJZ-rG-yN5">
-                                    <rect key="frame" x="16" y="16" width="255" height="23"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnN-e6-QRp" userLabel="Symptoms Test Description Container View">
-                                    <rect key="frame" x="16" y="55" width="382" height="317"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vi-3e-CAL" userLabel="Symptoms Test Container View">
+                                    <rect key="frame" x="0.0" y="227.5" width="414" height="421"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iWT-Ao-iOz" userLabel="Symptoms Test Description Text View">
-                                            <rect key="frame" x="32" y="32" width="318" height="200"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mach einen Symptome-Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJZ-rG-yN5">
+                                            <rect key="frame" x="20" y="20" width="374" height="23"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnN-e6-QRp" userLabel="Symptoms Test Description Container View">
+                                            <rect key="frame" x="20" y="63" width="374" height="337"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iWT-Ao-iOz" userLabel="Symptoms Test Description Text View">
+                                                    <rect key="frame" x="20" y="20" width="334" height="240"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <string key="text">Dieser Test beinhaltet die häufigsten Symptome einer COVID-19 Erkrankung.  Beantworte die Fragen ehrlich und so genau wie möglich, um dich selbst und deine Mitmenschen zu schützen.  Nach dem Test bekommst du eine Einschätzung, ob du Symptome einer COVID-19 Erkrankung aufweist und einen Arzt aufsuchen solltest.</string>
+                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="koF-pn-oaX" userLabel="Start Symptoms Test Button">
+                                                    <rect key="frame" x="136" y="280" width="102" height="37"/>
+                                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="9"/>
+                                                    <state key="normal" title="Test starten">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <string key="text">Dieser Test beinhaltet die häufigsten Symptome einer COVID-19 Erkrankung.  Beantworte die Fragen ehrlich und so genau wie möglich, um dich selbst und deine Mitmenschen zu schützen.  Nach dem Test bekommst du eine Einschätzung, ob du Symptome einer COVID-19 Erkrankung aufweist und einen Arzt aufsuchen solltest.</string>
-                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <constraints>
+                                                <constraint firstItem="koF-pn-oaX" firstAttribute="top" secondItem="iWT-Ao-iOz" secondAttribute="bottom" constant="20" id="NA8-Qa-xJa"/>
+                                                <constraint firstAttribute="trailing" secondItem="iWT-Ao-iOz" secondAttribute="trailing" constant="20" id="Ntc-sm-WeN"/>
+                                                <constraint firstItem="iWT-Ao-iOz" firstAttribute="leading" secondItem="lnN-e6-QRp" secondAttribute="leading" constant="20" id="Tsa-rE-Muc"/>
+                                                <constraint firstItem="iWT-Ao-iOz" firstAttribute="top" secondItem="lnN-e6-QRp" secondAttribute="top" constant="20" id="hrz-na-mqX"/>
+                                                <constraint firstItem="koF-pn-oaX" firstAttribute="centerX" secondItem="lnN-e6-QRp" secondAttribute="centerX" id="szc-vm-4zr"/>
+                                                <constraint firstAttribute="bottom" secondItem="koF-pn-oaX" secondAttribute="bottom" constant="20" id="vUW-bU-EIS"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1c-fc-8FC" userLabel="Border View">
+                                            <rect key="frame" x="0.0" y="420" width="414" height="1"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="YJz-sA-KUj"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lnN-e6-QRp" firstAttribute="leading" secondItem="8Vi-3e-CAL" secondAttribute="leading" constant="20" id="2Uc-LE-gQH"/>
+                                        <constraint firstAttribute="bottom" secondItem="e1c-fc-8FC" secondAttribute="bottom" id="B25-G4-lDs"/>
+                                        <constraint firstItem="e1c-fc-8FC" firstAttribute="leading" secondItem="8Vi-3e-CAL" secondAttribute="leading" id="CAj-E0-5Jr"/>
+                                        <constraint firstItem="wJZ-rG-yN5" firstAttribute="top" secondItem="8Vi-3e-CAL" secondAttribute="top" constant="20" id="Ca4-QD-eIS"/>
+                                        <constraint firstAttribute="trailing" secondItem="e1c-fc-8FC" secondAttribute="trailing" id="KtW-Bp-jFu"/>
+                                        <constraint firstItem="lnN-e6-QRp" firstAttribute="top" secondItem="wJZ-rG-yN5" secondAttribute="bottom" constant="20" id="MmW-6p-oww"/>
+                                        <constraint firstItem="wJZ-rG-yN5" firstAttribute="leading" secondItem="8Vi-3e-CAL" secondAttribute="leading" constant="20" id="OtY-d1-DIB"/>
+                                        <constraint firstItem="e1c-fc-8FC" firstAttribute="top" secondItem="lnN-e6-QRp" secondAttribute="bottom" constant="20" id="dve-DY-FGD"/>
+                                        <constraint firstAttribute="trailing" secondItem="lnN-e6-QRp" secondAttribute="trailing" constant="20" id="gLZ-9Z-Wdj"/>
+                                        <constraint firstAttribute="trailing" secondItem="wJZ-rG-yN5" secondAttribute="trailing" constant="20" id="yrG-RM-X7y"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWr-EE-EPe" userLabel="Symptoms Diary Container View">
+                                    <rect key="frame" x="0.0" y="648.5" width="414" height="983"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dein Symptome-Tagebuch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coL-0o-Uuk">
+                                            <rect key="frame" x="20" y="20" width="374" height="23"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Io-7Z-h8S">
+                                            <rect key="frame" x="20" y="63" width="374" height="0.0"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" priority="250" id="joe-Rm-dQy"/>
+                                            </constraints>
+                                        </view>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XML-Qe-CY2" userLabel="Notice Text View">
+                                            <rect key="frame" x="20" y="83" width="374" height="900"/>
+                                            <string key="text">* Bitte beachte: Deine Angaben und die Auswertung des Symptome-Tests und dessen Ergebnis sind ohne Gewähr. Bei Unwohlsein oder Verdacht auf COVID-19 bitte umgehend einen Arzt aufsuchen und medizinische Vorsorge leisten.</string>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="koF-pn-oaX" userLabel="Start Symptoms Test Button">
-                                            <rect key="frame" x="140" y="248" width="102" height="37"/>
-                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="9"/>
-                                            <state key="normal" title="Test starten">
-                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                    <integer key="value" value="2"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="16"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </button>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
-                                        <constraint firstItem="iWT-Ao-iOz" firstAttribute="width" secondItem="lnN-e6-QRp" secondAttribute="width" constant="-64" id="1lN-bL-sGD"/>
-                                        <constraint firstItem="iWT-Ao-iOz" firstAttribute="centerX" secondItem="lnN-e6-QRp" secondAttribute="centerX" id="7Sd-ur-h1U"/>
-                                        <constraint firstItem="koF-pn-oaX" firstAttribute="top" secondItem="iWT-Ao-iOz" secondAttribute="bottom" constant="16" id="NA8-Qa-xJa"/>
-                                        <constraint firstItem="iWT-Ao-iOz" firstAttribute="top" secondItem="lnN-e6-QRp" secondAttribute="top" constant="32" id="hrz-na-mqX"/>
-                                        <constraint firstItem="koF-pn-oaX" firstAttribute="centerX" secondItem="lnN-e6-QRp" secondAttribute="centerX" id="szc-vm-4zr"/>
-                                        <constraint firstAttribute="bottom" secondItem="koF-pn-oaX" secondAttribute="bottom" constant="32" id="vUW-bU-EIS"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="10"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1c-fc-8FC" userLabel="Border View">
-                                    <rect key="frame" x="0.0" y="404" width="414" height="1"/>
-                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="1" id="YJz-sA-KUj"/>
+                                        <constraint firstAttribute="trailing" secondItem="coL-0o-Uuk" secondAttribute="trailing" constant="20" id="6Ks-0K-wOd"/>
+                                        <constraint firstItem="coL-0o-Uuk" firstAttribute="top" secondItem="VWr-EE-EPe" secondAttribute="top" constant="20" id="8DY-ap-coy"/>
+                                        <constraint firstItem="coL-0o-Uuk" firstAttribute="leading" secondItem="VWr-EE-EPe" secondAttribute="leading" constant="20" id="8M6-bR-Yv2"/>
+                                        <constraint firstItem="1Io-7Z-h8S" firstAttribute="leading" secondItem="VWr-EE-EPe" secondAttribute="leading" constant="20" id="JMv-hF-j2r"/>
+                                        <constraint firstAttribute="trailing" secondItem="1Io-7Z-h8S" secondAttribute="trailing" constant="20" id="Qkg-FK-sav"/>
+                                        <constraint firstItem="XML-Qe-CY2" firstAttribute="leading" secondItem="VWr-EE-EPe" secondAttribute="leading" constant="20" id="dN1-lo-ws7"/>
+                                        <constraint firstItem="1Io-7Z-h8S" firstAttribute="top" secondItem="coL-0o-Uuk" secondAttribute="bottom" constant="20" id="dnz-Fn-RSX"/>
+                                        <constraint firstAttribute="trailing" secondItem="XML-Qe-CY2" secondAttribute="trailing" constant="20" id="uYb-bo-ct8"/>
+                                        <constraint firstItem="XML-Qe-CY2" firstAttribute="top" secondItem="1Io-7Z-h8S" secondAttribute="bottom" constant="20" id="xSK-4V-1XS"/>
+                                        <constraint firstAttribute="bottom" secondItem="XML-Qe-CY2" secondAttribute="bottom" id="xfW-mG-2ZZ"/>
                                     </constraints>
                                 </view>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="e1c-fc-8FC" firstAttribute="top" secondItem="lnN-e6-QRp" secondAttribute="bottom" constant="32" id="4Lb-a5-J6p"/>
-                                <constraint firstItem="lnN-e6-QRp" firstAttribute="width" secondItem="8Vi-3e-CAL" secondAttribute="width" constant="-32" id="Kww-1K-aeA"/>
-                                <constraint firstItem="lnN-e6-QRp" firstAttribute="centerX" secondItem="8Vi-3e-CAL" secondAttribute="centerX" id="VUf-aG-B0N"/>
-                                <constraint firstItem="lnN-e6-QRp" firstAttribute="top" secondItem="wJZ-rG-yN5" secondAttribute="bottom" constant="16" id="YBe-0D-BZN"/>
-                                <constraint firstItem="e1c-fc-8FC" firstAttribute="width" secondItem="8Vi-3e-CAL" secondAttribute="width" id="cwg-0Z-aPi"/>
-                                <constraint firstAttribute="bottom" secondItem="e1c-fc-8FC" secondAttribute="bottom" id="h1a-fQ-Shd"/>
-                                <constraint firstItem="wJZ-rG-yN5" firstAttribute="leading" secondItem="8Vi-3e-CAL" secondAttribute="leading" constant="16" id="lkf-6e-vhu"/>
-                                <constraint firstItem="wJZ-rG-yN5" firstAttribute="top" secondItem="8Vi-3e-CAL" secondAttribute="top" constant="16" id="rhM-2J-CCz"/>
-                                <constraint firstItem="e1c-fc-8FC" firstAttribute="leading" secondItem="8Vi-3e-CAL" secondAttribute="leading" id="uHG-Pe-olC"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWr-EE-EPe" userLabel="Symptoms Diary Container View">
-                            <rect key="frame" x="0.0" y="616.5" width="414" height="188.5"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dein Symptome-Tagebuch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coL-0o-Uuk">
-                                    <rect key="frame" x="16" y="16" width="414" height="23"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q5M-hA-Ecw" userLabel="Diary Entries Stack View">
-                                    <rect key="frame" x="16" y="55" width="382" height="1"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Io-7Z-h8S">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="1"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="joe-Rm-dQy"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                </stackView>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XML-Qe-CY2" userLabel="Notice Text View">
-                                    <rect key="frame" x="70.5" y="72" width="273" height="116.5"/>
-                                    <string key="text">* Bitte beachte: Deine Angaben und die Auswertung des Symptome-Tests und dessen Ergebnis sind ohne Gewähr. Bei Unwohlsein oder Verdacht auf COVID-19 bitte umgehend einen Arzt aufsuchen und medizinische Vorsorge leisten.</string>
-                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="coL-0o-Uuk" firstAttribute="top" secondItem="VWr-EE-EPe" secondAttribute="top" constant="16" id="8DY-ap-coy"/>
-                                <constraint firstItem="coL-0o-Uuk" firstAttribute="leading" secondItem="VWr-EE-EPe" secondAttribute="leading" constant="16" id="8M6-bR-Yv2"/>
-                                <constraint firstItem="q5M-hA-Ecw" firstAttribute="top" secondItem="coL-0o-Uuk" secondAttribute="bottom" constant="16" id="9MA-kc-OvJ"/>
-                                <constraint firstItem="XML-Qe-CY2" firstAttribute="centerX" secondItem="VWr-EE-EPe" secondAttribute="centerX" id="NyZ-4u-0qv"/>
-                                <constraint firstItem="XML-Qe-CY2" firstAttribute="top" secondItem="q5M-hA-Ecw" secondAttribute="bottom" constant="16" id="U3B-A6-OhL"/>
-                                <constraint firstItem="XML-Qe-CY2" firstAttribute="width" secondItem="VWr-EE-EPe" secondAttribute="width" multiplier="0.66" id="aW6-sE-bqZ"/>
-                                <constraint firstItem="coL-0o-Uuk" firstAttribute="width" secondItem="VWr-EE-EPe" secondAttribute="width" id="gB7-J5-2s6"/>
-                                <constraint firstItem="q5M-hA-Ecw" firstAttribute="leading" secondItem="VWr-EE-EPe" secondAttribute="leading" constant="16" id="qSe-QI-QCd"/>
-                                <constraint firstAttribute="bottom" secondItem="XML-Qe-CY2" secondAttribute="bottom" id="xfW-mG-2ZZ"/>
-                                <constraint firstItem="q5M-hA-Ecw" firstAttribute="width" secondItem="VWr-EE-EPe" secondAttribute="width" constant="-32" id="yMf-fR-Jix"/>
-                            </constraints>
-                        </view>
+                        </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="8Vi-3e-CAL" firstAttribute="leading" secondItem="TFT-sm-vkn" secondAttribute="leading" id="3FQ-Yg-Na5"/>
-                        <constraint firstItem="NRo-T3-7p8" firstAttribute="width" secondItem="8m3-4c-pPS" secondAttribute="width" id="Eyl-Mj-rHc"/>
-                        <constraint firstItem="NRo-T3-7p8" firstAttribute="trailing" secondItem="TFT-sm-vkn" secondAttribute="trailing" id="FoU-Ez-1b8"/>
-                        <constraint firstItem="VWr-EE-EPe" firstAttribute="trailing" secondItem="TFT-sm-vkn" secondAttribute="trailing" id="ICa-o3-PlJ"/>
-                        <constraint firstItem="NRo-T3-7p8" firstAttribute="leading" secondItem="TFT-sm-vkn" secondAttribute="leading" id="PDa-4B-71Z"/>
-                        <constraint firstItem="VWr-EE-EPe" firstAttribute="top" secondItem="8Vi-3e-CAL" secondAttribute="bottom" id="UkL-Gg-AZ6"/>
-                        <constraint firstItem="VWr-EE-EPe" firstAttribute="bottom" secondItem="TFT-sm-vkn" secondAttribute="bottom" id="Zvv-E0-pAy"/>
-                        <constraint firstItem="8Vi-3e-CAL" firstAttribute="top" secondItem="NRo-T3-7p8" secondAttribute="bottom" id="iHd-Xj-vrM"/>
-                        <constraint firstItem="NRo-T3-7p8" firstAttribute="top" secondItem="TFT-sm-vkn" secondAttribute="top" id="kz7-mN-2a5"/>
-                        <constraint firstItem="8Vi-3e-CAL" firstAttribute="trailing" secondItem="TFT-sm-vkn" secondAttribute="trailing" id="p0t-cn-0ZA"/>
-                        <constraint firstItem="VWr-EE-EPe" firstAttribute="leading" secondItem="TFT-sm-vkn" secondAttribute="leading" id="zPb-ri-puq"/>
+                        <constraint firstItem="eZl-Wh-K14" firstAttribute="leading" secondItem="fdg-iT-YYW" secondAttribute="leading" id="HxB-6u-3Tj"/>
+                        <constraint firstItem="eZl-Wh-K14" firstAttribute="trailing" secondItem="fdg-iT-YYW" secondAttribute="trailing" id="IG5-1Y-GSe"/>
+                        <constraint firstItem="eZl-Wh-K14" firstAttribute="top" secondItem="fdg-iT-YYW" secondAttribute="top" id="bXn-L4-6m9"/>
+                        <constraint firstItem="eZl-Wh-K14" firstAttribute="width" secondItem="gl5-sl-RoH" secondAttribute="width" id="fzq-3u-1dS"/>
+                        <constraint firstItem="eZl-Wh-K14" firstAttribute="bottom" secondItem="fdg-iT-YYW" secondAttribute="bottom" id="x3L-v7-R5p"/>
                     </constraints>
-                    <viewLayoutGuide key="contentLayoutGuide" id="TFT-sm-vkn"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="VcX-lg-enW"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="fdg-iT-YYW"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="gl5-sl-RoH"/>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="8m3-4c-pPS" firstAttribute="top" secondItem="Ta9-WB-xt6" secondAttribute="top" id="VPI-t4-ZRd"/>
-                <constraint firstItem="8m3-4c-pPS" firstAttribute="height" secondItem="Ta9-WB-xt6" secondAttribute="height" id="ahc-Kg-qhI"/>
-                <constraint firstItem="8m3-4c-pPS" firstAttribute="width" secondItem="Ta9-WB-xt6" secondAttribute="width" id="sjk-Kr-JJg"/>
-                <constraint firstItem="8m3-4c-pPS" firstAttribute="leading" secondItem="Ta9-WB-xt6" secondAttribute="leading" id="z7C-xb-KmQ"/>
+                <constraint firstItem="gXN-hr-QRe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JVi-89-fjJ"/>
+                <constraint firstItem="gXN-hr-QRe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="K6a-h3-w4n"/>
+                <constraint firstAttribute="trailing" secondItem="gXN-hr-QRe" secondAttribute="trailing" id="Rk9-sh-zLX"/>
+                <constraint firstAttribute="bottom" secondItem="gXN-hr-QRe" secondAttribute="bottom" id="tUV-YP-oJr"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Ta9-WB-xt6"/>
-            <point key="canvasLocation" x="132" y="154"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
     </objects>
 </document>

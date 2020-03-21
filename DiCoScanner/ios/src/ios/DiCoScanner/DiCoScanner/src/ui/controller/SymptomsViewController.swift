@@ -9,9 +9,10 @@
 import UIKit
 
 class SymptomsViewController: UIViewController {
+    
     @IBOutlet var coronaTestResultLabel: UILabel!
     @IBOutlet var startSymptomsTestButton: UIButton!
-    @IBOutlet var symptomsDiaryStackView: UIStackView!
+    @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +29,24 @@ class SymptomsViewController: UIViewController {
     }
 
     private func setupSymptomsDiaryEntries() {
-        let diaryEntryView = DiaryEntryView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 64))
-        symptomsDiaryStackView.addArrangedSubview(diaryEntryView)
-
-        let diaryEntryView2 = DiaryEntryView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 64))
-        symptomsDiaryStackView.addArrangedSubview(diaryEntryView2)
+        let diaryEntryView = DiaryEntryView()
+        let diaryEntryView2 = DiaryEntryView()
+        
+        let arrangedSubviews = [diaryEntryView, diaryEntryView2]
+        
+        let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
+        containerView.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            stackView.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor)
+        ])
+        stackView.alignment = .fill
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 20
     }
 
     func setupCoronaTestResults() {

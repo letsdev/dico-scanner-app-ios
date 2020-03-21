@@ -13,8 +13,8 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let markerVC = MarkerViewController()
-        let symptomsVC = SymptomsViewController()
+        let markerVC = UINavigationController(rootViewController: MarkerViewController())
+        let symptomsVC = UINavigationController(rootViewController: SymptomsViewController())
         self.viewControllers = [markerVC, symptomsVC]
     }
 }
