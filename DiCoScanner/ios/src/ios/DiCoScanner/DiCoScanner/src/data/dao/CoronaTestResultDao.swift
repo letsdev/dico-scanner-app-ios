@@ -11,7 +11,7 @@ class CoronaTestResultDao : BaseDao<CoronaTestResult> {
     enum CoronaTestResultState: String {
         case positive = "positive"
         case negative = "negative"
-        case pending = "pending"
+        case pending = "initialized"
     }
 
     func findLatest() -> CoronaTestResult? {

@@ -124,9 +124,8 @@ class CoronaTestViewController: UIViewController {
 
         DatabaseManager.shared.saveContext()
 
-        if (coronaTestResult != .pending) {
-            dao.markObjectForSync(object: testResult)
-        }
+        dao.markObjectForSync(object: testResult)
+
         self.coronaTestDelegate.didCompleteCoronaTest()
     }
 }
