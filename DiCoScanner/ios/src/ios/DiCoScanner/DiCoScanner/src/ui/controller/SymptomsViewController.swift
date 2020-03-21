@@ -10,17 +10,24 @@ import UIKit
 
 class SymptomsViewController: UIViewController {
     @IBOutlet var coronaTestResultLabel: UILabel!
+    @IBOutlet var startSymptomsTestButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.navigationBar.prefersLargeTitles = true
         
-
+        setupCoronaTestResults()
+        
+        setupSymptomsTestButton()
     }
 
     func setupCoronaTestResults() {
         coronaTestResultLabel.text = "Ausstehend"
         coronaTestResultLabel.textColor = UIColor(named: "AppOrange")
+    }
+    
+    func setupSymptomsTestButton() {
+        startSymptomsTestButton.layer.borderColor = UIColor.black.cgColor
     }
 }
