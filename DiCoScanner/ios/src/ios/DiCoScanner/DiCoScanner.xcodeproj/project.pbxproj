@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9FB52888BBA281507503 /* MarkerDao.swift */; };
 		29BD92191B3D84E566FFB53A /* MarkerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9E606104F85659D58A42 /* MarkerRequest.swift */; };
+		360131BD8B8F3F5632343187 /* LocationProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */; };
+		3601357A224E006EA0DE23C6 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360132EB1A6E05520CDBCE3C /* LocationProvider.swift */; };
 		29BD958E5A61B56A9AC99C23 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9E3E05235BB38E8BA1E3 /* DatabaseManager.swift */; };
 		29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9C9031377750FAEFBDEE /* SymptomDao.swift */; };
 		29BD9A3B4F51135C94742C5D /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9AD1E27E24B6709443F4 /* BaseRequest.swift */; };
@@ -17,6 +19,14 @@
 		A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */; };
 		A481B4CD2425623600B294AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CC2425623600B294AF /* Assets.xcassets */; };
 		A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CE2425623600B294AF /* LaunchScreen.storyboard */; };
+		E28583A02425683000C6BE16 /* MarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285839E2425683000C6BE16 /* MarkerViewController.swift */; };
+		E28583A12425683000C6BE16 /* MarkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E285839F2425683000C6BE16 /* MarkerViewController.xib */; };
+		E28583A424257ED600C6BE16 /* LastMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */; };
+		E28583A524257ED600C6BE16 /* LastMarkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28583A324257ED600C6BE16 /* LastMarkerViewController.xib */; };
+		E28583A92425807300C6BE16 /* LastMarkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28583A72425807300C6BE16 /* LastMarkerTableViewCell.swift */; };
+		E28583AA2425807300C6BE16 /* LastMarkerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28583A82425807300C6BE16 /* LastMarkerTableViewCell.xib */; };
+		E28BA0F22425666A00AF3CF2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */; };
+		E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +36,22 @@
 		29BD9E3E05235BB38E8BA1E3 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		29BD9E606104F85659D58A42 /* MarkerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerRequest.swift; sourceTree = "<group>"; };
 		29BD9FB52888BBA281507503 /* MarkerDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerDao.swift; sourceTree = "<group>"; };
+		360132EB1A6E05520CDBCE3C /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProviderDelegate.swift; sourceTree = "<group>"; };
 		A481B4BD2425623500B294AF /* DiCoScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiCoScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A481B4C02425623500B294AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A481B4CA2425623500B294AF /* DiCoScanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiCoScanner.xcdatamodel; sourceTree = "<group>"; };
 		A481B4CC2425623600B294AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A481B4CF2425623600B294AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A481B4D12425623600B294AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E285839E2425683000C6BE16 /* MarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerViewController.swift; sourceTree = "<group>"; };
+		E285839F2425683000C6BE16 /* MarkerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerViewController.xib; sourceTree = "<group>"; };
+		E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMarkerViewController.swift; sourceTree = "<group>"; };
+		E28583A324257ED600C6BE16 /* LastMarkerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastMarkerViewController.xib; sourceTree = "<group>"; };
+		E28583A72425807300C6BE16 /* LastMarkerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMarkerTableViewCell.swift; sourceTree = "<group>"; };
+		E28583A82425807300C6BE16 /* LastMarkerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastMarkerTableViewCell.xib; sourceTree = "<group>"; };
+		E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				2E9797E724256300005CE79F /* data */,
+				36013C97EB493D7A9017A98D /* ui */,
+				3601394BA90DCE4327CBB6F8 /* location */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -99,6 +121,37 @@
 			path = dao;
 			sourceTree = "<group>";
 		};
+		3601394BA90DCE4327CBB6F8 /* location */ = {
+			isa = PBXGroup;
+			children = (
+				360132EB1A6E05520CDBCE3C /* LocationProvider.swift */,
+				36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */,
+			);
+			path = location;
+			sourceTree = "<group>";
+		};
+		36013B2860E50B41AAEE60C2 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */,
+				E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */,
+				E285839E2425683000C6BE16 /* MarkerViewController.swift */,
+				E285839F2425683000C6BE16 /* MarkerViewController.xib */,
+				E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */,
+				E28583A324257ED600C6BE16 /* LastMarkerViewController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		36013C97EB493D7A9017A98D /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				E28583A62425806300C6BE16 /* cell */,
+				36013B2860E50B41AAEE60C2 /* controller */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
 		A481B4B42425623500B294AF = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +178,15 @@
 				A481B4D12425623600B294AF /* Info.plist */,
 			);
 			path = DiCoScanner;
+			sourceTree = "<group>";
+		};
+		E28583A62425806300C6BE16 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				E28583A72425807300C6BE16 /* LastMarkerTableViewCell.swift */,
+				E28583A82425807300C6BE16 /* LastMarkerTableViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,8 +247,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */,
 				A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */,
+				E28583A524257ED600C6BE16 /* LastMarkerViewController.xib in Resources */,
+				E28583A12425683000C6BE16 /* MarkerViewController.xib in Resources */,
 				A481B4CD2425623600B294AF /* Assets.xcassets in Resources */,
+				E28583AA2425807300C6BE16 /* LastMarkerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +264,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */,
+				E28583A92425807300C6BE16 /* LastMarkerTableViewCell.swift in Sources */,
+				E28583A424257ED600C6BE16 /* LastMarkerViewController.swift in Sources */,
 				A481B4C12425623500B294AF /* AppDelegate.swift in Sources */,
+				E28583A02425683000C6BE16 /* MarkerViewController.swift in Sources */,
+				E28BA0F22425666A00AF3CF2 /* TabBarViewController.swift in Sources */,
+				3601357A224E006EA0DE23C6 /* LocationProvider.swift in Sources */,
+				360131BD8B8F3F5632343187 /* LocationProviderDelegate.swift in Sources */,
 				29BD958E5A61B56A9AC99C23 /* DatabaseManager.swift in Sources */,
 				29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */,
 				29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */,
