@@ -52,6 +52,8 @@ internal class DatabaseManager {
             if let symptom = symptoms?[0] {
                 entity.addToSymptom(symptom)
             }
+            entity.entryDate = Date()
+            entity.areYouSick = false
             
         }
     }

@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiaryEntryDetailViewController" customModule="DiCoScanner" customModuleProvider="target">
             <connections>
                 <outlet property="headerContainerView" destination="XJ6-0h-FPO" id="9bl-8r-Re5"/>
+                <outlet property="resultLabel" destination="7ef-7D-ifL" id="ypN-lV-wLa"/>
                 <outlet property="symptomsTableView" destination="S2Y-rT-fOX" id="xRR-BE-3L6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

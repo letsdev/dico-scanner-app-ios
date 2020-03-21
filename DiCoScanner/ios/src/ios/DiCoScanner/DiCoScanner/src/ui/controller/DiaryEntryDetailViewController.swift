@@ -12,7 +12,8 @@ class DiaryEntryDetailViewController: UIViewController {
 
     @IBOutlet weak var headerContainerView: UIView!
     @IBOutlet weak var symptomsTableView: UITableView!
-
+    @IBOutlet weak var resultLabel: UILabel!
+    
     var entry: SymptomDiaryEntry?
 
     private let symptomDao = SymptomDao()
@@ -21,6 +22,7 @@ class DiaryEntryDetailViewController: UIViewController {
         super.viewDidLoad()
 
         let headerView = DiaryEntryView()
+        headerView.diaryEntry = entry
         headerContainerView.addSubview(headerView)
         headerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -33,6 +35,13 @@ class DiaryEntryDetailViewController: UIViewController {
         symptomsTableView.dataSource = self
         symptomsTableView.register(UINib(nibName: "SymptomsTableViewCell", bundle: Bundle.main),
                 forCellReuseIdentifier: "SymptomsTableViewCell")
+        
+        resultLabel.text = entry?.resultLabel()
+        if (entry?.areYouSick ?? false) {
+            resultLabel.textColor = UIColor(named: "AppGreen")
+        } else {
+            resultLabel.textColor = UIColor(named: "AppRed")
+        }
     }
 }
 

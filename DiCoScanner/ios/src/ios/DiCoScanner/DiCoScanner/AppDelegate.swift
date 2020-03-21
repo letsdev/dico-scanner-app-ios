@@ -21,14 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         registerForPushNotifications()
         // TODO remove all below
-//        DatabaseManager.shared.insertDummyData()
-//        os_log("Found number of symptoms: %i", SymptomDao().countAll())
-//        let all = MarkerDao().findAll()
-//        if let all = all {
-//            for marker in all {
-//               MarkerDao().markObjectForSync(object: marker)
-//            }
-//        }
+        DatabaseManager.shared.insertDummyData()
+        os_log("Found number of symptoms: %i", SymptomDao().countAll())
+        let all = MarkerDao().findAll()
+        if let all = all {
+            for marker in all {
+               MarkerDao().markObjectForSync(object: marker)
+            }
+        }
         // end remove
         return true
     }
