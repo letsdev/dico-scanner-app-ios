@@ -33,12 +33,10 @@ class CoronaTestPostRequest: BaseRequest, Request {
         // nothing to do
     }
 
-    override func modifyRequest(request: URLRequest) {
-        var mutableRequest = request;
-        super.modifyRequest(request: mutableRequest)
-        if let deviceId = deviceId {
-            mutableRequest.addValue(deviceId, forHTTPHeaderField: "X-ATT-DeviceId")
+    func additionalHeader() -> [String: String]? {
+        guard let deviceId = deviceId else {
+            return nil
         }
+        return ["X-ATT-DeviceId": deviceId]
     }
-
 }

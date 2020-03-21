@@ -23,6 +23,10 @@ class SymptomGetRequest: BaseRequest, Request {
         nil
     }
 
+    func additionalHeader() -> [String: String]? {
+        nil
+    }
+
     func receivedData(data: Data) {
         do {
             if let symptoms = try JSONSerialization.jsonObject(with: data) as? [[String: Any]] {

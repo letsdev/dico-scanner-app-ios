@@ -14,10 +14,11 @@ protocol Request {
     func url() -> URL
     func httpMethod() -> String
     func body() -> [String: Any]?
+    func additionalHeader() -> [String: String]?
     func receivedData(data: Data)
 }
 
-let baseUrl = "http://extern-server1.letsdev.de/coscan"
+let baseUrl = "https://coscan.letsdev.de/coscan"
 
 let defaultRequestSession: URLSession = {
     let urlSession = URLSession(configuration: .default)
@@ -45,9 +46,6 @@ class BaseRequest {
 
     var data: NSMutableData = NSMutableData()
 
-    internal func modifyRequest(request: URLRequest) {
-    }
-
     internal func send(completion: @escaping (Bool) -> Void) {
 
         request.httpMethod = requestDelegate.httpMethod()
@@ -61,7 +59,11 @@ class BaseRequest {
             }
         }
 
-        modifyRequest(request: request)
+        if let headers = requestDelegate.additionalHeader() {
+            for header in headers {
+                request.addValue(header.value, forHTTPHeaderField: header.key)
+            }
+        }
 
         dataTask = defaultRequestSession.dataTask(with: request) { [weak self] data, response, error in
             let success = error == nil
