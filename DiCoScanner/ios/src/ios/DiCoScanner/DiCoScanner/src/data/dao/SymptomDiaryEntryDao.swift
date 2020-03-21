@@ -6,15 +6,10 @@
 //
 
 import Foundation
-import CoreData
 
-class MarkerDao: BaseDao<Marker> {
+class SymptomDiaryEntryDao: BaseDao<SymptomDiaryEntry> {
 
-    func findAllByDate() -> [Marker] {
+    func findAllByDate() -> [SymptomDiaryEntry] {
         findAll(sortBy: NSSortDescriptor(key: "date", ascending: false))
-    }
-
-    func findLatest() -> Marker? {
-        findBy(predicate: nil, sortBy: NSSortDescriptor(key: "eventDate", ascending: false))
     }
 }

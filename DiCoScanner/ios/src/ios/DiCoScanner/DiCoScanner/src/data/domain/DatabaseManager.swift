@@ -40,7 +40,6 @@ internal class DatabaseManager {
             marker.eventDate = Date()
             marker.verticalAccuracy = 535353.535
             marker.horizontalAccuracy = 535353.535
-
             saveContext()
         }
     }

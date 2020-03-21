@@ -20,23 +20,37 @@ class BaseDao<T> where T: NSManagedObject {
         return result;
     }
 
-    internal func findAll() -> [T] {
+    internal func findAll(sortBy: NSSortDescriptor?) -> [T] {
         let request = NSFetchRequest<T>(entityName: entityName)
+        configureRequest(request: request, predicate: nil, sortBy: sortBy)
         let result = execute {
             try DatabaseManager.shared.persistentContainer.viewContext.fetch(request)
         } as! [T]
         return result
     }
 
+    internal func findAll() -> [T] {
+        findAll(sortBy: nil)
+    }
+
+    internal func findBy(predicate: NSPredicate?) -> T? {
+        findBy(predicate: predicate, sortBy: nil)
+    }
+
+    internal func findBy(predicate: NSPredicate?, sortBy: NSSortDescriptor?) -> T? {
+        let request = NSFetchRequest<T>(entityName: entityName)
+        request.fetchLimit = 1
+        configureRequest(request: request, predicate: predicate, sortBy: sortBy)
+        let result = (execute {
+            try DatabaseManager.shared.persistentContainer.viewContext.fetch(request)
+        } as! T)
+        return result
+    }
+
     internal func findByUUID(uuid: String?) -> T? {
         var result: T? = nil
         if let uuid = uuid {
-            let request = NSFetchRequest<T>(entityName: entityName)
-            request.fetchLimit = 1
-            request.predicate = NSPredicate(format: "uuid == %@", uuid)
-            result = (execute {
-                try DatabaseManager.shared.persistentContainer.viewContext.fetch(request)
-            } as! T)
+            result = findBy(predicate: NSPredicate(format: "uuid == %@", uuid))
         }
         return result
     }
@@ -44,6 +58,10 @@ class BaseDao<T> where T: NSManagedObject {
     internal func newEntity() -> T {
         NSEntityDescription.insertNewObject(forEntityName: entityName,
                 into: DatabaseManager.shared.persistentContainer.viewContext) as! T
+    }
+
+    internal func delete(object: T) {
+        DatabaseManager.shared.persistentContainer.viewContext.delete(object)
     }
 
     private func execute(statement: () throws -> Any) -> Any {
@@ -64,4 +82,12 @@ class BaseDao<T> where T: NSManagedObject {
         }
     }
 
+    private func configureRequest(request: NSFetchRequest<T>, predicate: NSPredicate?, sortBy: NSSortDescriptor?) {
+        if let predicate = predicate {
+            request.predicate = predicate
+        }
+        if let sortBy = sortBy {
+            request.sortDescriptors = [sortBy];
+        }
+    }
 }
