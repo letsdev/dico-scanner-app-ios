@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SymptomsTestViewController: UIViewController {
+class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet var symptomsTableView: UITableView!
+    
     public var symptomsTestDelegate: PresentedViewControllerDelegate
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?,
@@ -25,12 +27,20 @@ class SymptomsTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Frage 1 von 13"
+        self.title = "aktuelle Symptome"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Abbrechen", style: .plain, target: self,
                 action: #selector(cancelTest))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Fertig", style: .plain, target: self,
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Weiter", style: .plain, target: self,
                 action: #selector(finishSymptomsTest))
-        self.navigationItem.rightBarButtonItem!.isEnabled = false
+
+        setupSymptomsTableView()
+    }
+
+    func setupSymptomsTableView() {
+        symptomsTableView.delegate = self
+        symptomsTableView.dataSource = self
+        symptomsTableView.tableFooterView = UIView()
+        symptomsTableView.heightAnchor.constraint(equalToConstant: symptomsTableView.contentSize.height).isActive = true
     }
 
     @objc func finishSymptomsTest() {
@@ -41,5 +51,32 @@ class SymptomsTestViewController: UIViewController {
 
     @objc func cancelTest() {
         self.dismiss(animated: true, completion: nil)
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))
+
+        if (cell == nil) {
+            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: String(describing: UITableViewCell.self))
+        }
+
+        cell = setupSymptomCell(symptomCell: cell!)
+
+        return cell!
+    }
+    
+    func setupSymptomCell(symptomCell: UITableViewCell) -> UITableViewCell {
+        symptomCell.preservesSuperviewLayoutMargins = false
+        symptomCell.separatorInset = UIEdgeInsets.zero
+        symptomCell.layoutMargins = UIEdgeInsets.zero
+        
+        symptomCell.textLabel?.text = "hi"
+        symptomCell.imageView?.image = UIImage(named: "ic_info")
+        
+        return symptomCell
     }
 }
