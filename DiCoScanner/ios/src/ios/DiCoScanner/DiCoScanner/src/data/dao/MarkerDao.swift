@@ -11,7 +11,7 @@ import CoreData
 class MarkerDao: BaseDao<Marker> {
 
     func findAllByDate() -> [Marker] {
-        findAll(sortBy: NSSortDescriptor(key: "date", ascending: false))
+        findAll(sortBy: NSSortDescriptor(key: "eventDate", ascending: false))
     }
 
     func findLatest() -> Marker? {

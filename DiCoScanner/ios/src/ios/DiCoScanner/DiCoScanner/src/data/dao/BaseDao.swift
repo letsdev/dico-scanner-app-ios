@@ -25,8 +25,8 @@ class BaseDao<T> where T: NSManagedObject {
         configureRequest(request: request, predicate: nil, sortBy: sortBy)
         let result = execute {
             try DatabaseManager.shared.persistentContainer.viewContext.fetch(request)
-        } as! [T]
-        return result
+        } as? [T]
+        return result ?? []
     }
 
     internal func findAll() -> [T] {
