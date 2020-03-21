@@ -26,7 +26,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="682"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZG-9w-sZc">
-                            <rect key="frame" x="143" y="326" width="128" height="30"/>
+                            <rect key="frame" x="50" y="316" width="314" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="mg1-ch-tUX"/>
+                            </constraints>
                             <state key="normal" title="Markierung setzen"/>
                             <connections>
                                 <action selector="markButtonTapped:" destination="-1" eventType="touchUpInside" id="xBN-gP-HRq"/>
@@ -35,7 +38,9 @@
                     </subviews>
                     <color key="backgroundColor" name="AppGreyBackground"/>
                     <constraints>
+                        <constraint firstItem="nZG-9w-sZc" firstAttribute="leading" secondItem="smj-k2-HAJ" secondAttribute="leading" constant="50" id="NWx-sV-DlB"/>
                         <constraint firstItem="nZG-9w-sZc" firstAttribute="centerY" secondItem="smj-k2-HAJ" secondAttribute="centerY" id="Wlp-rx-rzU"/>
+                        <constraint firstAttribute="trailing" secondItem="nZG-9w-sZc" secondAttribute="trailing" constant="50" id="XRm-iQ-bso"/>
                         <constraint firstItem="nZG-9w-sZc" firstAttribute="centerX" secondItem="smj-k2-HAJ" secondAttribute="centerX" id="Zvn-EB-ciL"/>
                     </constraints>
                 </view>

@@ -22,6 +22,7 @@ class MarkerViewController: UIViewController {
     private let minHeightMarkButton: CGFloat = 250
     private let minHeightLastMarkerView: CGFloat = 100 // TODO: Fix it
     private static let animationDuration: TimeInterval = 0.2
+    private static let animationDurationButton: TimeInterval = 0.5
 
     private let locationProvider = LocationProvider()
 
@@ -38,13 +39,32 @@ class MarkerViewController: UIViewController {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(MarkerViewController.draggedView(_:)))
         lastMarkerView.isUserInteractionEnabled = true
         lastMarkerView.addGestureRecognizer(panGesture)
+
+        self.markButton.tintColor = UIColor(named: "AppGreyBackground")
+        self.markButton.layer.cornerRadius = 30
+
+        setButtonAnimation(state: .normal)
     }
 
     @IBAction func markButtonTapped(_ sender: Any) {
-        locationProvider.currentLocation()
+//        locationProvider.currentLocation()
+        self.setButtonAnimation(state: .progress)
     }
 
     @objc func draggedView(_ sender: UIPanGestureRecognizer) {
+        handleViewDragging(sender: sender)
+    }
+}
+
+extension MarkerViewController: LocationProviderDelegate {
+    func received(location: CLLocation) {
+        os_log("Received location long/lat: %d / %d", location.coordinate.latitude.description,
+                location.coordinate.longitude.binade.description)
+    }
+}
+
+extension MarkerViewController {
+    private func handleViewDragging(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: self.view)
         let newHeightMakerView = lastMakerViewHeightConstraint.constant - translation.y
         let newHeightMarkButton = self.view.bounds.height - newHeightMakerView
@@ -78,9 +98,50 @@ class MarkerViewController: UIViewController {
     }
 }
 
-extension MarkerViewController: LocationProviderDelegate {
-    func received(location: CLLocation) {
-        os_log("Received location long/lat: %d / %d", location.coordinate.latitude.description,
-                location.coordinate.longitude.binade.description)
+extension MarkerViewController {
+
+    enum ButtonState {
+        case normal
+        case progress
+        case failure
+    }
+
+    private func setButtonAnimation(state: ButtonState) {
+        switch (state) {
+        case .normal:
+            buttonNormal()
+        case .progress:
+            buttonProgress()
+        case .failure:
+            buttonFailure()
+        }
+    }
+
+    private func buttonNormal() {
+        animateToColor(colorName: "AppDarkBlue")
+    }
+
+    private func buttonProgress() {
+        // TODO: Use method animateToColor with optional options and completion
+        UIView.animate(withDuration: MarkerViewController.animationDurationButton, delay: 0.0,
+                animations: {
+                    self.markButton.backgroundColor = UIColor(named: "AppOrange")
+                }, completion: { b in
+            UIView.animate(withDuration: MarkerViewController.animationDurationButton + 0.25, delay: 0.0,
+                    options: [.autoreverse, .repeat, .curveEaseInOut],
+                    animations: {
+                        self.markButton.alpha = 0.75
+                    })
+        })
+    }
+
+    private func buttonFailure() {
+        animateToColor(colorName: "AppRed")
+    }
+
+    private func animateToColor(colorName: String) {
+        UIView.animate(withDuration: MarkerViewController.animationDurationButton) { () -> Void in
+            self.markButton.backgroundColor = UIColor(named: colorName)
+        }
     }
 }
