@@ -42,7 +42,7 @@ pipeline {
         }
         stage('Release') {
             when {
-                branch 'deploy'
+                branch 'testflight-upload'
             }
             environment {
                 MAVEN_SETTINGS_LOCATION = '/Users/jenkins/.m2/settings.xml'
