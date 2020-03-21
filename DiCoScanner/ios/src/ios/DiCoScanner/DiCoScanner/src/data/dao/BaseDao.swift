@@ -66,7 +66,12 @@ class BaseDao<T> where T: NSManagedObject {
 
     private func execute(statement: () throws -> Any) -> Any {
         do {
-            return try statement()
+            let result = try statement()
+            if let resultList = result as? [Any] {
+                return resultList.first as Any
+            }
+            
+            return result
         } catch {
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")

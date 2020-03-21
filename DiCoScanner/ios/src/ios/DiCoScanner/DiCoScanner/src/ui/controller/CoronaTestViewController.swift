@@ -8,13 +8,28 @@
 
 import UIKit
 
+protocol CoronaTestViewControllerDelegate: class {
+    func didCompleteCoronaTest()
+}
+
 class CoronaTestViewController: UIViewController {
     @IBOutlet var coronaTestPositiveResultSwitch: UISwitch!
     @IBOutlet var coronaTestPendingResultSwitch: UISwitch!
     @IBOutlet var coronaTestNegativeResultSwitch: UISwitch!
     @IBOutlet var coronaTestDateTextField: UITextField!
     let coronaTestDatePicker = UIDatePicker()
+    var coronaTestResult = CoronaTestResultDao.CoronaTestResultState.pending
+    public var coronaTestDelegate: CoronaTestViewControllerDelegate
 
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, coronaTestDelegate: CoronaTestViewControllerDelegate) {
+        self.coronaTestDelegate = coronaTestDelegate
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,12 +68,14 @@ class CoronaTestViewController: UIViewController {
         coronaTestNegativeResultSwitch.setOn(false, animated: false)
         coronaTestNegativeResultSwitch.addTarget(self, action: Selector(("coronaTestNegativeResultSwitchChanged")), for: UIControl.Event.valueChanged)
 
-        coronaTestPendingResultSwitch.setOn(false, animated: false)
+        coronaTestPendingResultSwitch.setOn(true, animated: false)
         coronaTestPendingResultSwitch.addTarget(self, action: Selector(("coronaTestPendingResultSwitchChanged")), for: UIControl.Event.valueChanged)
     }
 
     @objc func coronaTestPositiveResultSwitchChanged() {
         if (coronaTestPositiveResultSwitch.isOn) {
+            coronaTestResult = .positive
+            
             coronaTestNegativeResultSwitch.setOn(false, animated: true)
             coronaTestPendingResultSwitch.setOn(false, animated: true)
         }
@@ -66,6 +83,8 @@ class CoronaTestViewController: UIViewController {
 
     @objc func coronaTestNegativeResultSwitchChanged() {
         if (coronaTestNegativeResultSwitch.isOn) {
+            coronaTestResult = .negative
+            
             coronaTestPositiveResultSwitch.setOn(false, animated: true)
             coronaTestPendingResultSwitch.setOn(false, animated: true)
         }
@@ -73,12 +92,27 @@ class CoronaTestViewController: UIViewController {
 
     @objc func coronaTestPendingResultSwitchChanged() {
         if (coronaTestPendingResultSwitch.isOn) {
+            coronaTestResult = .pending
+            
             coronaTestNegativeResultSwitch.setOn(false, animated: true)
             coronaTestPositiveResultSwitch.setOn(false, animated: true)
         }
     }
 
     @objc func finishCoronaTest() {
+        storeTestResult()
+        
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func storeTestResult() {
+        let dao = CoronaTestResultDao()
+        let testResult = dao.newEntity()
+        testResult.testDate = coronaTestDatePicker.date
+        testResult.result = coronaTestResult.rawValue
+        
+        DatabaseManager.shared.saveContext()
+        
+        self.coronaTestDelegate.didCompleteCoronaTest()
     }
 }

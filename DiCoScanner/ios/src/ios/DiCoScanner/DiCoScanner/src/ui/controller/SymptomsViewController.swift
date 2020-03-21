@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SymptomsViewController: UIViewController {
+class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate {
 
     @IBOutlet var coronaTestResultLabel: UILabel!
     @IBOutlet var startSymptomsTestButton: UIButton!
@@ -19,7 +19,6 @@ class SymptomsViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "Symptome"
-
         navigationController?.navigationBar.prefersLargeTitles = true
 
         setupCoronaTestResults()
@@ -53,8 +52,30 @@ class SymptomsViewController: UIViewController {
     }
 
     func setupCoronaTestResults() {
-        coronaTestResultLabel.text = "Ausstehend"
-        coronaTestResultLabel.textColor = UIColor(named: "AppOrange")
+        let dao = CoronaTestResultDao()
+        let coronaTestResult = dao.findLatest()
+
+        if (coronaTestResult != nil) {
+            switch (CoronaTestResultDao.CoronaTestResultState(rawValue: coronaTestResult!.result)) {
+            case .positive:
+                coronaTestResultLabel.text = "Positiv"
+                coronaTestResultLabel.textColor = UIColor(named: "AppGreen")
+                break
+            case .negative:
+                coronaTestResultLabel.text = "Negativ"
+                coronaTestResultLabel.textColor = UIColor(named: "AppRed")
+                break
+            case .pending:
+                coronaTestResultLabel.text = "Ausstehend"
+                coronaTestResultLabel.textColor = UIColor(named: "AppOrange")
+                break
+            default:
+                break
+            }
+        } else {
+            coronaTestResultLabel.text = "-"
+            coronaTestResultLabel.textColor = UIColor.black
+        }
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleCoronaTestResultsTap(_:)))
         coronaTestResultContainer.addGestureRecognizer(tapGestureRecognizer)
@@ -69,9 +90,13 @@ class SymptomsViewController: UIViewController {
     }
 
     func startCoronaTest() {
-        let coronaTestVC = CoronaTestViewController(nibName: String(describing: CoronaTestViewController.self), bundle: nil)
+        let coronaTestVC = CoronaTestViewController(nibName: String(describing: CoronaTestViewController.self), bundle: nil, coronaTestDelegate: self)
         let navigationController = UINavigationController(rootViewController: coronaTestVC)
         self.present(navigationController, animated: true, completion: nil)
+    }
+
+    func didCompleteCoronaTest() {
+        self.setupCoronaTestResults()
     }
 }
 

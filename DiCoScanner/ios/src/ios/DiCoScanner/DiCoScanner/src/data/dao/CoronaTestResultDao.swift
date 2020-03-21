@@ -8,6 +8,11 @@
 import Foundation
 
 class CoronaTestResultDao : BaseDao<CoronaTestResult> {
+    enum CoronaTestResultState: Int32 {
+        case positive
+        case negative
+        case pending
+    }
 
     func findLatest() -> CoronaTestResult? {
         findBy(predicate: nil, sortBy: NSSortDescriptor(key: "testDate", ascending: false))
