@@ -10,6 +10,7 @@ import UIKit
 
 class LastMarkerViewController: UIViewController {
 
+    @IBOutlet weak var lastMarkerHeaderView: UIView!
     @IBOutlet weak var lastMarkerHeader: UILabel!
     @IBOutlet weak var lastMarkerTimestampLabel: UILabel!
     @IBOutlet weak var lastMarkerTableView: UITableView!
@@ -52,5 +53,21 @@ extension LastMarkerViewController: UITableViewDataSource {
             cell.lastMarkerCoordinatesLabel.text = marker.coordinatesString()
         }
         return cell
+    }
+
+    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
+                          forRowAt indexPath: IndexPath) {
+
+        if editingStyle == .delete {
+            let all = dao.findAllByDate();
+            if let deleteMarker = all?[indexPath.row] {
+                dao.delete(object: deleteMarker)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
     }
 }
