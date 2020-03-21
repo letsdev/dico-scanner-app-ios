@@ -470,6 +470,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DXR98A4DJW;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "${PROJECT_DIR}/../../../target/ios-dependencies";
 				INFOPLIST_FILE = DiCoScanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -494,6 +495,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DXR98A4DJW;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "${PROJECT_DIR}/../../../target/ios-dependencies";
 				INFOPLIST_FILE = DiCoScanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
