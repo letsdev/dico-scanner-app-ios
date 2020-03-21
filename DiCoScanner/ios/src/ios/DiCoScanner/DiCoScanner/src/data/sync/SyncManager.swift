@@ -61,6 +61,10 @@ class SyncManager {
                 if let marker = MarkerDao().findByObjectId(objectId: objectId) {
                     request = MarkerPostRequest(marker: marker)
                 }
+            case "CoronaTestResult":
+                if let testResult = CoronaTestResultDao().findByObjectId(objectId: objectId) {
+                    request = CoronaTestPostRequest(testResult: testResult)
+                }
             default:
                 request = nil
             }
