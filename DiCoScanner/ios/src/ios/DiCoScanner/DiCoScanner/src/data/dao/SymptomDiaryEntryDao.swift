@@ -9,7 +9,7 @@ import Foundation
 
 class SymptomDiaryEntryDao: BaseDao<SymptomDiaryEntry> {
 
-    func findAllByDate() -> [SymptomDiaryEntry] {
-        findAll(sortBy: NSSortDescriptor(key: "date", ascending: false))
+    func findAllByDate() -> [SymptomDiaryEntry]? {
+        findAll(sortBy: NSSortDescriptor(key: "entryDate", ascending: false))
     }
 }
