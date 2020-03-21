@@ -9,4 +9,7 @@ import Foundation
 
 class CoronaTestResultDao : BaseDao<CoronaTestResult> {
 
+    func findLatest() -> CoronaTestResult? {
+        findBy(predicate: nil, sortBy: NSSortDescriptor(key: "date", ascending: false))
+    }
 }
