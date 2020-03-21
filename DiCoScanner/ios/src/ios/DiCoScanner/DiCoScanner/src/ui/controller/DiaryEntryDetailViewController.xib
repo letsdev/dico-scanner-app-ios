@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiaryEntryDetailViewController" customModule="DiCoScanner" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiaryEntryDetailViewController" customModule="CO_Scan" customModuleProvider="target">
             <connections>
                 <outlet property="headerContainerView" destination="XJ6-0h-FPO" id="9bl-8r-Re5"/>
                 <outlet property="symptomsTableView" destination="S2Y-rT-fOX" id="xRR-BE-3L6"/>

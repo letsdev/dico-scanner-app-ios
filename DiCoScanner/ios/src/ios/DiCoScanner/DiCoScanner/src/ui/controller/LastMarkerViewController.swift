@@ -20,7 +20,7 @@ class LastMarkerViewController: UIViewController {
         super.viewDidLoad()
 
         lastMarkerHeader.text = "Meine letzten Markierungen"
-        lastMarkerTimestampLabel.text = "Dein Standort wurde zuletzt vor 14 Minuten getrackt"
+        lastMarkerTimestampLabel.text = "Es wurden noch keine Markierungen gesetzt."
 
         lastMarkerTableView.dataSource = self
         lastMarkerTableView.register(UINib(nibName: "LastMarkerTableViewCell", bundle: Bundle.main),
