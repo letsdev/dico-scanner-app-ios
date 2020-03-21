@@ -21,8 +21,12 @@ class BaseDao<T> where T: NSManagedObject {
     }
 
     internal func findAll(sortBy: NSSortDescriptor?) -> [T]? {
+        findAll(predicate: nil, sortBy: sortBy)
+    }
+
+    internal func findAll(predicate: NSPredicate?, sortBy: NSSortDescriptor?) -> [T]? {
         let request = NSFetchRequest<T>(entityName: entityName)
-        configureRequest(request: request, predicate: nil, sortBy: sortBy)
+        configureRequest(request: request, predicate: predicate, sortBy: sortBy)
         let result = execute {
             try DatabaseManager.shared.persistentContainer.viewContext.fetch(request)
         } as? [T]
@@ -64,9 +68,40 @@ class BaseDao<T> where T: NSManagedObject {
         DatabaseManager.shared.persistentContainer.viewContext.delete(object)
     }
 
+    internal func findByObjectId(objectId: NSManagedObjectID) -> T? {
+        let result = execute {
+            try DatabaseManager.shared.persistentContainer.viewContext.existingObject(with: objectId)
+        } as? T
+        return result
+    }
+
+    internal func markObjectForSync(object: T) {
+
+        if (object.objectID.isTemporaryID) {
+            DatabaseManager.shared.saveContext()
+        }
+
+        guard !object.objectID.isTemporaryID else {
+            fatalError("Tried to sync object with temp id.")
+        }
+
+        let syncDao = SyncDao()
+        let entity = syncDao.newEntity()
+        entity.refObjectId = object.objectID.uriRepresentation()
+        entity.createdDate = Date()
+        entity.syncState = SyncState.pending.rawValue;
+
+        DatabaseManager.shared.saveContext()
+    }
+
     private func execute(statement: () throws -> Any) -> Any {
         do {
-            return try statement()
+            let result = try statement()
+            if let resultList = result as? [Any] {
+                return resultList.first as Any
+            }
+            
+            return result
         } catch {
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
@@ -90,4 +125,5 @@ class BaseDao<T> where T: NSManagedObject {
             request.sortDescriptors = [sortBy];
         }
     }
+
 }
