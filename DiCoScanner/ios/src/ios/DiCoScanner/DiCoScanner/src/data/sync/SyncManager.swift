@@ -35,16 +35,17 @@ class SyncManager {
                             forURIRepresentation: uri)
                     if let request = convertToRequest(objectId: objectId) {
                         os_log("Sending request")
-                        request.send { result in
-                            SyncDao().delete(object: object)
+                        request.send { [weak self] result in
+                            if let strongSelf = self {
+                                SyncDao().delete(object: object)
+                                strongSelf.ignoreSave = true;
+                                DatabaseManager.shared.saveContext()
+                            }
                             os_log("Did send request with result: %i", result)
                         }
                     }
                 }
             }
-
-            ignoreSave = true;
-            DatabaseManager.shared.saveContext()
         }
     }
 
