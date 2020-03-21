@@ -10,7 +10,7 @@ import Foundation
 
 extension SymptomDiaryEntry {
     func dateLabel() -> String {
-        guard let date = self.date else {
+        guard let date = self.entryDate else {
             return ""
         }
         

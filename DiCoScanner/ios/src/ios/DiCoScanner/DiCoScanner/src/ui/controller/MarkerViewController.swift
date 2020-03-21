@@ -75,6 +75,7 @@ extension MarkerViewController: LocationProviderDelegate {
         marker.verticalAccuracy = location.verticalAccuracy
 
         DatabaseManager.shared.saveContext()
+        markerDao.markObjectForSync(object: marker)
 
         lastMarkVC.lastMarkerTableView.reloadData()
 
