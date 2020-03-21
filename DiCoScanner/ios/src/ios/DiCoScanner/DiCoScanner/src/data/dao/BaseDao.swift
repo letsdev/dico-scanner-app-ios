@@ -46,6 +46,10 @@ class BaseDao<T> where T: NSManagedObject {
                 into: DatabaseManager.shared.persistentContainer.viewContext) as! T
     }
 
+    internal func delete(object: T) {
+        DatabaseManager.shared.persistentContainer.viewContext.delete(object)
+    }
+
     private func execute(statement: () throws -> Any) -> Any {
         do {
             return try statement()
