@@ -42,6 +42,14 @@ internal class DatabaseManager {
             marker.horizontalAccuracy = 535353.535
             saveContext()
         }
+
+        if (SymptomDiaryEntryDao().countAll() <= 0) {
+            let dao = SymptomDao()
+            let symptoms = dao.findAllSortByName()
+            
+            let entity = SymptomDiaryEntryDao().newEntity()
+            entity.addToSymptom(symptoms[0])
+        }
     }
 
     // MARK: - Core Data stack

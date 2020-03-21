@@ -43,9 +43,6 @@
 		A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4D724256D9E00B294AF /* SymptomsViewController.swift */; };
 		A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4D824256D9E00B294AF /* SymptomsViewController.xib */; };
 		A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */; };
-		A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4D724256D9E00B294AF /* SymptomsViewController.swift */; };
-		A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4D824256D9E00B294AF /* SymptomsViewController.xib */; };
-		A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */; };
 		E242409C24265BF40072C3E1 /* DiaryEntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */; };
 		E242409D24265BF40072C3E1 /* DiaryEntryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */; };
 		E24240A024265DAE0072C3E1 /* SymptomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242409E24265DAE0072C3E1 /* SymptomsTableViewCell.swift */; };
@@ -60,6 +57,7 @@
 		E28583B22425BEBA00C6BE16 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28583B12425BEBA00C6BE16 /* MapKit.framework */; };
 		E28BA0F22425666A00AF3CF2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */; };
 		E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */; };
+		E2B04A53242676B600CD043E /* SymptomDiaryEntry+UiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B04A52242676B600CD043E /* SymptomDiaryEntry+UiModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,9 +100,6 @@
 		A481B4D824256D9E00B294AF /* SymptomsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsViewController.xib; sourceTree = "<group>"; };
 		A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
 		D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DiCoScanner-Bridging-Header.h"; sourceTree = "<group>"; };
-		A481B4D724256D9E00B294AF /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
-		A481B4D824256D9E00B294AF /* SymptomsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsViewController.xib; sourceTree = "<group>"; };
-		A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
 		E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryDetailViewController.swift; sourceTree = "<group>"; };
 		E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryEntryDetailViewController.xib; sourceTree = "<group>"; };
 		E242409E24265DAE0072C3E1 /* SymptomsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,6 +114,7 @@
 		E28583B12425BEBA00C6BE16 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
+		E2B04A52242676B600CD043E /* SymptomDiaryEntry+UiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SymptomDiaryEntry+UiModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +205,7 @@
 			children = (
 				360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */,
 				E28583AE2425B63B00C6BE16 /* Marker+UiModel.swift */,
+				E2B04A52242676B600CD043E /* SymptomDiaryEntry+UiModel.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -281,15 +278,6 @@
 				D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */,
 			);
 			path = DiCoScanner;
-			sourceTree = "<group>";
-		};
-		A481B4DB2425A69500B294AF /* view */ = {
-			isa = PBXGroup;
-			children = (
-				A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */,
-				A40D06932425AA1500D62CAF /* DiaryEntryView.xib */,
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		A481B4DB2425A69500B294AF /* view */ = {
@@ -427,6 +415,7 @@
 				29BD958E5A61B56A9AC99C23 /* DatabaseManager.swift in Sources */,
 				29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */,
 				29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */,
+				E2B04A53242676B600CD043E /* SymptomDiaryEntry+UiModel.swift in Sources */,
 				29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */,
 				29BD9A3B4F51135C94742C5D /* BaseRequest.swift in Sources */,
 				29BD92191B3D84E566FFB53A /* MarkerPostRequest.swift in Sources */,

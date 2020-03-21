@@ -11,7 +11,9 @@ import UIKit
 class DiaryEntryView: UIView {
 
     var delegate: DiaryEntryViewDelegate?
-
+    var diaryEntry: SymptomDiaryEntry?
+    @IBOutlet weak var testDateLabel: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -31,10 +33,11 @@ class DiaryEntryView: UIView {
 
         self.addSubview(contentView)
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClickEntry(_:))))
+        self.testDateLabel.text = diaryEntry?.dateLabel()
     }
 
     @objc func didClickEntry(_ sender: UIPanGestureRecognizer) {
-        delegate?.didClickEntry()
+        delegate?.didClick(entry: diaryEntry)
     }
 
 }

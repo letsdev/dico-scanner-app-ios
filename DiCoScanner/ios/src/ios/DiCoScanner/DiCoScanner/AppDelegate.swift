@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         registerForPushNotifications()
         // TODO remove all below
-//        DatabaseManager.shared.insertDummyData()
+        DatabaseManager.shared.insertDummyData()
         os_log("Found number of symptoms: %i", SymptomDao().countAll())
         let all = MarkerDao().findAll()
         for marker in all {
