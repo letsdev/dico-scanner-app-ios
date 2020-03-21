@@ -35,8 +35,8 @@ internal class DatabaseManager {
             let marker = NSEntityDescription.insertNewObject(forEntityName: "Marker",
                     into: persistentContainer.viewContext) as! Marker
             marker.altitude = 53.53
-            marker.lat = 7575.543
-            marker.lon = 75.53
+            marker.lat = 49.0159891
+            marker.lon = 8.2691054
             marker.eventDate = Date()
             marker.verticalAccuracy = 535353.535
             marker.horizontalAccuracy = 535353.535

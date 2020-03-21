@@ -27,7 +27,7 @@ class MarkerRequest: BaseRequest, Request {
     }
 
     func body() -> [String: Any]? {
-        convertToJSON(managedObject: marker, keyReplacer: ["horizontalAlignment": "alignment"])
+        convertToJSON(managedObject: marker, keyReplacer: ["horizontalAccuracy": "accuracy", "eventDate": "timestamp"])
     }
 
     func receivedData(data: Data) {

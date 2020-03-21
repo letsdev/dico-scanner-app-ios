@@ -17,4 +17,5 @@ class MarkerDao: BaseDao<Marker> {
     func findLatest() -> Marker? {
         findBy(predicate: nil, sortBy: NSSortDescriptor(key: "eventDate", ascending: false))
     }
+
 }
