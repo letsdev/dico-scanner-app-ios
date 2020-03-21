@@ -24,10 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         DatabaseManager.shared.insertDummyData()
         os_log("Found number of symptoms: %i", SymptomDao().countAll())
         let all = MarkerDao().findAll()
-        for marker in all {
-            let request = MarkerRequest(marker: marker)
-            request.send { result in
-                os_log("Did send request: %i", result)
+        if let all = all {
+            for marker in all {
+                let request = MarkerRequest(marker: marker)
+                request.send { result in
+                    os_log("Did send request: %i", result)
+                }
             }
         }
         // end remove

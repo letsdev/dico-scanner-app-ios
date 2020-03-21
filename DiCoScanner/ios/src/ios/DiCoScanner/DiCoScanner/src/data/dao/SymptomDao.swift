@@ -10,7 +10,7 @@ import CoreData
 
 class SymptomDao: BaseDao<Symptom> {
 
-    internal func findAllSortByName() -> [Symptom] {
+    internal func findAllSortByName() -> [Symptom]? {
         findAll(sortBy: NSSortDescriptor(key: "name", ascending: true))
     }
 
