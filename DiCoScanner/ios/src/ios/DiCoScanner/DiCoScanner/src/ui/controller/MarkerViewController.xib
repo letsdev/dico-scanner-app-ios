@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +12,7 @@
             <connections>
                 <outlet property="lastMakerViewHeightConstraint" destination="zaL-S4-3Fd" id="UCf-lN-7Vj"/>
                 <outlet property="lastMarkerView" destination="kc1-t6-SPh" id="5kg-xX-pOY"/>
+                <outlet property="mapKitView" destination="0Z1-Rf-fc3" id="N6A-Wo-EKs"/>
                 <outlet property="markButton" destination="nZG-9w-sZc" id="ckZ-Ng-4I2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,6 +22,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0Z1-Rf-fc3">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="726"/>
+                </mapView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smj-k2-HAJ">
                     <rect key="frame" x="0.0" y="44" width="414" height="682"/>
                     <subviews>
@@ -36,7 +39,6 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" name="AppGreyBackground"/>
                     <constraints>
                         <constraint firstItem="nZG-9w-sZc" firstAttribute="leading" secondItem="smj-k2-HAJ" secondAttribute="leading" constant="50" id="NWx-sV-DlB"/>
                         <constraint firstItem="nZG-9w-sZc" firstAttribute="centerY" secondItem="smj-k2-HAJ" secondAttribute="centerY" id="Wlp-rx-rzU"/>
@@ -55,20 +57,19 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="kc1-t6-SPh" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="2Sd-fQ-kPH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Z1-Rf-fc3" secondAttribute="trailing" id="8dd-8y-Xqz"/>
+                <constraint firstItem="0Z1-Rf-fc3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FsF-ep-9MC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="smj-k2-HAJ" secondAttribute="trailing" id="Gu5-3q-aOT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kc1-t6-SPh" secondAttribute="trailing" id="IIm-2J-wRa"/>
                 <constraint firstItem="kc1-t6-SPh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="O9p-ZF-9L3"/>
                 <constraint firstItem="smj-k2-HAJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Td2-dn-rsM"/>
+                <constraint firstItem="0Z1-Rf-fc3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hEf-zc-qGg"/>
                 <constraint firstItem="kc1-t6-SPh" firstAttribute="top" secondItem="smj-k2-HAJ" secondAttribute="bottom" constant="8" symbolic="YES" id="hXO-Sw-GhY"/>
                 <constraint firstItem="smj-k2-HAJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tiX-l5-vKU"/>
+                <constraint firstItem="kc1-t6-SPh" firstAttribute="top" secondItem="0Z1-Rf-fc3" secondAttribute="bottom" constant="8" symbolic="YES" id="xgE-Qy-TbT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="153"/>
         </view>
     </objects>
-    <resources>
-        <namedColor name="AppGreyBackground">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>

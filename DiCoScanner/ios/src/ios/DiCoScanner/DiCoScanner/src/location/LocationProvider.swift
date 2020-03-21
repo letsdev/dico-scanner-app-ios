@@ -18,7 +18,7 @@ class LocationProvider: NSObject {
     }
 
     func currentLocation() {
-        guard CLLocationManager.authorizationStatus() != .authorizedWhenInUse else {
+        guard CLLocationManager.authorizationStatus() == .authorizedWhenInUse else {
             manager.requestWhenInUseAuthorization()
             return
         }

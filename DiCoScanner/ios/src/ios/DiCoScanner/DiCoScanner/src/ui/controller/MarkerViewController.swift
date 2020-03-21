@@ -9,11 +9,13 @@
 import UIKit
 import CoreLocation
 import os
+import MapKit
 
 class MarkerViewController: UIViewController {
 
     @IBOutlet weak var markButton: UIButton!
     @IBOutlet weak var lastMarkerView: UIView!
+    @IBOutlet weak var mapKitView: MKMapView!
 
     @IBOutlet weak var lastMakerViewHeightConstraint: NSLayoutConstraint!
 
@@ -32,6 +34,8 @@ class MarkerViewController: UIViewController {
 
         locationProvider.delegate = self
 
+        mapKitView.setVisibleMapRect(MKMapRect(x: 0, y: 0, width: 25000, height: 25000), animated: true)
+
         markButton.titleLabel?.text = "Markierung setzen"
 
         lastMarkerView.addSubview(lastMarkVC.view)
@@ -47,7 +51,7 @@ class MarkerViewController: UIViewController {
     }
 
     @IBAction func markButtonTapped(_ sender: Any) {
-//        locationProvider.currentLocation()
+        locationProvider.currentLocation()
         self.setButtonAnimation(state: .progress)
     }
 
@@ -58,6 +62,8 @@ class MarkerViewController: UIViewController {
 
 extension MarkerViewController: LocationProviderDelegate {
     func received(location: CLLocation) {
+        mapKitView.setCenter(location.coordinate, animated: true)
+        self.setButtonAnimation(state: .success)
         os_log("Received location long/lat: %d / %d", location.coordinate.latitude.description,
                 location.coordinate.longitude.binade.description)
     }
@@ -104,20 +110,25 @@ extension MarkerViewController {
         case normal
         case progress
         case failure
+        case success
     }
 
     private func setButtonAnimation(state: ButtonState) {
+        self.markButton.layer.removeAllAnimations()
         switch (state) {
         case .normal:
             buttonNormal()
         case .progress:
             buttonProgress()
+        case .success:
+            buttonSuccess()
         case .failure:
             buttonFailure()
         }
     }
 
     private func buttonNormal() {
+        self.markButton.alpha = 1
         animateToColor(colorName: "AppDarkBlue")
     }
 
@@ -128,20 +139,34 @@ extension MarkerViewController {
                     self.markButton.backgroundColor = UIColor(named: "AppOrange")
                 }, completion: { b in
             UIView.animate(withDuration: MarkerViewController.animationDurationButton + 0.25, delay: 0.0,
-                    options: [.autoreverse, .repeat, .curveEaseInOut],
+                    options: [.autoreverse, .repeat, .curveEaseInOut, .allowUserInteraction],
                     animations: {
                         self.markButton.alpha = 0.75
                     })
         })
     }
 
+    private func buttonSuccess() {
+        self.markButton.alpha = 1
+        UIView.animate(withDuration: MarkerViewController.animationDurationButton, delay: 0.0,
+                options: [.allowUserInteraction],
+                animations: {
+                    self.markButton.backgroundColor = UIColor(named: "AppGreen")
+                }, completion: { b in
+
+        })
+    }
+
     private func buttonFailure() {
+        self.markButton.alpha = 1
         animateToColor(colorName: "AppRed")
     }
 
     private func animateToColor(colorName: String) {
-        UIView.animate(withDuration: MarkerViewController.animationDurationButton) { () -> Void in
-            self.markButton.backgroundColor = UIColor(named: colorName)
-        }
+        UIView.animate(withDuration: MarkerViewController.animationDurationButton, delay: 0.0,
+                options: .allowUserInteraction,
+                animations: { () -> Void in
+                    self.markButton.backgroundColor = UIColor(named: colorName)
+                })
     }
 }
