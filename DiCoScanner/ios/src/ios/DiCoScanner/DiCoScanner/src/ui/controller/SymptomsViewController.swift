@@ -11,6 +11,7 @@ import UIKit
 class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate {
 
     @IBOutlet var coronaTestResultLabel: UILabel!
+    @IBOutlet var coronaTestButton: UIButton!
     @IBOutlet var startSymptomsTestButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var coronaTestResultContainer: UIView!
@@ -23,6 +24,8 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
         self.title = "Symptome"
         navigationController?.navigationBar.prefersLargeTitles = true
 
+        setupCoronaTestButton()
+        
         setupCoronaTestResults()
 
         setupSymptomsTestButton()
@@ -64,14 +67,14 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
             switch (CoronaTestResultDao.CoronaTestResultState(rawValue: coronaTestResult!.result!)) {
             case .positive:
                 coronaTestResultLabel.text = "Positiv"
-                coronaTestResultLabel.textColor = UIColor(named: "AppGreen")
+                coronaTestResultLabel.textColor = UIColor(named: "AppRed")
                 break
             case .negative:
                 coronaTestResultLabel.text = "Negativ"
-                coronaTestResultLabel.textColor = UIColor(named: "AppRed")
+                coronaTestResultLabel.textColor = UIColor(named: "AppGreen")
                 break
             case .pending:
-                coronaTestResultLabel.text = "Ausstehend"
+                coronaTestResultLabel.text = "Ergebnis ausstehend"
                 coronaTestResultLabel.textColor = UIColor(named: "AppOrange")
                 break
             default:
@@ -91,13 +94,25 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
                 action: #selector(self.handleCoronaTestResultsTap(_:)))
         coronaTestResultContainer.addGestureRecognizer(tapGestureRecognizer)
     }
-
+    
+    func setupCoronaTestButton() {
+        coronaTestButton.addTarget(self, action: #selector(self.handleCoronaTestButtonTap(_:)), for: .touchUpInside)
+    }
+    
     func setupSymptomsTestButton() {
-        startSymptomsTestButton.layer.borderColor = UIColor.black.cgColor
+        startSymptomsTestButton.layer.borderColor = UIColor(named: "AppDarkBlue")!.cgColor
     }
 
+    @objc func handleSymptomsTestButtonTap(_ sender: UITapGestureRecognizer? = nil) {
+       
+    }
+    
     @objc func handleCoronaTestResultsTap(_ sender: UITapGestureRecognizer? = nil) {
-        startCoronaTest()
+        
+    }
+    
+    @objc func handleCoronaTestButtonTap(_ sender: UITapGestureRecognizer? = nil) {
+      startCoronaTest()
     }
 
     func startCoronaTest() {

@@ -35,9 +35,10 @@ class CoronaTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "SARS-CoV-2-Schnelltest"
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Fertig", style: .plain, target: self,
+        self.title = "SARS-CoV-2-Test"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Abbrechen", style: .plain, target: self,
+                                                                action: #selector(buttonToDismissModal))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Speichern", style: .plain, target: self,
                 action: #selector(finishCoronaTest))
         self.navigationItem.rightBarButtonItem!.isEnabled = false
 
@@ -51,7 +52,7 @@ class CoronaTestViewController: UIViewController {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let selectedDateButton = UIBarButtonItem(title: "Fertig", style: .plain, target: self,
+        let selectedDateButton = UIBarButtonItem(title: "Speichern", style: .plain, target: self,
                 action: #selector(selectedDate));
 
         toolbar.setItems([spaceButton, selectedDateButton], animated: false)
@@ -127,5 +128,8 @@ class CoronaTestViewController: UIViewController {
         dao.markObjectForSync(object: testResult)
 
         self.coronaTestDelegate.didCompleteCoronaTest()
+    }
+    @objc func buttonToDismissModal() {
+       self.dismiss(animated: true, completion: nil)
     }
 }
