@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CoronaTestViewController" customModule="DiCoScanner" customModuleProvider="target">
             <connections>
+                <outlet property="coronaTestDateTextField" destination="tAC-Wn-edW" id="FCF-R6-tr5"/>
+                <outlet property="coronaTestNegativeResultSwitch" destination="OOl-jq-eNV" id="bmK-TH-jwv"/>
+                <outlet property="coronaTestPendingResultSwitch" destination="Dan-i0-IwI" id="XKw-CP-6Km"/>
+                <outlet property="coronaTestPositiveResultSwitch" destination="4FB-dm-0zv" id="48u-t9-7F0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,7 +22,111 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkz-RV-DZV" userLabel="Corona Test Container View">
+                    <rect key="frame" x="16" y="60" width="382" height="450"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dein Ergebnis eines offiziellen vom Arzt/Krankenhaus durchgeführten SARS-CoV-2-Schnelltest:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhY-pc-ecC">
+                            <rect key="frame" x="32" y="32" width="318" height="68.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4FB-dm-0zv" userLabel="Positive Test Switch">
+                            <rect key="frame" x="32" y="132.5" width="51" height="31"/>
+                        </switch>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Positiv" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-BE-01i" userLabel="Positive Test Label">
+                            <rect key="frame" x="97" y="137.5" width="53.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OOl-jq-eNV" userLabel="Negative Test Switch">
+                            <rect key="frame" x="32" y="179.5" width="51" height="31"/>
+                        </switch>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Negativ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5r-YP-0Hb" userLabel="Negative Test Label">
+                            <rect key="frame" x="97" y="184.5" width="62.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dan-i0-IwI" userLabel="Pending Test Switch">
+                            <rect key="frame" x="32" y="226.5" width="51" height="31"/>
+                        </switch>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ausstehend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHj-t9-pHh" userLabel="Pending Test Label">
+                            <rect key="frame" x="97" y="231.5" width="96" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgB-eT-wj5" userLabel="Border View">
+                            <rect key="frame" x="0.0" y="289.5" width="382" height="1"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="aIg-72-9zO"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wann wurde dieser Test durchgeführt?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B96-er-ebW">
+                            <rect key="frame" x="32" y="322.5" width="318" height="45.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Datum" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tAC-Wn-edW">
+                            <rect key="frame" x="32" y="384" width="318" height="34"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="tAC-Wn-edW" firstAttribute="width" secondItem="B96-er-ebW" secondAttribute="width" id="3FB-K8-tbt"/>
+                        <constraint firstItem="Dan-i0-IwI" firstAttribute="top" secondItem="OOl-jq-eNV" secondAttribute="bottom" constant="16" id="FnE-8h-Ara"/>
+                        <constraint firstAttribute="trailing" secondItem="xgB-eT-wj5" secondAttribute="trailing" id="GVy-j1-NX6"/>
+                        <constraint firstItem="OhY-pc-ecC" firstAttribute="top" secondItem="bkz-RV-DZV" secondAttribute="top" constant="32" id="LCB-Mz-Er7"/>
+                        <constraint firstItem="B96-er-ebW" firstAttribute="centerX" secondItem="bkz-RV-DZV" secondAttribute="centerX" id="Ln8-YN-37G"/>
+                        <constraint firstItem="i5r-YP-0Hb" firstAttribute="leading" secondItem="OOl-jq-eNV" secondAttribute="trailing" constant="16" id="Ql9-Mg-P7E"/>
+                        <constraint firstItem="yWH-BE-01i" firstAttribute="leading" secondItem="4FB-dm-0zv" secondAttribute="trailing" constant="16" id="ULG-k2-AEu"/>
+                        <constraint firstItem="B96-er-ebW" firstAttribute="width" secondItem="bkz-RV-DZV" secondAttribute="width" constant="-64" id="UMm-bB-ctI"/>
+                        <constraint firstItem="OOl-jq-eNV" firstAttribute="leading" secondItem="4FB-dm-0zv" secondAttribute="leading" id="UpY-P3-egg"/>
+                        <constraint firstItem="oHj-t9-pHh" firstAttribute="centerY" secondItem="Dan-i0-IwI" secondAttribute="centerY" id="WJG-15-d79"/>
+                        <constraint firstItem="oHj-t9-pHh" firstAttribute="leading" secondItem="Dan-i0-IwI" secondAttribute="trailing" constant="16" id="WUa-IX-6r6"/>
+                        <constraint firstItem="OhY-pc-ecC" firstAttribute="centerX" secondItem="bkz-RV-DZV" secondAttribute="centerX" id="Wva-Ti-iPD"/>
+                        <constraint firstAttribute="bottom" secondItem="tAC-Wn-edW" secondAttribute="bottom" constant="32" id="XfW-3O-Qtn"/>
+                        <constraint firstItem="B96-er-ebW" firstAttribute="leading" secondItem="bkz-RV-DZV" secondAttribute="leading" constant="32" id="aw9-11-nil"/>
+                        <constraint firstItem="xgB-eT-wj5" firstAttribute="top" secondItem="Dan-i0-IwI" secondAttribute="bottom" constant="32" id="b00-Uq-cSR"/>
+                        <constraint firstItem="tAC-Wn-edW" firstAttribute="top" secondItem="B96-er-ebW" secondAttribute="bottom" constant="16" id="ciX-k0-4ko"/>
+                        <constraint firstItem="4FB-dm-0zv" firstAttribute="top" secondItem="OhY-pc-ecC" secondAttribute="bottom" constant="32" id="eeG-ej-TDd"/>
+                        <constraint firstItem="yWH-BE-01i" firstAttribute="centerY" secondItem="4FB-dm-0zv" secondAttribute="centerY" id="eoj-ok-fRi"/>
+                        <constraint firstItem="OhY-pc-ecC" firstAttribute="leading" secondItem="bkz-RV-DZV" secondAttribute="leading" constant="32" id="gGe-hN-orb"/>
+                        <constraint firstItem="OOl-jq-eNV" firstAttribute="top" secondItem="4FB-dm-0zv" secondAttribute="bottom" constant="16" id="hDE-NU-XZv"/>
+                        <constraint firstAttribute="trailing" secondItem="OhY-pc-ecC" secondAttribute="trailing" constant="32" id="hp9-eQ-4O4"/>
+                        <constraint firstItem="xgB-eT-wj5" firstAttribute="leading" secondItem="bkz-RV-DZV" secondAttribute="leading" id="k3x-Xh-HGp"/>
+                        <constraint firstItem="OhY-pc-ecC" firstAttribute="width" secondItem="bkz-RV-DZV" secondAttribute="width" constant="-64" id="l69-9c-LiF"/>
+                        <constraint firstItem="i5r-YP-0Hb" firstAttribute="centerY" secondItem="OOl-jq-eNV" secondAttribute="centerY" id="lxn-qy-HNs"/>
+                        <constraint firstItem="tAC-Wn-edW" firstAttribute="leading" secondItem="B96-er-ebW" secondAttribute="leading" id="n4W-m6-lRE"/>
+                        <constraint firstItem="xgB-eT-wj5" firstAttribute="width" secondItem="bkz-RV-DZV" secondAttribute="width" id="nkP-rZ-7cx"/>
+                        <constraint firstItem="4FB-dm-0zv" firstAttribute="leading" secondItem="OhY-pc-ecC" secondAttribute="leading" id="nnx-2M-9ig"/>
+                        <constraint firstItem="Dan-i0-IwI" firstAttribute="leading" secondItem="OOl-jq-eNV" secondAttribute="leading" id="p9N-MT-CkX"/>
+                        <constraint firstItem="B96-er-ebW" firstAttribute="top" secondItem="xgB-eT-wj5" secondAttribute="bottom" constant="32" id="ruI-JN-jWQ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
             <color key="backgroundColor" name="AppGreyBackground"/>
+            <constraints>
+                <constraint firstItem="bkz-RV-DZV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="9Hy-NZ-lYg"/>
+                <constraint firstItem="bkz-RV-DZV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="qkS-fQ-aI6"/>
+                <constraint firstItem="bkz-RV-DZV" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" constant="-32" id="uhQ-gE-RaR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bkz-RV-DZV" secondAttribute="trailing" constant="16" id="vMC-sQ-bXs"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="108"/>
         </view>
