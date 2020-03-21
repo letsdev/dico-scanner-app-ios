@@ -104,7 +104,7 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
     }
 
     @objc func handleSymptomsTestButtonTap(_ sender: UITapGestureRecognizer? = nil) {
-        startCoronaTest()
+       
     }
     
     @objc func handleCoronaTestResultsTap(_ sender: UITapGestureRecognizer? = nil) {
