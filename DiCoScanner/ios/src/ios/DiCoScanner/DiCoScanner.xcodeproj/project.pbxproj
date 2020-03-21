@@ -36,13 +36,12 @@
 		A40D06AF24262B2E00D62CAF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06AE24262B2E00D62CAF /* libc++.tbd */; };
 		A40D06B224265F5B00D62CAF /* CoronaTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40D06B024265F5B00D62CAF /* CoronaTestViewController.swift */; };
 		A40D06B324265F5B00D62CAF /* CoronaTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */; };
+		A40D06B624268EBA00D62CAF /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40D06B424268EBA00D62CAF /* AppInfoViewController.swift */; };
+		A40D06B724268EBA00D62CAF /* AppInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06B524268EBA00D62CAF /* AppInfoViewController.xib */; };
 		A481B4C12425623500B294AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C02425623500B294AF /* AppDelegate.swift */; };
 		A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */; };
 		A481B4CD2425623600B294AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CC2425623600B294AF /* Assets.xcassets */; };
 		A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CE2425623600B294AF /* LaunchScreen.storyboard */; };
-		A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4D724256D9E00B294AF /* SymptomsViewController.swift */; };
-		A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4D824256D9E00B294AF /* SymptomsViewController.xib */; };
-		A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */; };
 		A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4D724256D9E00B294AF /* SymptomsViewController.swift */; };
 		A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4D824256D9E00B294AF /* SymptomsViewController.xib */; };
 		A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */; };
@@ -92,6 +91,8 @@
 		A40D06AE24262B2E00D62CAF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A40D06B024265F5B00D62CAF /* CoronaTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaTestViewController.swift; sourceTree = "<group>"; };
 		A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoronaTestViewController.xib; sourceTree = "<group>"; };
+		A40D06B424268EBA00D62CAF /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
+		A40D06B524268EBA00D62CAF /* AppInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInfoViewController.xib; sourceTree = "<group>"; };
 		A481B4BD2425623500B294AF /* DiCoScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiCoScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A481B4C02425623500B294AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A481B4CA2425623500B294AF /* DiCoScanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiCoScanner.xcdatamodel; sourceTree = "<group>"; };
@@ -102,9 +103,6 @@
 		A481B4D824256D9E00B294AF /* SymptomsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsViewController.xib; sourceTree = "<group>"; };
 		A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
 		D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DiCoScanner-Bridging-Header.h"; sourceTree = "<group>"; };
-		A481B4D724256D9E00B294AF /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
-		A481B4D824256D9E00B294AF /* SymptomsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsViewController.xib; sourceTree = "<group>"; };
-		A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
 		E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryDetailViewController.swift; sourceTree = "<group>"; };
 		E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryEntryDetailViewController.xib; sourceTree = "<group>"; };
 		E242409E24265DAE0072C3E1 /* SymptomsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsTableViewCell.swift; sourceTree = "<group>"; };
@@ -237,6 +235,8 @@
 				A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */,
 				E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */,
 				E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */,
+				A40D06B424268EBA00D62CAF /* AppInfoViewController.swift */,
+				A40D06B524268EBA00D62CAF /* AppInfoViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -281,15 +281,6 @@
 				D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */,
 			);
 			path = DiCoScanner;
-			sourceTree = "<group>";
-		};
-		A481B4DB2425A69500B294AF /* view */ = {
-			isa = PBXGroup;
-			children = (
-				A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */,
-				A40D06932425AA1500D62CAF /* DiaryEntryView.xib */,
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		A481B4DB2425A69500B294AF /* view */ = {
@@ -401,6 +392,7 @@
 				A40D06B324265F5B00D62CAF /* CoronaTestViewController.xib in Resources */,
 				A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */,
 				E24240A124265DAE0072C3E1 /* SymptomsTableViewCell.xib in Resources */,
+				A40D06B724268EBA00D62CAF /* AppInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +421,7 @@
 				29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */,
 				29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */,
 				29BD9A3B4F51135C94742C5D /* BaseRequest.swift in Sources */,
+				A40D06B624268EBA00D62CAF /* AppInfoViewController.swift in Sources */,
 				29BD92191B3D84E566FFB53A /* MarkerPostRequest.swift in Sources */,
 				36013CB43F23F90880575A49 /* DateFormatter+Localization.swift in Sources */,
 				A40D06B224265F5B00D62CAF /* CoronaTestViewController.swift in Sources */,
