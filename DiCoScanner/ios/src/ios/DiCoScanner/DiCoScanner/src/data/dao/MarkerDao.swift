@@ -1,5 +1,8 @@
 //
-// Copyright © 2020 MBition GmbH. All rights reserved.
+//  DiCoScanner
+//
+//  Created by Arne Fischer on 20.03.20.
+//  Copyright © 2020 let's dev GmbH & Co. KG. All rights reserved.
 //
 
 import Foundation

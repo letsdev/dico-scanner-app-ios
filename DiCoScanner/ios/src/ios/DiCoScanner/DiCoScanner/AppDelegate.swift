@@ -19,10 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = TabBarViewController()
         self.window!.makeKeyAndVisible()
 
-        // TODO remove
+        // TODO remove all below
         DatabaseManager.shared.insertDummyData()
         os_log("Found number of symptoms: %i", SymptomDao().countAll())
-
         let all = MarkerDao().findAll()
         for marker in all {
             let request = MarkerRequest(marker: marker)
@@ -30,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 os_log("Did send request: %i", result)
             }
         }
+        // end remove
         return true
     }
 

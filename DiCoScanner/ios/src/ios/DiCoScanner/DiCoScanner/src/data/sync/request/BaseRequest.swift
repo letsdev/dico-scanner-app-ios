@@ -1,5 +1,8 @@
 //
-// Copyright © 2020 MBition GmbH. All rights reserved.
+//  DiCoScanner
+//
+//  Created by Arne Fischer on 20.03.20.
+//  Copyright © 2020 let's dev GmbH & Co. KG. All rights reserved.
 //
 
 import Foundation
@@ -12,6 +15,8 @@ protocol Request {
     func httpMethod() -> String
     func body() -> [String: Any]?
 }
+
+let baseUrl = "http://lx-qa1.letsdev.extern:8008/coscan"
 
 let defaultRequestSession: URLSession = {
     let urlSession = URLSession(configuration: .default)
