@@ -117,7 +117,8 @@ class CoronaTestViewController: UIViewController {
         testResult.result = coronaTestResult.rawValue
         
         DatabaseManager.shared.saveContext()
-        
+
+        dao.markObjectForSync(object: testResult)
         self.coronaTestDelegate.didCompleteCoronaTest()
     }
 }

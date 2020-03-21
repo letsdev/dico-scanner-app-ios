@@ -18,7 +18,7 @@ class CoronaTestPostRequest: BaseRequest, Request {
     }
 
     func url() -> URL {
-        URL(string: "\(baseUrl)/test")!
+        URL(string: "\(baseUrl)/test/sendResult")!
     }
 
     func httpMethod() -> String {
@@ -26,7 +26,7 @@ class CoronaTestPostRequest: BaseRequest, Request {
     }
 
     func body() -> [String: Any]? {
-        convertToJSON(managedObject: testResult)
+        convertToJSON(managedObject: testResult, keyReplacer: ["testDate": "timestamp"])
     }
 
     func receivedData(data: Data) {

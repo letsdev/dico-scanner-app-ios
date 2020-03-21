@@ -33,7 +33,7 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
     private func setupSymptomsDiaryEntries() {
 
         var arrangedSubviews: [DiaryEntryView] = []
-        
+
         symptomDiaryDao.findAllByDate()?.forEach { (diaryEntry: SymptomDiaryEntry) in
             let diaryEntryView = DiaryEntryView()
             diaryEntryView.delegate = self
@@ -61,7 +61,7 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
         let coronaTestResult = dao.findLatest()
 
         if (coronaTestResult != nil) {
-            switch (CoronaTestResultDao.CoronaTestResultState(rawValue: coronaTestResult!.result)) {
+            switch (CoronaTestResultDao.CoronaTestResultState(rawValue: coronaTestResult!.result!)) {
             case .positive:
                 coronaTestResultLabel.text = "Positiv"
                 coronaTestResultLabel.textColor = UIColor(named: "AppGreen")
@@ -87,7 +87,8 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
             coronaTestResultLabel.textColor = UIColor.black
         }
 
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleCoronaTestResultsTap(_:)))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self,
+                action: #selector(self.handleCoronaTestResultsTap(_:)))
         coronaTestResultContainer.addGestureRecognizer(tapGestureRecognizer)
     }
 
@@ -100,7 +101,8 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
     }
 
     func startCoronaTest() {
-        let coronaTestVC = CoronaTestViewController(nibName: String(describing: CoronaTestViewController.self), bundle: nil, coronaTestDelegate: self)
+        let coronaTestVC = CoronaTestViewController(nibName: String(describing: CoronaTestViewController.self),
+                bundle: nil, coronaTestDelegate: self)
         let navigationController = UINavigationController(rootViewController: coronaTestVC)
         self.present(navigationController, animated: true, completion: nil)
     }
