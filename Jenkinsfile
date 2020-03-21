@@ -63,7 +63,7 @@ pipeline {
             }
             steps {
                 dir('DiCoScanner') {
-                    sh "mvn -B --settings ${env.MAVEN_SETTINGS_LOCATION} release:prepare release:perform " +
+                    sh "mvn -B --settings ${env.MAVEN_SETTINGS_LOCATION} release:prepare release:perform -DupdateWorkingCopyVersions=false" +
                             "-DcheckModificationExcludeList=" +
                             "\'**/*Info.plist,**/*.entitlements*,**/*.xcodeproj/**.*,**/xcodebuild.log," +
                             "**/xcodebuild-clean.log\' "
