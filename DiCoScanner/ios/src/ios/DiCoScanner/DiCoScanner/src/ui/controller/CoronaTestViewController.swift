@@ -23,6 +23,7 @@ class CoronaTestViewController: UIViewController {
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, coronaTestDelegate: CoronaTestViewControllerDelegate) {
         self.coronaTestDelegate = coronaTestDelegate
+        
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
@@ -34,7 +35,9 @@ class CoronaTestViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "SARS-CoV-2-Schnelltest"
+
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Fertig", style: .plain, target: self, action: #selector(finishCoronaTest))
+        self.navigationItem.rightBarButtonItem!.isEnabled = false
 
         setupTestResults()
         setupTestDate()
@@ -59,6 +62,8 @@ class CoronaTestViewController: UIViewController {
         formatter.dateFormat = "dd.MM.yyyy"
         coronaTestDateTextField.text = formatter.string(from: coronaTestDatePicker.date)
         self.view.endEditing(true)
+        
+        self.navigationItem.rightBarButtonItem!.isEnabled = true
     }
 
     private func setupTestResults() {
