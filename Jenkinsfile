@@ -19,7 +19,7 @@ pipeline {
         XC_TEST_DESTINATION = 'platform=iOS Simulator,name=iPhone 11,OS=latest'
         MAVEN_OPTS = '-Xms256m -Xmx2048m -Djava.awt.headless=true'
         RELEASE_BRANCH = 'testflight-upload'
-        VERSION = readMavenPom(file: 'DiCoScanner/ios/pom.xml').getVersion()
+        VERSION = readMavenPom(file: 'DiCoScanner/pom.xml').getVersion()
     }
     stages {
         stage('Build & Test') {
