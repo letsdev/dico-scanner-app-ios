@@ -14,6 +14,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         let markerVC = MarkerViewController()
-        self.viewControllers = [markerVC]
+        let symptomsVC = SymptomsViewController()
+        self.viewControllers = [markerVC, symptomsVC]
     }
 }
