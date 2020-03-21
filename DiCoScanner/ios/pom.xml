@@ -42,9 +42,13 @@
   								<buildId>${env.BUILD_NUMBER}</buildId>
   								<configuration>Release</configuration>
   								<xcodeVersion>/Applications/Xcode-11.app</xcodeVersion>
-								  <keychainPath>${codeSignIdentity.enterprise.keychain.path}</keychainPath>
-							      <keychainPassword>${codeSignIdentity.enterprise.keychain.password}</keychainPassword>
-  								<provisioningProfileName>ldentwildcarddistribution</provisioningProfileName>
+                  				<codeSignIdentity>${codeSignIdentity.developer.name}</codeSignIdentity>
+								<keychainPath>${codeSignIdentity.developer.keychain.path}</keychainPath>
+							    <keychainPassword>${codeSignIdentity.developer.keychain.password}</keychainPassword>
+  								<provisioningProfileName>DiCoScanner_AppStore</provisioningProfileName>
+								<releaseTask>TestFlight</releaseTask>
+								<iTunesConnectUsername>${itunesConnect.developer.username}</iTunesConnectUsername>
+								<iTunesConnectPassword>${itunesConnect.developer.password}</iTunesConnectPassword>
   							</configuration>
   						</execution>
   					</executions>
@@ -70,8 +74,13 @@
   	</profile>
   </profiles>
 
-  <dependencies>
-
-  </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>de.letsdev.projects.intern</groupId>
+			<artifactId>LDPush-iOS</artifactId>
+			<version>1.3.8</version>
+			<type>zip</type>
+		</dependency>
+	</dependencies>
 
 </project>
