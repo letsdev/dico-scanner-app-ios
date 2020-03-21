@@ -82,8 +82,13 @@
   	</profile>
   </profiles>
 
-  <dependencies>
-
-  </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>de.letsdev.projects.intern</groupId>
+			<artifactId>LDPush-iOS</artifactId>
+			<version>1.5.7</version>
+			<type>zip</type>
+		</dependency>
+	</dependencies>
 
 </project>
