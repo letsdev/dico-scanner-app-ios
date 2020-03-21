@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.makeKeyAndVisible()
 
         // TODO remove
+        DatabaseManager.shared.insertDummyData()
         os_log("Found number of symptoms: %i", SymptomDao().countAll())
         return true
     }
