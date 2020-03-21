@@ -56,7 +56,7 @@ pipeline {
             steps {
                 dir('DiCoScanner') {
                     sh "mvn -B --settings ${env.MAVEN_SETTINGS_LOCATION} release:prepare release:perform " +
-                            "-DpushChanges=false -DupdateWorkingCopyVersions=false"
+                            "-DpushChanges=false -DupdateWorkingCopyVersions=false -DlocalCheckout=true"
                 }
             }
         }
