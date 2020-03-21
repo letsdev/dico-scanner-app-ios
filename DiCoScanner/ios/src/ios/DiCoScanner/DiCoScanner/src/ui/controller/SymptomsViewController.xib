@@ -101,7 +101,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vi-3e-CAL" userLabel="Symptoms Test Container View">
-                            <rect key="frame" x="0.0" y="212" width="414" height="0.0"/>
+                            <rect key="frame" x="0.0" y="212" width="414" height="405"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mach einen Symptome-Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJZ-rG-yN5">
                                     <rect key="frame" x="16" y="16" width="255" height="23"/>
@@ -110,7 +110,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnN-e6-QRp" userLabel="Symptoms Test Description Container View">
-                                    <rect key="frame" x="16" y="55" width="382" height="318"/>
+                                    <rect key="frame" x="16" y="55" width="382" height="317"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iWT-Ao-iOz" userLabel="Symptoms Test Description Text View">
                                             <rect key="frame" x="32" y="32" width="318" height="200"/>
@@ -121,8 +121,8 @@
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="koF-pn-oaX" userLabel="Start Symptoms Test Button">
-                                            <rect key="frame" x="140" y="248" width="102" height="38"/>
-                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                            <rect key="frame" x="140" y="248" width="102" height="37"/>
+                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="9"/>
                                             <state key="normal" title="Test starten">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
@@ -152,7 +152,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1c-fc-8FC" userLabel="Border View">
-                                    <rect key="frame" x="0.0" y="405" width="414" height="1"/>
+                                    <rect key="frame" x="0.0" y="404" width="414" height="1"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="YJz-sA-KUj"/>
@@ -165,19 +165,49 @@
                                 <constraint firstItem="lnN-e6-QRp" firstAttribute="centerX" secondItem="8Vi-3e-CAL" secondAttribute="centerX" id="VUf-aG-B0N"/>
                                 <constraint firstItem="lnN-e6-QRp" firstAttribute="top" secondItem="wJZ-rG-yN5" secondAttribute="bottom" constant="16" id="YBe-0D-BZN"/>
                                 <constraint firstItem="e1c-fc-8FC" firstAttribute="width" secondItem="8Vi-3e-CAL" secondAttribute="width" id="cwg-0Z-aPi"/>
+                                <constraint firstAttribute="bottom" secondItem="e1c-fc-8FC" secondAttribute="bottom" id="h1a-fQ-Shd"/>
                                 <constraint firstItem="wJZ-rG-yN5" firstAttribute="leading" secondItem="8Vi-3e-CAL" secondAttribute="leading" constant="16" id="lkf-6e-vhu"/>
                                 <constraint firstItem="wJZ-rG-yN5" firstAttribute="top" secondItem="8Vi-3e-CAL" secondAttribute="top" constant="16" id="rhM-2J-CCz"/>
                                 <constraint firstItem="e1c-fc-8FC" firstAttribute="leading" secondItem="8Vi-3e-CAL" secondAttribute="leading" id="uHG-Pe-olC"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWr-EE-EPe" userLabel="Symptoms Diary Container View">
+                            <rect key="frame" x="0.0" y="617" width="414" height="155.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dein Symptome-Tagebuch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coL-0o-Uuk">
+                                    <rect key="frame" x="16" y="16" width="414" height="23"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XML-Qe-CY2" userLabel="Notice Text View">
+                                    <rect key="frame" x="70.5" y="39" width="273" height="116.5"/>
+                                    <string key="text">* Bitte beachte: Deine Angaben und die Auswertung des Symptome-Tests und dessen Ergebnis sind ohne Gewähr. Bei Unwohlsein oder Verdacht auf COVID-19 bitte umgehend einen Arzt aufsuchen und medizinische Vorsorge leisten.</string>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="coL-0o-Uuk" firstAttribute="top" secondItem="VWr-EE-EPe" secondAttribute="top" constant="16" id="8DY-ap-coy"/>
+                                <constraint firstAttribute="bottom" secondItem="XML-Qe-CY2" secondAttribute="bottom" id="8K6-Y1-aoC"/>
+                                <constraint firstItem="coL-0o-Uuk" firstAttribute="leading" secondItem="VWr-EE-EPe" secondAttribute="leading" constant="16" id="8M6-bR-Yv2"/>
+                                <constraint firstItem="XML-Qe-CY2" firstAttribute="centerX" secondItem="VWr-EE-EPe" secondAttribute="centerX" id="NyZ-4u-0qv"/>
+                                <constraint firstItem="XML-Qe-CY2" firstAttribute="width" secondItem="VWr-EE-EPe" secondAttribute="width" multiplier="0.66" id="aW6-sE-bqZ"/>
+                                <constraint firstItem="coL-0o-Uuk" firstAttribute="width" secondItem="VWr-EE-EPe" secondAttribute="width" id="gB7-J5-2s6"/>
+                                <constraint firstItem="XML-Qe-CY2" firstAttribute="top" secondItem="coL-0o-Uuk" secondAttribute="bottom" id="ocY-ep-Jwn"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="TFT-sm-vkn" firstAttribute="trailing" secondItem="VWr-EE-EPe" secondAttribute="trailing" id="0CD-NU-q4K"/>
                         <constraint firstItem="NRo-T3-7p8" firstAttribute="width" secondItem="8m3-4c-pPS" secondAttribute="width" id="Eyl-Mj-rHc"/>
                         <constraint firstItem="NRo-T3-7p8" firstAttribute="trailing" secondItem="TFT-sm-vkn" secondAttribute="trailing" id="FoU-Ez-1b8"/>
                         <constraint firstItem="NRo-T3-7p8" firstAttribute="bottom" secondItem="TFT-sm-vkn" secondAttribute="bottom" id="Izi-wM-Bni"/>
                         <constraint firstItem="TFT-sm-vkn" firstAttribute="trailing" secondItem="8Vi-3e-CAL" secondAttribute="trailing" id="NMt-4f-Yex"/>
                         <constraint firstItem="NRo-T3-7p8" firstAttribute="leading" secondItem="TFT-sm-vkn" secondAttribute="leading" id="PDa-4B-71Z"/>
-                        <constraint firstItem="8Vi-3e-CAL" firstAttribute="bottom" secondItem="TFT-sm-vkn" secondAttribute="bottom" id="S2b-mq-3tW"/>
+                        <constraint firstItem="VWr-EE-EPe" firstAttribute="leading" secondItem="TFT-sm-vkn" secondAttribute="leading" id="Tra-Iz-ZIt"/>
+                        <constraint firstItem="VWr-EE-EPe" firstAttribute="top" secondItem="8Vi-3e-CAL" secondAttribute="bottom" id="gP7-yH-xtA"/>
                         <constraint firstItem="8Vi-3e-CAL" firstAttribute="top" secondItem="NRo-T3-7p8" secondAttribute="bottom" id="iHd-Xj-vrM"/>
                         <constraint firstItem="NRo-T3-7p8" firstAttribute="top" secondItem="TFT-sm-vkn" secondAttribute="top" id="kz7-mN-2a5"/>
                         <constraint firstItem="8Vi-3e-CAL" firstAttribute="leading" secondItem="TFT-sm-vkn" secondAttribute="leading" id="nWq-8P-cbF"/>
