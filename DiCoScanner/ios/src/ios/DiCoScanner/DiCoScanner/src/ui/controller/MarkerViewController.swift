@@ -9,11 +9,13 @@
 import UIKit
 import CoreLocation
 import os
+import MapKit
 
 class MarkerViewController: UIViewController {
 
     @IBOutlet weak var markButton: UIButton!
     @IBOutlet weak var lastMarkerView: UIView!
+    @IBOutlet weak var mapKitView: MKMapView!
 
     @IBOutlet weak var lastMakerViewHeightConstraint: NSLayoutConstraint!
 
@@ -31,6 +33,8 @@ class MarkerViewController: UIViewController {
         self.title = "Markierungen"
 
         locationProvider.delegate = self
+
+        mapKitView.setVisibleMapRect(MKMapRect(x: 0, y: 0, width: 25000, height: 25000), animated: true)
 
         markButton.titleLabel?.text = "Markierung setzen"
 
@@ -58,6 +62,7 @@ class MarkerViewController: UIViewController {
 
 extension MarkerViewController: LocationProviderDelegate {
     func received(location: CLLocation) {
+        mapKitView.setCenter(location.coordinate, animated: true)
         self.setButtonAnimation(state: .success)
         os_log("Received location long/lat: %d / %d", location.coordinate.latitude.description,
                 location.coordinate.longitude.binade.description)
@@ -123,6 +128,7 @@ extension MarkerViewController {
     }
 
     private func buttonNormal() {
+        self.markButton.alpha = 1
         animateToColor(colorName: "AppDarkBlue")
     }
 
@@ -141,6 +147,7 @@ extension MarkerViewController {
     }
 
     private func buttonSuccess() {
+        self.markButton.alpha = 1
         UIView.animate(withDuration: MarkerViewController.animationDurationButton, delay: 0.0,
                 options: [.allowUserInteraction],
                 animations: {
@@ -151,6 +158,7 @@ extension MarkerViewController {
     }
 
     private func buttonFailure() {
+        self.markButton.alpha = 1
         animateToColor(colorName: "AppRed")
     }
 
