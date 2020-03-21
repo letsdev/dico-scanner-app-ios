@@ -12,7 +12,7 @@ import CoreData
 class SymptomGetRequest: BaseRequest, Request {
 
     func url() -> URL {
-        URL(string: "\(baseUrl)/symtoms")!
+        URL(string: "\(baseUrl)/symptoms")!
     }
 
     func httpMethod() -> String {
