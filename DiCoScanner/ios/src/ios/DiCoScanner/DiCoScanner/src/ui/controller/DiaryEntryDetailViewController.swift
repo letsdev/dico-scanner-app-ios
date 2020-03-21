@@ -13,6 +13,10 @@ class DiaryEntryDetailViewController: UIViewController {
     @IBOutlet weak var headerContainerView: UIView!
     @IBOutlet weak var symptomsTableView: UITableView!
 
+    var entry: SymptomDiaryEntry?
+
+    private let symptomDao = SymptomDao()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +38,7 @@ class DiaryEntryDetailViewController: UIViewController {
 
 extension DiaryEntryDetailViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        symptomDao.countAll()
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,6 +46,17 @@ extension DiaryEntryDetailViewController: UITableViewDataSource {
                 withIdentifier: "SymptomsTableViewCell") as? SymptomsTableViewCell else {
             return UITableViewCell()
         }
+
+        let symptom = symptomDao.findAllSortByName()?[indexPath.row]
+        cell.symptomNameLabel.text = symptom?.name
+
+        if (entry?.symptom?.contains(symptom) ?? false) {
+            cell.symptomStatusImageView.image = UIImage(named: "ic_tabbar_symptoms_active")
+        } else {
+            cell.symptomStatusImageView.image = UIImage(named: "ic_tabbar_symptoms_normal")
+        }
+
+        cell.symptomIconImageView.image = UIImage(named: "ic_info")
 
         return cell
     }

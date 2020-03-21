@@ -15,6 +15,8 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var coronaTestResultContainer: UIView!
 
+    private let symptomDiaryDao = SymptomDiaryEntryDao()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,12 +31,15 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
     }
 
     private func setupSymptomsDiaryEntries() {
-        let diaryEntryView = DiaryEntryView()
-        diaryEntryView.delegate = self
-        let diaryEntryView2 = DiaryEntryView()
-        diaryEntryView2.delegate = self
 
-        let arrangedSubviews = [diaryEntryView, diaryEntryView2]
+        var arrangedSubviews: [DiaryEntryView] = []
+        
+        symptomDiaryDao.findAllByDate()?.forEach { (diaryEntry: SymptomDiaryEntry) in
+            let diaryEntryView = DiaryEntryView()
+            diaryEntryView.delegate = self
+            diaryEntryView.diaryEntry = diaryEntry
+            arrangedSubviews.append(diaryEntryView)
+        }
 
         let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
         containerView.addSubview(stackView)
@@ -106,9 +111,9 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
 }
 
 extension SymptomsViewController: DiaryEntryViewDelegate {
-
-    func didClickEntry() {
-        self.present(DiaryEntryDetailViewController(), animated: true)
+    func didClick(entry: SymptomDiaryEntry?) {
+        let vc = DiaryEntryDetailViewController()
+        vc.entry = entry
+        self.present(vc, animated: true)
     }
-
 }

@@ -32,8 +32,7 @@ class LastMarkerViewController: UIViewController {
 extension LastMarkerViewController: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let all2 = dao.countAll()
-        return all2
+        dao.countAll()
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,7 +42,7 @@ extension LastMarkerViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let all = dao.findAll();
+        let all = dao.findAllByDate();
         if let all = all {
             let marker = all[indexPath.row]
             if let eventDate = marker.eventDate {
