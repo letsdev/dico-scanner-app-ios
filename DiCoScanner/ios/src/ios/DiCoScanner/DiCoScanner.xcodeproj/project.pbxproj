@@ -16,10 +16,27 @@
 		36013CAD1FD909AADEBD2A17 /* DiaryEntryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360136BCF480A84B3D49648D /* DiaryEntryViewDelegate.swift */; };
 		36013CB43F23F90880575A49 /* DateFormatter+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */; };
 		A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06932425AA1500D62CAF /* DiaryEntryView.xib */; };
+		A40D06962426203C00D62CAF /* LDLetspushFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06952426203C00D62CAF /* LDLetspushFramework.framework */; };
+		A40D069C2426220300D62CAF /* LDLetspushFramework.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A40D069B2426220300D62CAF /* LDLetspushFramework.bundle */; };
+		A40D069E242628AD00D62CAF /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D069D242628AD00D62CAF /* UserNotifications.framework */; };
+		A40D069F2426296A00D62CAF /* DiCoScanner-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */; };
+		A40D06A624262AFC00D62CAF /* Ssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06A024262AFC00D62CAF /* Ssl.framework */; };
+		A40D06A724262AFC00D62CAF /* LDDatabaseiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06A124262AFC00D62CAF /* LDDatabaseiOS.framework */; };
+		A40D06A824262AFC00D62CAF /* Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06A224262AFC00D62CAF /* Crypto.framework */; };
+		A40D06A924262AFC00D62CAF /* LDUtilsCppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06A324262AFC00D62CAF /* LDUtilsCppiOS.framework */; };
+		A40D06AA24262AFC00D62CAF /* ld-utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06A424262AFC00D62CAF /* ld-utils.framework */; };
+		A40D06AB24262AFC00D62CAF /* LDHttpiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06A524262AFC00D62CAF /* LDHttpiOS.framework */; };
+		A40D06AD24262B0D00D62CAF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06AC24262B0D00D62CAF /* libz.tbd */; };
+		A40D06AF24262B2E00D62CAF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06AE24262B2E00D62CAF /* libc++.tbd */; };
+		A40D06B224265F5B00D62CAF /* CoronaTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40D06B024265F5B00D62CAF /* CoronaTestViewController.swift */; };
+		A40D06B324265F5B00D62CAF /* CoronaTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */; };
 		A481B4C12425623500B294AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C02425623500B294AF /* AppDelegate.swift */; };
 		A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */; };
 		A481B4CD2425623600B294AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CC2425623600B294AF /* Assets.xcassets */; };
 		A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CE2425623600B294AF /* LaunchScreen.storyboard */; };
+		A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4D724256D9E00B294AF /* SymptomsViewController.swift */; };
+		A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4D824256D9E00B294AF /* SymptomsViewController.xib */; };
+		A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */; };
 		A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4D724256D9E00B294AF /* SymptomsViewController.swift */; };
 		A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4D824256D9E00B294AF /* SymptomsViewController.xib */; };
 		A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */; };
@@ -49,12 +66,30 @@
 		36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProviderDelegate.swift; sourceTree = "<group>"; };
 		360136BCF480A84B3D49648D /* DiaryEntryViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntryViewDelegate.swift; sourceTree = "<group>"; };
 		A40D06932425AA1500D62CAF /* DiaryEntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryEntryView.xib; sourceTree = "<group>"; };
+		A40D06952426203C00D62CAF /* LDLetspushFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LDLetspushFramework.framework; path = "../../../target/ios-dependencies/LDLetspushFramework.framework"; sourceTree = "<group>"; };
+		A40D069A2426210600D62CAF /* DiCoScanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DiCoScanner.entitlements; sourceTree = "<group>"; };
+		A40D069B2426220300D62CAF /* LDLetspushFramework.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = LDLetspushFramework.bundle; path = "../../../target/ios-dependencies/LDLetspushFramework.bundle"; sourceTree = "<group>"; };
+		A40D069D242628AD00D62CAF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		A40D06A024262AFC00D62CAF /* Ssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ssl.framework; path = "../../../target/ios-dependencies/Ssl.framework"; sourceTree = "<group>"; };
+		A40D06A124262AFC00D62CAF /* LDDatabaseiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LDDatabaseiOS.framework; path = "../../../target/ios-dependencies/LDDatabaseiOS.framework"; sourceTree = "<group>"; };
+		A40D06A224262AFC00D62CAF /* Crypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crypto.framework; path = "../../../target/ios-dependencies/Crypto.framework"; sourceTree = "<group>"; };
+		A40D06A324262AFC00D62CAF /* LDUtilsCppiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LDUtilsCppiOS.framework; path = "../../../target/ios-dependencies/LDUtilsCppiOS.framework"; sourceTree = "<group>"; };
+		A40D06A424262AFC00D62CAF /* ld-utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "ld-utils.framework"; path = "../../../target/ios-dependencies/ld-utils.framework"; sourceTree = "<group>"; };
+		A40D06A524262AFC00D62CAF /* LDHttpiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LDHttpiOS.framework; path = "../../../target/ios-dependencies/LDHttpiOS.framework"; sourceTree = "<group>"; };
+		A40D06AC24262B0D00D62CAF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A40D06AE24262B2E00D62CAF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		A40D06B024265F5B00D62CAF /* CoronaTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaTestViewController.swift; sourceTree = "<group>"; };
+		A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoronaTestViewController.xib; sourceTree = "<group>"; };
 		A481B4BD2425623500B294AF /* DiCoScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiCoScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A481B4C02425623500B294AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A481B4CA2425623500B294AF /* DiCoScanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiCoScanner.xcdatamodel; sourceTree = "<group>"; };
 		A481B4CC2425623600B294AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A481B4CF2425623600B294AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A481B4D12425623600B294AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A481B4D724256D9E00B294AF /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
+		A481B4D824256D9E00B294AF /* SymptomsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsViewController.xib; sourceTree = "<group>"; };
+		A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
+		D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DiCoScanner-Bridging-Header.h"; sourceTree = "<group>"; };
 		A481B4D724256D9E00B294AF /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
 		A481B4D824256D9E00B294AF /* SymptomsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsViewController.xib; sourceTree = "<group>"; };
 		A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
@@ -79,6 +114,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40D06AF24262B2E00D62CAF /* libc++.tbd in Frameworks */,
+				A40D06AD24262B0D00D62CAF /* libz.tbd in Frameworks */,
+				A40D06A624262AFC00D62CAF /* Ssl.framework in Frameworks */,
+				A40D06A724262AFC00D62CAF /* LDDatabaseiOS.framework in Frameworks */,
+				A40D06A824262AFC00D62CAF /* Crypto.framework in Frameworks */,
+				A40D06A924262AFC00D62CAF /* LDUtilsCppiOS.framework in Frameworks */,
+				A40D06AA24262AFC00D62CAF /* ld-utils.framework in Frameworks */,
+				A40D06AB24262AFC00D62CAF /* LDHttpiOS.framework in Frameworks */,
+				A40D069E242628AD00D62CAF /* UserNotifications.framework in Frameworks */,
+				A40D06962426203C00D62CAF /* LDLetspushFramework.framework in Frameworks */,
 				E28583B22425BEBA00C6BE16 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +199,8 @@
 				E28583A324257ED600C6BE16 /* LastMarkerViewController.xib */,
 				A481B4D724256D9E00B294AF /* SymptomsViewController.swift */,
 				A481B4D824256D9E00B294AF /* SymptomsViewController.xib */,
+				A40D06B024265F5B00D62CAF /* CoronaTestViewController.swift */,
+				A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */,
 				E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */,
 				E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */,
 			);
@@ -173,6 +220,7 @@
 		A481B4B42425623500B294AF = {
 			isa = PBXGroup;
 			children = (
+				A40D069B2426220300D62CAF /* LDLetspushFramework.bundle */,
 				A481B4BF2425623500B294AF /* DiCoScanner */,
 				A481B4BE2425623500B294AF /* Products */,
 				E28583B02425BEBA00C6BE16 /* Frameworks */,
@@ -190,13 +238,24 @@
 		A481B4BF2425623500B294AF /* DiCoScanner */ = {
 			isa = PBXGroup;
 			children = (
+				A40D069A2426210600D62CAF /* DiCoScanner.entitlements */,
 				2E9797E6242562EA005CE79F /* src */,
 				A481B4C02425623500B294AF /* AppDelegate.swift */,
 				A481B4CC2425623600B294AF /* Assets.xcassets */,
 				A481B4CE2425623600B294AF /* LaunchScreen.storyboard */,
 				A481B4D12425623600B294AF /* Info.plist */,
+				D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */,
 			);
 			path = DiCoScanner;
+			sourceTree = "<group>";
+		};
+		A481B4DB2425A69500B294AF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */,
+				A40D06932425AA1500D62CAF /* DiaryEntryView.xib */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		A481B4DB2425A69500B294AF /* view */ = {
@@ -223,6 +282,16 @@
 		E28583B02425BEBA00C6BE16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A40D06AE24262B2E00D62CAF /* libc++.tbd */,
+				A40D06AC24262B0D00D62CAF /* libz.tbd */,
+				A40D06A224262AFC00D62CAF /* Crypto.framework */,
+				A40D06A424262AFC00D62CAF /* ld-utils.framework */,
+				A40D06A124262AFC00D62CAF /* LDDatabaseiOS.framework */,
+				A40D06A524262AFC00D62CAF /* LDHttpiOS.framework */,
+				A40D06A324262AFC00D62CAF /* LDUtilsCppiOS.framework */,
+				A40D06A024262AFC00D62CAF /* Ssl.framework */,
+				A40D069D242628AD00D62CAF /* UserNotifications.framework */,
+				A40D06952426203C00D62CAF /* LDLetspushFramework.framework */,
 				E28583B12425BEBA00C6BE16 /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -286,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40D069C2426220300D62CAF /* LDLetspushFramework.bundle in Resources */,
 				E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */,
 				A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */,
 				E28583A524257ED600C6BE16 /* LastMarkerViewController.xib in Resources */,
@@ -294,6 +364,7 @@
 				A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */,
 				A481B4CD2425623600B294AF /* Assets.xcassets in Resources */,
 				E28583AA2425807300C6BE16 /* LastMarkerTableViewCell.xib in Resources */,
+				A40D06B324265F5B00D62CAF /* CoronaTestViewController.xib in Resources */,
 				A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */,
 				E24240A124265DAE0072C3E1 /* SymptomsTableViewCell.xib in Resources */,
 			);
@@ -307,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E24240A024265DAE0072C3E1 /* SymptomsTableViewCell.swift in Sources */,
+				A40D069F2426296A00D62CAF /* DiCoScanner-Bridging-Header.h in Sources */,
 				A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */,
 				E28583A92425807300C6BE16 /* LastMarkerTableViewCell.swift in Sources */,
 				E28583A424257ED600C6BE16 /* LastMarkerViewController.swift in Sources */,
@@ -323,6 +395,7 @@
 				29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */,
 				29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */,
 				36013CB43F23F90880575A49 /* DateFormatter+Localization.swift in Sources */,
+				A40D06B224265F5B00D62CAF /* CoronaTestViewController.swift in Sources */,
 				E28583AF2425B63B00C6BE16 /* Marker+UiModel.swift in Sources */,
 				36013CAD1FD909AADEBD2A17 /* DiaryEntryViewDelegate.swift in Sources */,
 			);
@@ -460,9 +533,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DiCoScanner/DiCoScanner.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 55N9D27866;
+				DEVELOPMENT_TEAM = DXR98A4DJW;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "${PROJECT_DIR}/../../../target/ios-dependencies";
 				INFOPLIST_FILE = DiCoScanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -471,7 +547,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.letsdev.DiCoScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "ld-ent-wildcard-development-xcode11";
+				PROVISIONING_PROFILE_SPECIFIER = "DiCoScanner Development";
+				SWIFT_OBJC_BRIDGING_HEADER = "DiCoScanner/DiCoScanner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -481,9 +558,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DiCoScanner/DiCoScanner.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 55N9D27866;
+				DEVELOPMENT_TEAM = DXR98A4DJW;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "${PROJECT_DIR}/../../../target/ios-dependencies";
 				INFOPLIST_FILE = DiCoScanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -492,7 +572,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.letsdev.DiCoScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "ld-ent-wildcard-distribution";
+				PROVISIONING_PROFILE_SPECIFIER = "DiCoScanner AppStore";
+				SWIFT_OBJC_BRIDGING_HEADER = "DiCoScanner/DiCoScanner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
