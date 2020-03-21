@@ -13,8 +13,18 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let markerVC = UINavigationController(rootViewController: MarkerViewController())
-        let symptomsVC = UINavigationController(rootViewController: SymptomsViewController())
+        self.tabBar.tintColor = UIColor(named: "")
+
+        let markerNavigationController = UINavigationController(rootViewController: MarkerViewController())
+        let markerVC = markerNavigationController
+        markerNavigationController.tabBarItem.selectedImage = UIImage(named: "ic_tabbar_position_active")
+        markerNavigationController.tabBarItem.image = UIImage(named: "ic_tabbar_position_normal")
+
+        let symptomsNavigationController = UINavigationController(rootViewController: SymptomsViewController())
+        let symptomsVC = symptomsNavigationController
+        symptomsNavigationController.tabBarItem.selectedImage = UIImage(named: "ic_tabbar_symptoms_active")
+        symptomsNavigationController.tabBarItem.image = UIImage(named: "ic_tabbar_symptoms_normal")
+
         self.viewControllers = [markerVC, symptomsVC]
     }
 }
