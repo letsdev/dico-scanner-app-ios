@@ -19,8 +19,8 @@
         <maven.dependency.plugin.version>2.8</maven.dependency.plugin.version>
         <maven.build.helper.maven.plugin>1.5</maven.build.helper.maven.plugin>
         <const.scm.url>https://github.com/letsdev/dico-scanner-app-ios.git</const.scm.url>
-        <const.scm.connection>scm:git:git@git@github.com:letsdev/dico-scanner-app-ios.git</const.scm.connection>
-        <const.scm.developerConnection>scm:git:git@git@github.com:letsdev/dico-scanner-app-ios.git</const.scm.developerConnection>
+        <const.scm.connection>scm:git:git@github.com:letsdev/dico-scanner-app-ios.git</const.scm.connection>
+        <const.scm.developerConnection>scm:git:git@github.com:letsdev/dico-scanner-app-ios.git</const.scm.developerConnection>
     </properties>
 
     <scm>
