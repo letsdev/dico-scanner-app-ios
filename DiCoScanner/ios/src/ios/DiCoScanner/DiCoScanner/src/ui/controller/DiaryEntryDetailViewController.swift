@@ -8,13 +8,20 @@
 
 import UIKit
 
+protocol DiaryEntryDetailViewControllerDelegate {
+
+    func deleteButtonTapped(_: DiaryEntryDetailViewController, _: SymptomDiaryEntry?)
+}
+
 class DiaryEntryDetailViewController: UIViewController {
 
     @IBOutlet weak var headerContainerView: UIView!
     @IBOutlet weak var symptomsTableView: UITableView!
     @IBOutlet weak var resultLabel: UILabel!
-    
+
     var entry: SymptomDiaryEntry?
+
+    var delegate: DiaryEntryDetailViewControllerDelegate?
 
     private let symptomDao = SymptomDao()
 
@@ -35,13 +42,18 @@ class DiaryEntryDetailViewController: UIViewController {
         symptomsTableView.dataSource = self
         symptomsTableView.register(UINib(nibName: "SymptomsTableViewCell", bundle: Bundle.main),
                 forCellReuseIdentifier: "SymptomsTableViewCell")
-        
+
         resultLabel.text = entry?.resultLabel()
         if (entry?.areYouSick ?? false) {
             resultLabel.textColor = UIColor(named: "AppGreen")
         } else {
             resultLabel.textColor = UIColor(named: "AppRed")
         }
+    }
+
+
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        delegate?.deleteButtonTapped(self, entry)
     }
 }
 

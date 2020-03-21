@@ -14,6 +14,7 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
     @IBOutlet var startSymptomsTestButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var coronaTestResultContainer: UIView!
+    @IBOutlet weak var symptomsDiaryContainerView: UIView!
 
     private let symptomDiaryDao = SymptomDiaryEntryDao()
 
@@ -31,6 +32,9 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
     }
 
     private func setupSymptomsDiaryEntries() {
+        containerView.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
 
         var arrangedSubviews: [DiaryEntryView] = []
 
@@ -40,6 +44,13 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
             diaryEntryView.diaryEntry = diaryEntry
             arrangedSubviews.append(diaryEntryView)
         }
+
+        guard arrangedSubviews.count > 0 else {
+            symptomsDiaryContainerView.isHidden = true
+            return
+        }
+
+        symptomsDiaryContainerView.isHidden = false
 
         let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
         containerView.addSubview(stackView)
@@ -116,6 +127,19 @@ extension SymptomsViewController: DiaryEntryViewDelegate {
     func didClick(entry: SymptomDiaryEntry?) {
         let vc = DiaryEntryDetailViewController()
         vc.entry = entry
+        vc.delegate = self
         self.present(vc, animated: true)
+    }
+}
+
+extension SymptomsViewController: DiaryEntryDetailViewControllerDelegate {
+    func deleteButtonTapped(_ controller: DiaryEntryDetailViewController, _ entry: SymptomDiaryEntry?) {
+        controller.dismiss(animated: true)
+
+        if let entry = entry {
+            SymptomDiaryEntryDao().delete(object: entry)
+        }
+
+        setupSymptomsDiaryEntries()
     }
 }
