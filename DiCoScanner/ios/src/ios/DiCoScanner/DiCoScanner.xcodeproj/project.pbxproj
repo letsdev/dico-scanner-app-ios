@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9FB52888BBA281507503 /* MarkerDao.swift */; };
+		29BD92191B3D84E566FFB53A /* MarkerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9E606104F85659D58A42 /* MarkerRequest.swift */; };
 		29BD958E5A61B56A9AC99C23 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9E3E05235BB38E8BA1E3 /* DatabaseManager.swift */; };
 		29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9C9031377750FAEFBDEE /* SymptomDao.swift */; };
+		29BD9A3B4F51135C94742C5D /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9AD1E27E24B6709443F4 /* BaseRequest.swift */; };
 		29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD99460BD6EC84122302EE /* BaseDao.swift */; };
 		A481B4C12425623500B294AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C02425623500B294AF /* AppDelegate.swift */; };
 		A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */; };
@@ -19,8 +21,10 @@
 
 /* Begin PBXFileReference section */
 		29BD99460BD6EC84122302EE /* BaseDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
+		29BD9AD1E27E24B6709443F4 /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		29BD9C9031377750FAEFBDEE /* SymptomDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomDao.swift; sourceTree = "<group>"; };
 		29BD9E3E05235BB38E8BA1E3 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		29BD9E606104F85659D58A42 /* MarkerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerRequest.swift; sourceTree = "<group>"; };
 		29BD9FB52888BBA281507503 /* MarkerDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerDao.swift; sourceTree = "<group>"; };
 		A481B4BD2425623500B294AF /* DiCoScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiCoScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A481B4C02425623500B294AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29BD932A1B0F687C5ACDF431 /* request */ = {
+			isa = PBXGroup;
+			children = (
+				29BD9AD1E27E24B6709443F4 /* BaseRequest.swift */,
+				29BD9E606104F85659D58A42 /* MarkerRequest.swift */,
+			);
+			path = request;
+			sourceTree = "<group>";
+		};
+		29BD9BEB4EDADF2C6A9E1962 /* sync */ = {
+			isa = PBXGroup;
+			children = (
+				29BD932A1B0F687C5ACDF431 /* request */,
+			);
+			path = sync;
+			sourceTree = "<group>";
+		};
 		2E9797E6242562EA005CE79F /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +75,7 @@
 			children = (
 				2E9797E924256317005CE79F /* dao */,
 				2E9797E824256308005CE79F /* domain */,
+				29BD9BEB4EDADF2C6A9E1962 /* sync */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -181,6 +203,8 @@
 				29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */,
 				29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */,
 				29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */,
+				29BD9A3B4F51135C94742C5D /* BaseRequest.swift in Sources */,
+				29BD92191B3D84E566FFB53A /* MarkerRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

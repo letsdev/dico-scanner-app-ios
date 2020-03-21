@@ -13,7 +13,8 @@ import os
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.rootViewController = UINavigationController()
         self.window!.makeKeyAndVisible()
@@ -21,6 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // TODO remove
         DatabaseManager.shared.insertDummyData()
         os_log("Found number of symptoms: %i", SymptomDao().countAll())
+
+        let all = MarkerDao().findAll()
+        for marker in all {
+            let request = MarkerRequest(marker: marker)
+            request.send { result in
+                os_log("Did send request: %i", result)
+            }
+        }
         return true
     }
 

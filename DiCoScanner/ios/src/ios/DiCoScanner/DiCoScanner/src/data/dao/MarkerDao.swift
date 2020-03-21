@@ -5,6 +5,6 @@
 import Foundation
 import CoreData
 
-class MarkerDao {
+class MarkerDao : BaseDao<Marker> {
 
 }
