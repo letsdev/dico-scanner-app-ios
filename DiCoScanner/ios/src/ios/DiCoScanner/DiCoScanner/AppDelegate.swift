@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         self.window!.rootViewController = TabBarViewController()
         self.window!.makeKeyAndVisible()
 
-        //registerForPushNotifications()
+        registerForPushNotifications()
 
         // TODO remove
         DatabaseManager.shared.insertDummyData()
@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     func registerForPushNotifications() {
+        #if targetEnvironment(simulator)
+            return
+        #endif
+
         let libraryDirectory = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
         let pushConfiguration = LDPPushConfiguration.init(
                 license: "c0f3c0ab491eae494ef9acd3b73b5aef5caba6f58e6dff99bcadb2b838b44694523c885ee356c2a06adb1b8475065545592aed9f0cc1849ed42b0d47e3bf7478",
