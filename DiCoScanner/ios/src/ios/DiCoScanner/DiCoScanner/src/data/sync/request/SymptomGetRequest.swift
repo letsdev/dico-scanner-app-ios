@@ -38,7 +38,7 @@ class SymptomGetRequest: BaseRequest, Request {
                         if object == nil {
                             object = dao.newEntity()
                         }
-                        object?.name = symptom["name"] as? String
+                        object?.name = symptom["name_de"] as? String
                     }
                     DatabaseManager.shared.saveContext()
                 }

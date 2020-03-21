@@ -3,7 +3,7 @@
   <parent>
 	<groupId>de.letsdev</groupId>
     <artifactId>DiCoScanner-Parent</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.3-SNAPSHOT</version>
   </parent>
 
   <artifactId>DiCoScanner</artifactId>
@@ -33,7 +33,7 @@
   							<configuration>
   								<appName>DiCoScanner</appName>
   								<projectName>DiCoScanner</projectName>
-  								<displayName>DiCoScanner</displayName>
+  								<displayName>CO Scan</displayName>
   								<scheme>DiCoScanner</scheme>
   								<infoPlist>DiCoScanner/Info.plist</infoPlist>
   								<bundleIdentifier>de.letsdev.DiCoScanner</bundleIdentifier>

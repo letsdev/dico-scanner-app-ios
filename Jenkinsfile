@@ -18,7 +18,7 @@ pipeline {
         MAVEN_SETTINGS_LOCATION = '/Users/jenkins/.m2/settings.xml'
         XC_TEST_DESTINATION = 'platform=iOS Simulator,name=iPhone 11,OS=latest'
         MAVEN_OPTS = '-Xms256m -Xmx2048m -Djava.awt.headless=true'
-        RELEASE_BRANCH = 'testflight-upload'
+        RELEASE_BRANCH = 'master'
         VERSION = readMavenPom(file: 'DiCoScanner/pom.xml').getVersion().minus('-SNAPSHOT')
     }
     stages {
