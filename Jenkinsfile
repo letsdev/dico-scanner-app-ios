@@ -40,5 +40,17 @@ pipeline {
                 }
             }
         }
+        stage('Release') {
+            when {
+                branch 'deploy'
+            }
+            environment {
+                MAVEN_SETTINGS_LOCATION = '/Users/jenkins/.m2/settings.xml'
+            }
+            steps {
+                sh "cd ${env.PROJECT_ROOT_DIRECTORY} && mvn -B --settings ${env.MAVEN_SETTINGS_LOCATION} " +
+                        "release:perform "
+            }
+        }
     }
 }
