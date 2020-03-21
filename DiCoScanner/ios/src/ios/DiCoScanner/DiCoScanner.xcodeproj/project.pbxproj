@@ -14,6 +14,7 @@
 		360131BD8B8F3F5632343187 /* LocationProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */; };
 		3601357A224E006EA0DE23C6 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360132EB1A6E05520CDBCE3C /* LocationProvider.swift */; };
 		36013CB43F23F90880575A49 /* DateFormatter+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */; };
+		A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06932425AA1500D62CAF /* DiaryEntryView.xib */; };
 		A40D06962426203C00D62CAF /* LDLetspushFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06952426203C00D62CAF /* LDLetspushFramework.framework */; };
 		A40D069C2426220300D62CAF /* LDLetspushFramework.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A40D069B2426220300D62CAF /* LDLetspushFramework.bundle */; };
 		A40D069E242628AD00D62CAF /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D069D242628AD00D62CAF /* UserNotifications.framework */; };
@@ -26,11 +27,15 @@
 		A40D06AB24262AFC00D62CAF /* LDHttpiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06A524262AFC00D62CAF /* LDHttpiOS.framework */; };
 		A40D06AD24262B0D00D62CAF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06AC24262B0D00D62CAF /* libz.tbd */; };
 		A40D06AF24262B2E00D62CAF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06AE24262B2E00D62CAF /* libc++.tbd */; };
-		A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06932425AA1500D62CAF /* DiaryEntryView.xib */; };
+		A40D06B224265F5B00D62CAF /* CoronaTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40D06B024265F5B00D62CAF /* CoronaTestViewController.swift */; };
+		A40D06B324265F5B00D62CAF /* CoronaTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */; };
 		A481B4C12425623500B294AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C02425623500B294AF /* AppDelegate.swift */; };
 		A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */; };
 		A481B4CD2425623600B294AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CC2425623600B294AF /* Assets.xcassets */; };
 		A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CE2425623600B294AF /* LaunchScreen.storyboard */; };
+		A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4D724256D9E00B294AF /* SymptomsViewController.swift */; };
+		A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4D824256D9E00B294AF /* SymptomsViewController.xib */; };
+		A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */; };
 		E28583A02425683000C6BE16 /* MarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285839E2425683000C6BE16 /* MarkerViewController.swift */; };
 		E28583A12425683000C6BE16 /* MarkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E285839F2425683000C6BE16 /* MarkerViewController.xib */; };
 		E28583A424257ED600C6BE16 /* LastMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */; };
@@ -39,9 +44,6 @@
 		E28583AA2425807300C6BE16 /* LastMarkerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28583A82425807300C6BE16 /* LastMarkerTableViewCell.xib */; };
 		E28583AF2425B63B00C6BE16 /* Marker+UiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28583AE2425B63B00C6BE16 /* Marker+UiModel.swift */; };
 		E28583B22425BEBA00C6BE16 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28583B12425BEBA00C6BE16 /* MapKit.framework */; };
-		A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4D724256D9E00B294AF /* SymptomsViewController.swift */; };
-		A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4D824256D9E00B294AF /* SymptomsViewController.xib */; };
-		A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */; };
 		E28BA0F22425666A00AF3CF2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */; };
 		E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */; };
 /* End PBXBuildFile section */
@@ -67,12 +69,17 @@
 		A40D06A524262AFC00D62CAF /* LDHttpiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LDHttpiOS.framework; path = "../../../target/ios-dependencies/LDHttpiOS.framework"; sourceTree = "<group>"; };
 		A40D06AC24262B0D00D62CAF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A40D06AE24262B2E00D62CAF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		A40D06B024265F5B00D62CAF /* CoronaTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaTestViewController.swift; sourceTree = "<group>"; };
+		A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoronaTestViewController.xib; sourceTree = "<group>"; };
 		A481B4BD2425623500B294AF /* DiCoScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiCoScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A481B4C02425623500B294AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A481B4CA2425623500B294AF /* DiCoScanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiCoScanner.xcdatamodel; sourceTree = "<group>"; };
 		A481B4CC2425623600B294AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A481B4CF2425623600B294AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A481B4D12425623600B294AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A481B4D724256D9E00B294AF /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
+		A481B4D824256D9E00B294AF /* SymptomsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsViewController.xib; sourceTree = "<group>"; };
+		A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
 		D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DiCoScanner-Bridging-Header.h"; sourceTree = "<group>"; };
 		E285839E2425683000C6BE16 /* MarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerViewController.swift; sourceTree = "<group>"; };
 		E285839F2425683000C6BE16 /* MarkerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerViewController.xib; sourceTree = "<group>"; };
@@ -82,9 +89,6 @@
 		E28583A82425807300C6BE16 /* LastMarkerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastMarkerTableViewCell.xib; sourceTree = "<group>"; };
 		E28583AE2425B63B00C6BE16 /* Marker+UiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Marker+UiModel.swift"; sourceTree = "<group>"; };
 		E28583B12425BEBA00C6BE16 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		A481B4D724256D9E00B294AF /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
-		A481B4D824256D9E00B294AF /* SymptomsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsViewController.xib; sourceTree = "<group>"; };
-		A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
 		E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +183,8 @@
 				E28583A324257ED600C6BE16 /* LastMarkerViewController.xib */,
 				A481B4D724256D9E00B294AF /* SymptomsViewController.swift */,
 				A481B4D824256D9E00B294AF /* SymptomsViewController.xib */,
+				A40D06B024265F5B00D62CAF /* CoronaTestViewController.swift */,
+				A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -225,6 +231,15 @@
 			path = DiCoScanner;
 			sourceTree = "<group>";
 		};
+		A481B4DB2425A69500B294AF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */,
+				A40D06932425AA1500D62CAF /* DiaryEntryView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		E28583A62425806300C6BE16 /* cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,15 +265,6 @@
 				E28583B12425BEBA00C6BE16 /* MapKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A481B4DB2425A69500B294AF /* view */ = {
-			isa = PBXGroup;
-			children = (
-				A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */,
-				A40D06932425AA1500D62CAF /* DiaryEntryView.xib */,
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +333,7 @@
 				A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */,
 				A481B4CD2425623600B294AF /* Assets.xcassets in Resources */,
 				E28583AA2425807300C6BE16 /* LastMarkerTableViewCell.xib in Resources */,
+				A40D06B324265F5B00D62CAF /* CoronaTestViewController.xib in Resources */,
 				A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +361,7 @@
 				29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */,
 				29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */,
 				36013CB43F23F90880575A49 /* DateFormatter+Localization.swift in Sources */,
+				A40D06B224265F5B00D62CAF /* CoronaTestViewController.swift in Sources */,
 				E28583AF2425B63B00C6BE16 /* Marker+UiModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

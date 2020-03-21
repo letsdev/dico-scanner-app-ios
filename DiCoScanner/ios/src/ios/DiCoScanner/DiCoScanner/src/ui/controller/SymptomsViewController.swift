@@ -13,6 +13,7 @@ class SymptomsViewController: UIViewController {
     @IBOutlet var coronaTestResultLabel: UILabel!
     @IBOutlet var startSymptomsTestButton: UIButton!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet var coronaTestResultContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +53,22 @@ class SymptomsViewController: UIViewController {
     func setupCoronaTestResults() {
         coronaTestResultLabel.text = "Ausstehend"
         coronaTestResultLabel.textColor = UIColor(named: "AppOrange")
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleCoronaTestResultsTap(_:)))
+        coronaTestResultContainer.addGestureRecognizer(tapGestureRecognizer)
     }
     
     func setupSymptomsTestButton() {
         startSymptomsTestButton.layer.borderColor = UIColor.black.cgColor
+    }
+
+    @objc func handleCoronaTestResultsTap(_ sender: UITapGestureRecognizer? = nil) {
+        startCoronaTest()
+    }
+
+    func startCoronaTest() {
+        let coronaTestVC = CoronaTestViewController(nibName: String(describing: CoronaTestViewController.self), bundle: nil)
+        let navigationController = UINavigationController(rootViewController: coronaTestVC)
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
