@@ -1,5 +1,8 @@
 #!/usr/bin/env groovy
 
+@Library('ld-shared')
+import de.letsdev.*
+
 pipeline {
     agent {
         label 'xcode-11'
