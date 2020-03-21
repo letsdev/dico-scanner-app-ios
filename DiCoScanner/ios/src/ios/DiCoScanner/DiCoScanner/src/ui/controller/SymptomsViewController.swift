@@ -96,7 +96,7 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
     }
     
     func setupCoronaTestButton() {
-        coronaTestButton.addTarget(self, action: #selector(self.handleSymptomsTestButtonTap(_:)), for: .touchUpInside)
+        coronaTestButton.addTarget(self, action: #selector(self.handleCoronaTestButtonTap(_:)), for: .touchUpInside)
     }
     
     func setupSymptomsTestButton() {
@@ -109,6 +109,10 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
     
     @objc func handleCoronaTestResultsTap(_ sender: UITapGestureRecognizer? = nil) {
         
+    }
+    
+    @objc func handleCoronaTestButtonTap(_ sender: UITapGestureRecognizer? = nil) {
+      startCoronaTest()
     }
 
     func startCoronaTest() {
