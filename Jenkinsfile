@@ -16,6 +16,7 @@ pipeline {
         XC_TEST_DESTINATION = 'platform=iOS Simulator,name=iPhone 11,OS=latest'
         MAVEN_OPTS = '-Xms256m -Xmx2048m -Djava.awt.headless=true'
         RELEASE_BRANCH = 'testflight-upload'
+        VERSION = readMavenPom(file: 'DiCoScanner/ios/pom.xml').getVersion()
     }
     stages {
         stage('Build & Test') {
@@ -49,7 +50,10 @@ pipeline {
         }
         stage('Release') {
             when {
-                branch env.RELEASE_BRANCH
+                allOf {
+                    branch env.RELEASE_BRANCH
+                    expression { return !tagExist(env.VERSION) }
+                }
             }
             environment {
                 MAVEN_SETTINGS_LOCATION = '/Users/jenkins/.m2/settings.xml'
@@ -57,7 +61,9 @@ pipeline {
             steps {
                 dir('DiCoScanner') {
                     sh "mvn -B --settings ${env.MAVEN_SETTINGS_LOCATION} release:prepare release:perform " +
-                            "-DpushChanges=false -DupdateWorkingCopyVersions=false -DlocalCheckout=true"
+                            "-DcheckModificationExcludeList=" +
+                            "\'**/*Info.plist,**/*.entitlements*,**/*.xcodeproj/**.*,**/xcodebuild.log," +
+                            "**/xcodebuild-clean.log\' "
                 }
             }
         }
