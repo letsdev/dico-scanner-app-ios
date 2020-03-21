@@ -35,7 +35,7 @@ class SymptomsViewController: UIViewController {
 
         var arrangedSubviews: [DiaryEntryView] = []
         
-        symptomDiaryDao.findAllByDate().forEach { (diaryEntry: SymptomDiaryEntry) in
+        symptomDiaryDao.findAllByDate()?.forEach { (diaryEntry: SymptomDiaryEntry) in
             let diaryEntryView = DiaryEntryView()
             diaryEntryView.delegate = self
             diaryEntryView.diaryEntry = diaryEntry

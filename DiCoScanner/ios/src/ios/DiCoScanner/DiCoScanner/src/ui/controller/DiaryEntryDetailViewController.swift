@@ -47,8 +47,8 @@ extension DiaryEntryDetailViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let symptom = symptomDao.findAllSortByName()[indexPath.row]
-        cell.symptomNameLabel.text = symptom.name
+        let symptom = symptomDao.findAllSortByName()?[indexPath.row]
+        cell.symptomNameLabel.text = symptom?.name
 
         if (entry?.symptom?.contains(symptom) ?? false) {
             cell.symptomStatusImageView.image = UIImage(named: "ic_tabbar_symptoms_active")

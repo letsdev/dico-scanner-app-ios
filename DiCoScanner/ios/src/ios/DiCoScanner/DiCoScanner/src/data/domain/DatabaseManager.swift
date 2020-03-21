@@ -48,7 +48,10 @@ internal class DatabaseManager {
             let symptoms = dao.findAllSortByName()
             
             let entity = SymptomDiaryEntryDao().newEntity()
-            entity.addToSymptom(symptoms[0])
+            if let symptom = symptoms?[0] {
+                entity.addToSymptom(symptom)
+            }
+            
         }
     }
 
