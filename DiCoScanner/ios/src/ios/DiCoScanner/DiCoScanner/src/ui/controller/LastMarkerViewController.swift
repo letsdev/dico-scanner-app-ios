@@ -42,14 +42,15 @@ extension LastMarkerViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let marker = dao.findAllByDate()[indexPath.row]
+        let all = dao.findAllByDate();
+        if let all = all {
+            let marker = all[indexPath.row]
+            if let eventDate = marker.eventDate {
+                cell.lastMarkerTimeStampLabel.text = DateFormatter.localizedString(for: eventDate)
+            }
 
-        if let eventDate = marker.eventDate {
-            cell.lastMarkerTimeStampLabel.text = DateFormatter.localizedString(for: eventDate)
+            cell.lastMarkerCoordinatesLabel.text = marker.coordinatesString()
         }
-
-        cell.lastMarkerCoordinatesLabel.text = marker.coordinatesString()
-
         return cell
     }
 }

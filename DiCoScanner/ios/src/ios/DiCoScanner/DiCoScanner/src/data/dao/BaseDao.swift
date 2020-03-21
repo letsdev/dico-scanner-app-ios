@@ -20,16 +20,16 @@ class BaseDao<T> where T: NSManagedObject {
         return result;
     }
 
-    internal func findAll(sortBy: NSSortDescriptor?) -> [T] {
+    internal func findAll(sortBy: NSSortDescriptor?) -> [T]? {
         let request = NSFetchRequest<T>(entityName: entityName)
         configureRequest(request: request, predicate: nil, sortBy: sortBy)
         let result = execute {
             try DatabaseManager.shared.persistentContainer.viewContext.fetch(request)
         } as? [T]
-        return result ?? []
+        return result
     }
 
-    internal func findAll() -> [T] {
+    internal func findAll() -> [T]? {
         findAll(sortBy: nil)
     }
 
@@ -43,7 +43,7 @@ class BaseDao<T> where T: NSManagedObject {
         configureRequest(request: request, predicate: predicate, sortBy: sortBy)
         let result = (execute {
             try DatabaseManager.shared.persistentContainer.viewContext.fetch(request)
-        } as! T)
+        } as? T)
         return result
     }
 
