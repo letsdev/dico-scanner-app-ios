@@ -5,6 +5,6 @@
 import Foundation
 import CoreData
 
-class SymptomDao: BaseDao<Symptom> {
+class MarkerDao: BaseDao<Marker> {
 
 }

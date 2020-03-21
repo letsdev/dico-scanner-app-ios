@@ -15,10 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window!.rootViewController = UINavigationController()
+        self.window!.rootViewController = TabBarViewController()
         self.window!.makeKeyAndVisible()
 
         // TODO remove
+        DatabaseManager.shared.insertDummyData()
         os_log("Found number of symptoms: %i", SymptomDao().countAll())
         return true
     }
