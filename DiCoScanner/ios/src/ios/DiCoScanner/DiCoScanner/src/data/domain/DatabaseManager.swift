@@ -12,6 +12,7 @@ import os
 internal class DatabaseManager {
 
     internal static let shared = DatabaseManager()
+    private let syncManager = SyncManager()
 
     private init() {
     }
@@ -69,6 +70,7 @@ internal class DatabaseManager {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        syncManager.register()
         return container
     }()
 

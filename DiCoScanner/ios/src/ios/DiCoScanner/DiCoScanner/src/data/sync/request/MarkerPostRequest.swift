@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class MarkerRequest: BaseRequest, Request {
+class MarkerPostRequest: BaseRequest, Request {
 
     private let marker: Marker
 

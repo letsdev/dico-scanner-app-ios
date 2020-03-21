@@ -26,10 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let all = MarkerDao().findAll()
         if let all = all {
             for marker in all {
-                let request = MarkerRequest(marker: marker)
-                request.send { result in
-                    os_log("Did send request: %i", result)
-                }
+               MarkerDao().markObjectForSync(object: marker)
             }
         }
         // end remove

@@ -90,6 +90,8 @@ class BaseDao<T> where T: NSManagedObject {
         entity.refObjectId = object.objectID.uriRepresentation()
         entity.createdDate = Date()
         entity.syncState = SyncState.pending.rawValue;
+
+        DatabaseManager.shared.saveContext()
     }
 
     private func execute(statement: () throws -> Any) -> Any {
