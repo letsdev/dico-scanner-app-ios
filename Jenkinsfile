@@ -55,7 +55,7 @@ pipeline {
             when {
                 allOf {
                     branch env.RELEASE_BRANCH
-                    expression { return !tagExist(env.VERSION) }
+                    expression { return !tagExist("version-${env.VERSION}") }
                 }
             }
             environment {
