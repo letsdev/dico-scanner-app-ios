@@ -41,7 +41,7 @@
                                     <fragment content="Markierung setzen">
                                         <attributes>
                                             <color key="NSColor" name="AppWhite"/>
-                                            <font key="NSFont" metaFont="system" size="15"/>
+                                            <font key="NSFont" metaFont="system" size="20"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
