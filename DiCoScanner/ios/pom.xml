@@ -42,21 +42,13 @@
   								<buildId>${env.BUILD_NUMBER}</buildId>
   								<configuration>Release</configuration>
   								<xcodeVersion>/Applications/Xcode-11.app</xcodeVersion>
-                  <codeSignIdentity>?????????????????</codeSignIdentity>
-								  <keychainPath>${codeSignIdentity.enterprise.keychain.path}</keychainPath>
-							    <keychainPassword>${codeSignIdentity.enterprise.keychain.password}</keychainPassword>
-  								<provisioningProfileName>ldentwildcarddistribution</provisioningProfileName>
-                  <provisioningProfileUUID>??????????????????</provisioningProfileUUID>
-                  <xcodeExportOptions>
-                      <method>app-store</method>
-                      <teamID>?????????????</teamID>
-                      <provisioningProfiles>
-                          <de.letsdev.DiCoScanner>??????????</de.letsdev.DiCoScanner>
-                      </provisioningProfiles>
-                  </xcodeExportOptions>
-                  <releaseTask>TestFlight</releaseTask>
-                  <iTunesConnectUsername>${itunesConnect.developer.username}</iTunesConnectUsername>
-                  <iTunesConnectPassword>${itunesConnect.developer.password}</iTunesConnectPassword>
+                  				<codeSignIdentity>${codeSignIdentity.developer.name}</codeSignIdentity>
+								<keychainPath>${codeSignIdentity.developer.keychain.path}</keychainPath>
+							    <keychainPassword>${codeSignIdentity.developer.keychain.password}</keychainPassword>
+  								<provisioningProfileName>DiCoScanner_AppStore</provisioningProfileName>
+								<releaseTask>TestFlight</releaseTask>
+								<iTunesConnectUsername>${itunesConnect.developer.username}</iTunesConnectUsername>
+								<iTunesConnectPassword>${itunesConnect.developer.password}</iTunesConnectPassword>
   							</configuration>
   						</execution>
   					</executions>
