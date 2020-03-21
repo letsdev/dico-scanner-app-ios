@@ -72,6 +72,11 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
             default:
                 break
             }
+
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd.MM.yyyy"
+            let coronaTestDate = formatter.string(from: coronaTestResult!.testDate!)
+            coronaTestResultLabel.text = coronaTestResultLabel.text! + " (\(coronaTestDate))"
         } else {
             coronaTestResultLabel.text = "-"
             coronaTestResultLabel.textColor = UIColor.black
