@@ -15,6 +15,10 @@
 		A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CE2425623600B294AF /* LaunchScreen.storyboard */; };
 		E28583A02425683000C6BE16 /* MarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285839E2425683000C6BE16 /* MarkerViewController.swift */; };
 		E28583A12425683000C6BE16 /* MarkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E285839F2425683000C6BE16 /* MarkerViewController.xib */; };
+		E28583A424257ED600C6BE16 /* LastMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */; };
+		E28583A524257ED600C6BE16 /* LastMarkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28583A324257ED600C6BE16 /* LastMarkerViewController.xib */; };
+		E28583A92425807300C6BE16 /* LastMarkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28583A72425807300C6BE16 /* LastMarkerTableViewCell.swift */; };
+		E28583AA2425807300C6BE16 /* LastMarkerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28583A82425807300C6BE16 /* LastMarkerTableViewCell.xib */; };
 		E28BA0F22425666A00AF3CF2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */; };
 		E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */; };
 /* End PBXBuildFile section */
@@ -30,6 +34,10 @@
 		A481B4D12425623600B294AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E285839E2425683000C6BE16 /* MarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerViewController.swift; sourceTree = "<group>"; };
 		E285839F2425683000C6BE16 /* MarkerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerViewController.xib; sourceTree = "<group>"; };
+		E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMarkerViewController.swift; sourceTree = "<group>"; };
+		E28583A324257ED600C6BE16 /* LastMarkerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastMarkerViewController.xib; sourceTree = "<group>"; };
+		E28583A72425807300C6BE16 /* LastMarkerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMarkerTableViewCell.swift; sourceTree = "<group>"; };
+		E28583A82425807300C6BE16 /* LastMarkerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastMarkerTableViewCell.xib; sourceTree = "<group>"; };
 		E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +103,8 @@
 				E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */,
 				E285839E2425683000C6BE16 /* MarkerViewController.swift */,
 				E285839F2425683000C6BE16 /* MarkerViewController.xib */,
+				E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */,
+				E28583A324257ED600C6BE16 /* LastMarkerViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -102,6 +112,7 @@
 		36013C97EB493D7A9017A98D /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				E28583A62425806300C6BE16 /* cell */,
 				36013B2860E50B41AAEE60C2 /* controller */,
 			);
 			path = ui;
@@ -133,6 +144,15 @@
 				A481B4D12425623600B294AF /* Info.plist */,
 			);
 			path = DiCoScanner;
+			sourceTree = "<group>";
+		};
+		E28583A62425806300C6BE16 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				E28583A72425807300C6BE16 /* LastMarkerTableViewCell.swift */,
+				E28583A82425807300C6BE16 /* LastMarkerTableViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,8 +215,10 @@
 			files = (
 				E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */,
 				A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */,
+				E28583A524257ED600C6BE16 /* LastMarkerViewController.xib in Resources */,
 				E28583A12425683000C6BE16 /* MarkerViewController.xib in Resources */,
 				A481B4CD2425623600B294AF /* Assets.xcassets in Resources */,
+				E28583AA2425807300C6BE16 /* LastMarkerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */,
+				E28583A92425807300C6BE16 /* LastMarkerTableViewCell.swift in Sources */,
+				E28583A424257ED600C6BE16 /* LastMarkerViewController.swift in Sources */,
 				A481B4C12425623500B294AF /* AppDelegate.swift in Sources */,
 				E28583A02425683000C6BE16 /* MarkerViewController.swift in Sources */,
 				E28BA0F22425666A00AF3CF2 /* TabBarViewController.swift in Sources */,
