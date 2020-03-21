@@ -8,7 +8,9 @@ import os
 
 class SyncManager {
 
-    func register(){
+    private var ignoreSave = false;
+
+    func register() {
         NotificationCenter.default.addObserver(self, selector: #selector(didSaveContext),
                 name: NSNotification.Name.NSManagedObjectContextDidSave, object: nil)
     }
@@ -18,6 +20,11 @@ class SyncManager {
     }
 
     @objc func didSaveContext(context: NSManagedObjectContext) {
+
+        guard !ignoreSave else {
+            ignoreSave = false
+            return
+        }
 
         let objectsToSync = SyncDao().findAllNotSynced();
         if let objectsToSync = objectsToSync {
@@ -29,11 +36,15 @@ class SyncManager {
                     if let request = convertToRequest(objectId: objectId) {
                         os_log("Sending request")
                         request.send { result in
+                            SyncDao().delete(object: object)
                             os_log("Did send request with result: %i", result)
                         }
                     }
                 }
             }
+
+            ignoreSave = true;
+            DatabaseManager.shared.saveContext()
         }
     }
 

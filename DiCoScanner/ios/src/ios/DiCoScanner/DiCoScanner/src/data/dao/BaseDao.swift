@@ -27,7 +27,7 @@ class BaseDao<T> where T: NSManagedObject {
     internal func findAll(predicate: NSPredicate?, sortBy: NSSortDescriptor?) -> [T]? {
         let request = NSFetchRequest<T>(entityName: entityName)
         configureRequest(request: request, predicate: predicate, sortBy: sortBy)
-        let result = execute {
+        let result = executeArray {
             try DatabaseManager.shared.persistentContainer.viewContext.fetch(request)
         } as? [T]
         return result
@@ -108,7 +108,7 @@ class BaseDao<T> where T: NSManagedObject {
         }
     }
 
-    private func execute(statement: () throws -> [Any]) -> [Any] {
+    private func executeArray(statement: () throws -> [Any]) -> [Any] {
         do {
             return try statement()
         } catch {
