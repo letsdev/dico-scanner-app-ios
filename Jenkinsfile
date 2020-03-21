@@ -8,6 +8,7 @@ pipeline {
         timestamps()
         ansiColor('xterm')
         buildDiscarder logRotator(numToKeepStr: '20')
+        disableConcurrentBuilds()
     }
     environment {
         DERIVED_DATA_PATH = "JenkinsDerivedData"
