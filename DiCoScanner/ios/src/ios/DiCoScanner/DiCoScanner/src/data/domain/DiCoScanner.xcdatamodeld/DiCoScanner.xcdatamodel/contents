@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CoronaTestResult" representedClassName="CoronaTestResult" syncable="YES" codeGenerationType="class">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="result" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="testDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Marker" representedClassName="Marker" syncable="YES" codeGenerationType="class">
         <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -18,7 +18,7 @@
     </entity>
     <entity name="SymptomDiaryEntry" representedClassName="SymptomDiaryEntry" syncable="YES" codeGenerationType="class">
         <attribute name="areYouSick" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="entryDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="symptom" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Symptom" inverseName="diary" inverseEntity="Symptom"/>
     </entity>
     <elements>
