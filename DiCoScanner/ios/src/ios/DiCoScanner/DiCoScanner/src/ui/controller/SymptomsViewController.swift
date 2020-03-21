@@ -8,18 +8,19 @@
 
 import UIKit
 
-class SymptomsViewController: UIViewController {
+class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate {
 
     @IBOutlet var coronaTestResultLabel: UILabel!
     @IBOutlet var startSymptomsTestButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var coronaTestResultContainer: UIView!
 
+    private let symptomDiaryDao = SymptomDiaryEntryDao()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "Symptome"
-
         navigationController?.navigationBar.prefersLargeTitles = true
 
         setupCoronaTestResults()
@@ -30,12 +31,15 @@ class SymptomsViewController: UIViewController {
     }
 
     private func setupSymptomsDiaryEntries() {
-        let diaryEntryView = DiaryEntryView()
-        diaryEntryView.delegate = self
-        let diaryEntryView2 = DiaryEntryView()
-        diaryEntryView2.delegate = self
 
-        let arrangedSubviews = [diaryEntryView, diaryEntryView2]
+        var arrangedSubviews: [DiaryEntryView] = []
+        
+        symptomDiaryDao.findAllByDate()?.forEach { (diaryEntry: SymptomDiaryEntry) in
+            let diaryEntryView = DiaryEntryView()
+            diaryEntryView.delegate = self
+            diaryEntryView.diaryEntry = diaryEntry
+            arrangedSubviews.append(diaryEntryView)
+        }
 
         let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
         containerView.addSubview(stackView)
@@ -53,8 +57,35 @@ class SymptomsViewController: UIViewController {
     }
 
     func setupCoronaTestResults() {
-        coronaTestResultLabel.text = "Ausstehend"
-        coronaTestResultLabel.textColor = UIColor(named: "AppOrange")
+        let dao = CoronaTestResultDao()
+        let coronaTestResult = dao.findLatest()
+
+        if (coronaTestResult != nil) {
+            switch (CoronaTestResultDao.CoronaTestResultState(rawValue: coronaTestResult!.result)) {
+            case .positive:
+                coronaTestResultLabel.text = "Positiv"
+                coronaTestResultLabel.textColor = UIColor(named: "AppGreen")
+                break
+            case .negative:
+                coronaTestResultLabel.text = "Negativ"
+                coronaTestResultLabel.textColor = UIColor(named: "AppRed")
+                break
+            case .pending:
+                coronaTestResultLabel.text = "Ausstehend"
+                coronaTestResultLabel.textColor = UIColor(named: "AppOrange")
+                break
+            default:
+                break
+            }
+
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd.MM.yyyy"
+            let coronaTestDate = formatter.string(from: coronaTestResult!.testDate!)
+            coronaTestResultLabel.text = coronaTestResultLabel.text! + " (\(coronaTestDate))"
+        } else {
+            coronaTestResultLabel.text = "-"
+            coronaTestResultLabel.textColor = UIColor.black
+        }
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleCoronaTestResultsTap(_:)))
         coronaTestResultContainer.addGestureRecognizer(tapGestureRecognizer)
@@ -69,16 +100,20 @@ class SymptomsViewController: UIViewController {
     }
 
     func startCoronaTest() {
-        let coronaTestVC = CoronaTestViewController(nibName: String(describing: CoronaTestViewController.self), bundle: nil)
+        let coronaTestVC = CoronaTestViewController(nibName: String(describing: CoronaTestViewController.self), bundle: nil, coronaTestDelegate: self)
         let navigationController = UINavigationController(rootViewController: coronaTestVC)
         self.present(navigationController, animated: true, completion: nil)
+    }
+
+    func didCompleteCoronaTest() {
+        self.setupCoronaTestResults()
     }
 }
 
 extension SymptomsViewController: DiaryEntryViewDelegate {
-
-    func didClickEntry() {
-        self.present(DiaryEntryDetailViewController(), animated: true)
+    func didClick(entry: SymptomDiaryEntry?) {
+        let vc = DiaryEntryDetailViewController()
+        vc.entry = entry
+        self.present(vc, animated: true)
     }
-
 }

@@ -13,16 +13,23 @@ import os
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.rootViewController = TabBarViewController()
         self.window!.makeKeyAndVisible()
 
         registerForPushNotifications()
-
-        // TODO remove
-        DatabaseManager.shared.insertDummyData()
-        os_log("Found number of symptoms: %i", SymptomDao().countAll())
+        // TODO remove all below
+//        DatabaseManager.shared.insertDummyData()
+//        os_log("Found number of symptoms: %i", SymptomDao().countAll())
+//        let all = MarkerDao().findAll()
+//        if let all = all {
+//            for marker in all {
+//               MarkerDao().markObjectForSync(object: marker)
+//            }
+//        }
+        // end remove
         return true
     }
 

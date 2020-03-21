@@ -28,6 +28,8 @@ class MarkerViewController: UIViewController {
     
     private let locationProvider = LocationProvider()
 
+    private let markerDao = MarkerDao()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Markierungen"
@@ -62,6 +64,20 @@ class MarkerViewController: UIViewController {
 extension MarkerViewController: LocationProviderDelegate {
     func received(location: CLLocation) {
         mapKitView.setCenter(location.coordinate, animated: true)
+
+        let marker = markerDao.newEntity()
+        marker.eventDate = Date()
+        marker.lat = location.coordinate.latitude
+        marker.lon = location.coordinate.longitude
+        marker.altitude = location.altitude
+        marker.horizontalAccuracy = location.horizontalAccuracy
+        marker.verticalAccuracy = location.verticalAccuracy
+
+        DatabaseManager.shared.saveContext()
+        markerDao.markObjectForSync(object: marker)
+
+        lastMarkVC.lastMarkerTableView.reloadData()
+
         self.setButtonAnimation(state: .success)
         os_log("Received location long/lat: %d / %d", location.coordinate.latitude.description,
                 location.coordinate.longitude.binade.description)

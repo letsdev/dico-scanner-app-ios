@@ -15,7 +15,7 @@ class LastMarkerViewController: UIViewController {
     @IBOutlet weak var lastMarkerTableView: UITableView!
 
     private let dao = MarkerDao()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,8 +32,7 @@ class LastMarkerViewController: UIViewController {
 extension LastMarkerViewController: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let all2 = dao.countAll()
-        return all2
+        dao.countAll()
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,14 +42,15 @@ extension LastMarkerViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let marker = dao.findAll()[indexPath.row]
+        let all = dao.findAllByDate();
+        if let all = all {
+            let marker = all[indexPath.row]
+            if let eventDate = marker.eventDate {
+                cell.lastMarkerTimeStampLabel.text = DateFormatter.localizedString(for: eventDate)
+            }
 
-        if let eventDate = marker.eventDate {
-            cell.lastMarkerTimeStampLabel.text = DateFormatter.localizedString(for: eventDate)
+            cell.lastMarkerCoordinatesLabel.text = marker.coordinatesString()
         }
-
-        cell.lastMarkerCoordinatesLabel.text = marker.coordinatesString()
-
         return cell
     }
 }
