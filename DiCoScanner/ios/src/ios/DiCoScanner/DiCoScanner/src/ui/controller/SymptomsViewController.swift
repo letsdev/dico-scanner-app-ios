@@ -16,7 +16,7 @@ class SymptomsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.title = "Symptome"
 
         navigationController?.navigationBar.prefersLargeTitles = true
