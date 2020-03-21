@@ -11,6 +11,7 @@ import UIKit
 class SymptomsViewController: UIViewController {
     @IBOutlet var coronaTestResultLabel: UILabel!
     @IBOutlet var startSymptomsTestButton: UIButton!
+    @IBOutlet var symptomsDiaryStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,16 @@ class SymptomsViewController: UIViewController {
         setupCoronaTestResults()
         
         setupSymptomsTestButton()
+
+        setupSymptomsDiaryEntries()
+    }
+
+    private func setupSymptomsDiaryEntries() {
+        let diaryEntryView = DiaryEntryView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 64))
+        symptomsDiaryStackView.addArrangedSubview(diaryEntryView)
+
+        let diaryEntryView2 = DiaryEntryView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 64))
+        symptomsDiaryStackView.addArrangedSubview(diaryEntryView2)
     }
 
     func setupCoronaTestResults() {

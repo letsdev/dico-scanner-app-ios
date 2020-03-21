@@ -7,17 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06932425AA1500D62CAF /* DiaryEntryView.xib */; };
 		A481B4C12425623500B294AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C02425623500B294AF /* AppDelegate.swift */; };
 		A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */; };
 		A481B4CD2425623600B294AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CC2425623600B294AF /* Assets.xcassets */; };
 		A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CE2425623600B294AF /* LaunchScreen.storyboard */; };
 		A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4D724256D9E00B294AF /* SymptomsViewController.swift */; };
 		A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4D824256D9E00B294AF /* SymptomsViewController.xib */; };
+		A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */; };
 		E28BA0F22425666A00AF3CF2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */; };
 		E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A40D06932425AA1500D62CAF /* DiaryEntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryEntryView.xib; sourceTree = "<group>"; };
 		A481B4BD2425623500B294AF /* DiCoScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiCoScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A481B4C02425623500B294AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A481B4CA2425623500B294AF /* DiCoScanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiCoScanner.xcdatamodel; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		A481B4D12425623600B294AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A481B4D724256D9E00B294AF /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
 		A481B4D824256D9E00B294AF /* SymptomsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsViewController.xib; sourceTree = "<group>"; };
+		A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
 		E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +92,7 @@
 		36013C97EB493D7A9017A98D /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				A481B4DB2425A69500B294AF /* view */,
 				36013B2860E50B41AAEE60C2 /* controller */,
 			);
 			path = ui;
@@ -119,6 +124,15 @@
 				A481B4D12425623600B294AF /* Info.plist */,
 			);
 			path = DiCoScanner;
+			sourceTree = "<group>";
+		};
+		A481B4DB2425A69500B294AF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */,
+				A40D06932425AA1500D62CAF /* DiaryEntryView.xib */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +197,7 @@
 				A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */,
 				A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */,
 				A481B4CD2425623600B294AF /* Assets.xcassets in Resources */,
+				A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +210,7 @@
 			files = (
 				A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */,
 				A481B4C12425623500B294AF /* AppDelegate.swift in Sources */,
+				A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */,
 				A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */,
 				E28BA0F22425666A00AF3CF2 /* TabBarViewController.swift in Sources */,
 			);

@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="coronaTestResultLabel" destination="fTZ-TJ-8O9" id="XfB-OQ-jON"/>
                 <outlet property="startSymptomsTestButton" destination="koF-pn-oaX" id="BtI-Mu-i5t"/>
+                <outlet property="symptomsDiaryStackView" destination="q5M-hA-Ecw" id="WCH-jt-Y4F"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,7 +25,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRo-T3-7p8" userLabel="Corona Test Container View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="212"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="211.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offizieller Corona-Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caP-gq-0E1">
                                     <rect key="frame" x="16" y="16" width="207" height="23"/>
@@ -33,7 +34,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDo-SY-WiE" userLabel="Corona Test Result Container View">
-                                    <rect key="frame" x="16" y="55" width="382" height="124"/>
+                                    <rect key="frame" x="16" y="55" width="382" height="123.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SARS-CoV-2-Schnelltest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccT-pe-NZK">
                                             <rect key="frame" x="16" y="16" width="194.5" height="19.5"/>
@@ -55,7 +56,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;result&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTZ-TJ-8O9">
-                                            <rect key="frame" x="16" y="88" width="67" height="20"/>
+                                            <rect key="frame" x="16" y="88" width="66.5" height="19.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -81,7 +82,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPq-a8-FuU" userLabel="Border View">
-                                    <rect key="frame" x="0.0" y="211" width="414" height="1"/>
+                                    <rect key="frame" x="0.0" y="210.5" width="414" height="1"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="vZM-Fl-Nrc"/>
@@ -101,7 +102,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vi-3e-CAL" userLabel="Symptoms Test Container View">
-                            <rect key="frame" x="0.0" y="212" width="414" height="405"/>
+                            <rect key="frame" x="0.0" y="211.5" width="414" height="405"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mach einen Symptome-Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJZ-rG-yN5">
                                     <rect key="frame" x="16" y="16" width="255" height="23"/>
@@ -115,7 +116,7 @@
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iWT-Ao-iOz" userLabel="Symptoms Test Description Text View">
                                             <rect key="frame" x="32" y="32" width="318" height="200"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <mutableString key="text">Dieser Test beinhaltet die häufigsten Symptome einer COVID-19 Erkrankung.  Beantworte die Fragen ehrlich und so genau wie möglich, um dich selbst und deine Mitmenschen zu schützen.  Nach dem Test bekommst du eine Einschätzung, ob du Symptome einer COVID-19 Erkrankung aufweist und einen Arzt aufsuchen solltest.</mutableString>
+                                            <string key="text">Dieser Test beinhaltet die häufigsten Symptome einer COVID-19 Erkrankung.  Beantworte die Fragen ehrlich und so genau wie möglich, um dich selbst und deine Mitmenschen zu schützen.  Nach dem Test bekommst du eine Einschätzung, ob du Symptome einer COVID-19 Erkrankung aufweist und einen Arzt aufsuchen solltest.</string>
                                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -172,7 +173,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWr-EE-EPe" userLabel="Symptoms Diary Container View">
-                            <rect key="frame" x="0.0" y="617" width="414" height="155.5"/>
+                            <rect key="frame" x="0.0" y="616.5" width="414" height="188.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dein Symptome-Tagebuch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coL-0o-Uuk">
                                     <rect key="frame" x="16" y="16" width="414" height="23"/>
@@ -180,8 +181,20 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q5M-hA-Ecw" userLabel="Diary Entries Stack View">
+                                    <rect key="frame" x="16" y="55" width="382" height="1"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Io-7Z-h8S">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="1"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="joe-Rm-dQy"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XML-Qe-CY2" userLabel="Notice Text View">
-                                    <rect key="frame" x="70.5" y="39" width="273" height="116.5"/>
+                                    <rect key="frame" x="70.5" y="72" width="273" height="116.5"/>
                                     <string key="text">* Bitte beachte: Deine Angaben und die Auswertung des Symptome-Tests und dessen Ergebnis sind ohne Gewähr. Bei Unwohlsein oder Verdacht auf COVID-19 bitte umgehend einen Arzt aufsuchen und medizinische Vorsorge leisten.</string>
                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -190,27 +203,30 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="coL-0o-Uuk" firstAttribute="top" secondItem="VWr-EE-EPe" secondAttribute="top" constant="16" id="8DY-ap-coy"/>
-                                <constraint firstAttribute="bottom" secondItem="XML-Qe-CY2" secondAttribute="bottom" id="8K6-Y1-aoC"/>
                                 <constraint firstItem="coL-0o-Uuk" firstAttribute="leading" secondItem="VWr-EE-EPe" secondAttribute="leading" constant="16" id="8M6-bR-Yv2"/>
+                                <constraint firstItem="q5M-hA-Ecw" firstAttribute="top" secondItem="coL-0o-Uuk" secondAttribute="bottom" constant="16" id="9MA-kc-OvJ"/>
                                 <constraint firstItem="XML-Qe-CY2" firstAttribute="centerX" secondItem="VWr-EE-EPe" secondAttribute="centerX" id="NyZ-4u-0qv"/>
+                                <constraint firstItem="XML-Qe-CY2" firstAttribute="top" secondItem="q5M-hA-Ecw" secondAttribute="bottom" constant="16" id="U3B-A6-OhL"/>
                                 <constraint firstItem="XML-Qe-CY2" firstAttribute="width" secondItem="VWr-EE-EPe" secondAttribute="width" multiplier="0.66" id="aW6-sE-bqZ"/>
                                 <constraint firstItem="coL-0o-Uuk" firstAttribute="width" secondItem="VWr-EE-EPe" secondAttribute="width" id="gB7-J5-2s6"/>
-                                <constraint firstItem="XML-Qe-CY2" firstAttribute="top" secondItem="coL-0o-Uuk" secondAttribute="bottom" id="ocY-ep-Jwn"/>
+                                <constraint firstItem="q5M-hA-Ecw" firstAttribute="leading" secondItem="VWr-EE-EPe" secondAttribute="leading" constant="16" id="qSe-QI-QCd"/>
+                                <constraint firstAttribute="bottom" secondItem="XML-Qe-CY2" secondAttribute="bottom" id="xfW-mG-2ZZ"/>
+                                <constraint firstItem="q5M-hA-Ecw" firstAttribute="width" secondItem="VWr-EE-EPe" secondAttribute="width" constant="-32" id="yMf-fR-Jix"/>
                             </constraints>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="TFT-sm-vkn" firstAttribute="trailing" secondItem="VWr-EE-EPe" secondAttribute="trailing" id="0CD-NU-q4K"/>
+                        <constraint firstItem="8Vi-3e-CAL" firstAttribute="leading" secondItem="TFT-sm-vkn" secondAttribute="leading" id="3FQ-Yg-Na5"/>
                         <constraint firstItem="NRo-T3-7p8" firstAttribute="width" secondItem="8m3-4c-pPS" secondAttribute="width" id="Eyl-Mj-rHc"/>
                         <constraint firstItem="NRo-T3-7p8" firstAttribute="trailing" secondItem="TFT-sm-vkn" secondAttribute="trailing" id="FoU-Ez-1b8"/>
-                        <constraint firstItem="NRo-T3-7p8" firstAttribute="bottom" secondItem="TFT-sm-vkn" secondAttribute="bottom" id="Izi-wM-Bni"/>
-                        <constraint firstItem="TFT-sm-vkn" firstAttribute="trailing" secondItem="8Vi-3e-CAL" secondAttribute="trailing" id="NMt-4f-Yex"/>
+                        <constraint firstItem="VWr-EE-EPe" firstAttribute="trailing" secondItem="TFT-sm-vkn" secondAttribute="trailing" id="ICa-o3-PlJ"/>
                         <constraint firstItem="NRo-T3-7p8" firstAttribute="leading" secondItem="TFT-sm-vkn" secondAttribute="leading" id="PDa-4B-71Z"/>
-                        <constraint firstItem="VWr-EE-EPe" firstAttribute="leading" secondItem="TFT-sm-vkn" secondAttribute="leading" id="Tra-Iz-ZIt"/>
-                        <constraint firstItem="VWr-EE-EPe" firstAttribute="top" secondItem="8Vi-3e-CAL" secondAttribute="bottom" id="gP7-yH-xtA"/>
+                        <constraint firstItem="VWr-EE-EPe" firstAttribute="top" secondItem="8Vi-3e-CAL" secondAttribute="bottom" id="UkL-Gg-AZ6"/>
+                        <constraint firstItem="VWr-EE-EPe" firstAttribute="bottom" secondItem="TFT-sm-vkn" secondAttribute="bottom" id="Zvv-E0-pAy"/>
                         <constraint firstItem="8Vi-3e-CAL" firstAttribute="top" secondItem="NRo-T3-7p8" secondAttribute="bottom" id="iHd-Xj-vrM"/>
                         <constraint firstItem="NRo-T3-7p8" firstAttribute="top" secondItem="TFT-sm-vkn" secondAttribute="top" id="kz7-mN-2a5"/>
-                        <constraint firstItem="8Vi-3e-CAL" firstAttribute="leading" secondItem="TFT-sm-vkn" secondAttribute="leading" id="nWq-8P-cbF"/>
+                        <constraint firstItem="8Vi-3e-CAL" firstAttribute="trailing" secondItem="TFT-sm-vkn" secondAttribute="trailing" id="p0t-cn-0ZA"/>
+                        <constraint firstItem="VWr-EE-EPe" firstAttribute="leading" secondItem="TFT-sm-vkn" secondAttribute="leading" id="zPb-ri-puq"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="TFT-sm-vkn"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="VcX-lg-enW"/>
