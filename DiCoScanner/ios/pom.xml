@@ -3,7 +3,7 @@
   <parent>
 	<groupId>de.letsdev</groupId>
     <artifactId>DiCoScanner-Parent</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.3-SNAPSHOT</version>
   </parent>
 
   <artifactId>DiCoScanner</artifactId>
