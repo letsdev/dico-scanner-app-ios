@@ -14,9 +14,15 @@ pipeline {
         MAVEN_SETTINGS_LOCATION = '/Users/jenkins/.m2/settings.xml'
         XC_TEST_DESTINATION = 'platform=iOS Simulator,name=iPhone 11,OS=latest'
         MAVEN_OPTS = '-Xms256m -Xmx2048m -Djava.awt.headless=true'
+        RELEASE_BRANCH = 'testflight-upload'
     }
     stages {
         stage('Build & Test') {
+            when {
+                not {
+                    branch env.RELEASE_BRANCH
+                }
+            }
             steps {
                 dir('DiCoScanner') {
                     sh "mvn clean install -P dico-scanner-inhouse " +
@@ -42,14 +48,15 @@ pipeline {
         }
         stage('Release') {
             when {
-                branch 'testflight-upload'
+                branch env.RELEASE_BRANCH
             }
             environment {
                 MAVEN_SETTINGS_LOCATION = '/Users/jenkins/.m2/settings.xml'
             }
             steps {
-                sh "cd ${env.PROJECT_ROOT_DIRECTORY} && mvn -B --settings ${env.MAVEN_SETTINGS_LOCATION} " +
-                        "release:perform "
+                dir('DiCoScanner') {
+                    sh "mvn -B --settings ${env.MAVEN_SETTINGS_LOCATION} release:perform"
+                }
             }
         }
     }
