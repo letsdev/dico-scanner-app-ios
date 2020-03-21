@@ -103,7 +103,13 @@ class BaseRequest {
                     key = keyReplacer![key]!
                 }
 
-                if let value = value as? Date {
+                if let values = value as? [Any] {
+                    for arrayValue in values {
+                        if let arrayValue = arrayValue as? NSManagedObject {
+                            jsonDict[key] = convertToJSON(managedObject: arrayValue, keyReplacer: keyReplacer)
+                        }
+                    }
+                } else if let value = value as? Date {
                     let formatter = ISO8601DateFormatter()
                     let string = formatter.string(from: value)
                     jsonDict[key] = string

@@ -12,7 +12,7 @@ import CoreData
 class SymptomGetRequest: BaseRequest, Request {
 
     func url() -> URL {
-        URL(string: "\(baseUrl)/symptoms")!
+        URL(string: "\(baseUrl)/rest/symptoms")!
     }
 
     func httpMethod() -> String {
@@ -29,17 +29,19 @@ class SymptomGetRequest: BaseRequest, Request {
 
     func receivedData(data: Data) {
         do {
-            if let symptoms = try JSONSerialization.jsonObject(with: data) as? [[String: Any]] {
-                for symptom in symptoms {
-                    let uuid = symptom["uuid"] as? String
-                    let dao = SymptomDao()
-                    var object = dao.findByUUID(uuid: uuid)
-                    if object == nil {
-                        object = dao.newEntity()
+            if let symptomObject = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
+                if let symptoms = symptomObject["symptoms"] as? [[String: Any]] {
+                    for symptom in symptoms {
+                        let uuid = symptom["id"] as? String
+                        let dao = SymptomDao()
+                        var object = dao.findByUUID(uuid: uuid)
+                        if object == nil {
+                            object = dao.newEntity()
+                        }
+                        object?.name = symptom["name"] as? String
                     }
-                    object?.name = symptom["name"] as? String
+                    DatabaseManager.shared.saveContext()
                 }
-                DatabaseManager.shared.saveContext()
             } else {
                 os_log("Can't parse json data.")
             }

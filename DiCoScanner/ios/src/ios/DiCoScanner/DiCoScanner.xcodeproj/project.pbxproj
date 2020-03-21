@@ -13,6 +13,7 @@
 		29BD933AEA3163A09AB5EE9A /* SymptomDiaryEntryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9B7FF2FD1828DE7127CF /* SymptomDiaryEntryDao.swift */; };
 		29BD9473DAB79227727C64D7 /* SymptomGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD92A6BDE937A9F83222A8 /* SymptomGetRequest.swift */; };
 		29BD958E5A61B56A9AC99C23 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9E3E05235BB38E8BA1E3 /* DatabaseManager.swift */; };
+		29BD95BD9208C8629C9C621A /* SymptomDiaryPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD94314153056CF8266F4E /* SymptomDiaryPostRequest.swift */; };
 		29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9C9031377750FAEFBDEE /* SymptomDao.swift */; };
 		29BD9A3B4F51135C94742C5D /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9AD1E27E24B6709443F4 /* BaseRequest.swift */; };
 		29BD9CA020B40DEA5988249B /* SyncDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD975EDEA1FC4E9EBDEF4E /* SyncDao.swift */; };
@@ -66,6 +67,7 @@
 		29BD9102CAEC325A370F12E2 /* CoronaTestResultDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoronaTestResultDao.swift; sourceTree = "<group>"; };
 		29BD91B441F69C43B36D982A /* CoronaTestPostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoronaTestPostRequest.swift; sourceTree = "<group>"; };
 		29BD92A6BDE937A9F83222A8 /* SymptomGetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomGetRequest.swift; sourceTree = "<group>"; };
+		29BD94314153056CF8266F4E /* SymptomDiaryPostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomDiaryPostRequest.swift; sourceTree = "<group>"; };
 		29BD975EDEA1FC4E9EBDEF4E /* SyncDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncDao.swift; sourceTree = "<group>"; };
 		29BD99460BD6EC84122302EE /* BaseDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
 		29BD994BC62AD0DF886F1389 /* SyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				29BD9E606104F85659D58A42 /* MarkerPostRequest.swift */,
 				29BD92A6BDE937A9F83222A8 /* SymptomGetRequest.swift */,
 				29BD91B441F69C43B36D982A /* CoronaTestPostRequest.swift */,
+				29BD94314153056CF8266F4E /* SymptomDiaryPostRequest.swift */,
 			);
 			path = request;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				29BD933AEA3163A09AB5EE9A /* SymptomDiaryEntryDao.swift in Sources */,
 				29BD9CA020B40DEA5988249B /* SyncDao.swift in Sources */,
 				29BD903B8514E18517A05543 /* SyncManager.swift in Sources */,
+				29BD95BD9208C8629C9C621A /* SymptomDiaryPostRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -66,6 +66,10 @@ class SyncManager {
                 if let testResult = CoronaTestResultDao().findByObjectId(objectId: objectId) {
                     request = CoronaTestPostRequest(testResult: testResult)
                 }
+            case "SymptomDiaryEntry":
+                if let entry = SymptomDiaryEntryDao().findByObjectId(objectId: objectId) {
+                    request = SymptomDiaryPostRequest(symptomDiary: entry)
+                }
             default:
                 request = nil
             }
