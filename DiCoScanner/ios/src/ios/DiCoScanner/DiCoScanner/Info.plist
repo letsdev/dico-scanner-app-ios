@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBuildNumber</key>
 	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Wir werden deinen Standort verwenden, um eine Markierung anlegen zu können.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
