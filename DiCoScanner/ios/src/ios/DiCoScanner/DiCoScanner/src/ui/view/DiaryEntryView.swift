@@ -9,6 +9,9 @@
 import UIKit
 
 class DiaryEntryView: UIView {
+
+    var delegate: DiaryEntryViewDelegate?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -27,5 +30,11 @@ class DiaryEntryView: UIView {
         contentView.frame = self.bounds
 
         self.addSubview(contentView)
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClickEntry(_:))))
     }
+
+    @objc func didClickEntry(_ sender: UIPanGestureRecognizer) {
+        delegate?.didClickEntry()
+    }
+
 }

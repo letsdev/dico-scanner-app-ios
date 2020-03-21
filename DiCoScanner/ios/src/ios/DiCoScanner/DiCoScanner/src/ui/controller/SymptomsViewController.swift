@@ -9,20 +9,20 @@
 import UIKit
 
 class SymptomsViewController: UIViewController {
-    
+
     @IBOutlet var coronaTestResultLabel: UILabel!
     @IBOutlet var startSymptomsTestButton: UIButton!
     @IBOutlet weak var containerView: UIView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.title = "Symptome"
 
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+
         setupCoronaTestResults()
-        
+
         setupSymptomsTestButton()
 
         setupSymptomsDiaryEntries()
@@ -30,10 +30,12 @@ class SymptomsViewController: UIViewController {
 
     private func setupSymptomsDiaryEntries() {
         let diaryEntryView = DiaryEntryView()
+        diaryEntryView.delegate = self
         let diaryEntryView2 = DiaryEntryView()
-        
+        diaryEntryView2.delegate = self
+
         let arrangedSubviews = [diaryEntryView, diaryEntryView2]
-        
+
         let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
         containerView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,8 +55,16 @@ class SymptomsViewController: UIViewController {
         coronaTestResultLabel.text = "Ausstehend"
         coronaTestResultLabel.textColor = UIColor(named: "AppOrange")
     }
-    
+
     func setupSymptomsTestButton() {
         startSymptomsTestButton.layer.borderColor = UIColor.black.cgColor
     }
+}
+
+extension SymptomsViewController: DiaryEntryViewDelegate {
+
+    func didClickEntry() {
+        self.present(DiaryEntryDetailViewController(), animated: true)
+    }
+
 }
