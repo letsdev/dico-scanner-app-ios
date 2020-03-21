@@ -25,6 +25,10 @@ internal class DatabaseManager {
                 object.name = symptom
             }
 
+            saveContext()
+        }
+
+        if (MarkerDao().countAll() <= 0) {
             let marker = NSEntityDescription.insertNewObject(forEntityName: "Marker",
                     into: persistentContainer.viewContext) as! Marker
             marker.altitude = 53.53

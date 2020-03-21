@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		360131BD8B8F3F5632343187 /* LocationProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */; };
-		3601357A224E006EA0DE23C6 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360132EB1A6E05520CDBCE3C /* LocationProvider.swift */; };
 		29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9FB52888BBA281507503 /* MarkerDao.swift */; };
 		29BD958E5A61B56A9AC99C23 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9E3E05235BB38E8BA1E3 /* DatabaseManager.swift */; };
 		29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9C9031377750FAEFBDEE /* SymptomDao.swift */; };
 		29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD99460BD6EC84122302EE /* BaseDao.swift */; };
+		360131BD8B8F3F5632343187 /* LocationProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */; };
+		3601357A224E006EA0DE23C6 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360132EB1A6E05520CDBCE3C /* LocationProvider.swift */; };
+		36013CB43F23F90880575A49 /* DateFormatter+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */; };
 		A481B4C12425623500B294AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C02425623500B294AF /* AppDelegate.swift */; };
 		A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */; };
 		A481B4CD2425623600B294AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CC2425623600B294AF /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		E28583A524257ED600C6BE16 /* LastMarkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28583A324257ED600C6BE16 /* LastMarkerViewController.xib */; };
 		E28583A92425807300C6BE16 /* LastMarkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28583A72425807300C6BE16 /* LastMarkerTableViewCell.swift */; };
 		E28583AA2425807300C6BE16 /* LastMarkerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28583A82425807300C6BE16 /* LastMarkerTableViewCell.xib */; };
+		E28583AF2425B63B00C6BE16 /* Marker+UiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28583AE2425B63B00C6BE16 /* Marker+UiModel.swift */; };
 		E28BA0F22425666A00AF3CF2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */; };
 		E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */; };
 /* End PBXBuildFile section */
@@ -31,9 +33,10 @@
 		29BD99460BD6EC84122302EE /* BaseDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
 		29BD9C9031377750FAEFBDEE /* SymptomDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomDao.swift; sourceTree = "<group>"; };
 		29BD9E3E05235BB38E8BA1E3 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		29BD9FB52888BBA281507503 /* MarkerDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerDao.swift; sourceTree = "<group>"; };
+		360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Localization.swift"; sourceTree = "<group>"; };
 		360132EB1A6E05520CDBCE3C /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProviderDelegate.swift; sourceTree = "<group>"; };
-		29BD9FB52888BBA281507503 /* MarkerDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerDao.swift; sourceTree = "<group>"; };
 		A481B4BD2425623500B294AF /* DiCoScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiCoScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A481B4C02425623500B294AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A481B4CA2425623500B294AF /* DiCoScanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiCoScanner.xcdatamodel; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		E28583A324257ED600C6BE16 /* LastMarkerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastMarkerViewController.xib; sourceTree = "<group>"; };
 		E28583A72425807300C6BE16 /* LastMarkerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMarkerTableViewCell.swift; sourceTree = "<group>"; };
 		E28583A82425807300C6BE16 /* LastMarkerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastMarkerTableViewCell.xib; sourceTree = "<group>"; };
+		E28583AE2425B63B00C6BE16 /* Marker+UiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Marker+UiModel.swift"; sourceTree = "<group>"; };
 		E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +71,7 @@
 				2E9797E724256300005CE79F /* data */,
 				36013C97EB493D7A9017A98D /* ui */,
 				3601394BA90DCE4327CBB6F8 /* location */,
+				360134E8560E28C5F5FED969 /* util */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -97,6 +102,15 @@
 				29BD9FB52888BBA281507503 /* MarkerDao.swift */,
 			);
 			path = dao;
+			sourceTree = "<group>";
+		};
+		360134E8560E28C5F5FED969 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */,
+				E28583AE2425B63B00C6BE16 /* Marker+UiModel.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 		3601394BA90DCE4327CBB6F8 /* location */ = {
@@ -253,6 +267,8 @@
 				29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */,
 				29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */,
 				29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */,
+				36013CB43F23F90880575A49 /* DateFormatter+Localization.swift in Sources */,
+				E28583AF2425B63B00C6BE16 /* Marker+UiModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
