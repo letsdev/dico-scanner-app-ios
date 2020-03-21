@@ -14,6 +14,8 @@
 		A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */; };
 		A481B4CD2425623600B294AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CC2425623600B294AF /* Assets.xcassets */; };
 		A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CE2425623600B294AF /* LaunchScreen.storyboard */; };
+		E28BA0F22425666A00AF3CF2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */; };
+		E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		A481B4CC2425623600B294AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A481B4CF2425623600B294AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A481B4D12425623600B294AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				2E9797E724256300005CE79F /* data */,
+				36013C97EB493D7A9017A98D /* ui */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -72,6 +77,23 @@
 				29BD99460BD6EC84122302EE /* BaseDao.swift */,
 			);
 			path = dao;
+			sourceTree = "<group>";
+		};
+		36013B2860E50B41AAEE60C2 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				E28BA0F02425666A00AF3CF2 /* TabBarViewController.swift */,
+				E28BA0F12425666A00AF3CF2 /* TabBarViewController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		36013C97EB493D7A9017A98D /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				36013B2860E50B41AAEE60C2 /* controller */,
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 		A481B4B42425623500B294AF = {
@@ -160,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */,
 				A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */,
 				A481B4CD2425623600B294AF /* Assets.xcassets in Resources */,
 			);
@@ -174,6 +197,7 @@
 			files = (
 				A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */,
 				A481B4C12425623500B294AF /* AppDelegate.swift in Sources */,
+				E28BA0F22425666A00AF3CF2 /* TabBarViewController.swift in Sources */,
 				29BD958E5A61B56A9AC99C23 /* DatabaseManager.swift in Sources */,
 				29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */,
 				29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */,
