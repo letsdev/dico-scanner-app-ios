@@ -9,20 +9,21 @@
 import UIKit
 
 class SymptomsViewController: UIViewController {
-    
+
     @IBOutlet var coronaTestResultLabel: UILabel!
     @IBOutlet var startSymptomsTestButton: UIButton!
     @IBOutlet weak var containerView: UIView!
-    
+    @IBOutlet var coronaTestResultContainer: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.title = "Symptome"
 
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+
         setupCoronaTestResults()
-        
+
         setupSymptomsTestButton()
 
         setupSymptomsDiaryEntries()
@@ -30,10 +31,12 @@ class SymptomsViewController: UIViewController {
 
     private func setupSymptomsDiaryEntries() {
         let diaryEntryView = DiaryEntryView()
+        diaryEntryView.delegate = self
         let diaryEntryView2 = DiaryEntryView()
-        
+        diaryEntryView2.delegate = self
+
         let arrangedSubviews = [diaryEntryView, diaryEntryView2]
-        
+
         let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
         containerView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,9 +55,30 @@ class SymptomsViewController: UIViewController {
     func setupCoronaTestResults() {
         coronaTestResultLabel.text = "Ausstehend"
         coronaTestResultLabel.textColor = UIColor(named: "AppOrange")
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleCoronaTestResultsTap(_:)))
+        coronaTestResultContainer.addGestureRecognizer(tapGestureRecognizer)
     }
-    
+
     func setupSymptomsTestButton() {
         startSymptomsTestButton.layer.borderColor = UIColor.black.cgColor
     }
+
+    @objc func handleCoronaTestResultsTap(_ sender: UITapGestureRecognizer? = nil) {
+        startCoronaTest()
+    }
+
+    func startCoronaTest() {
+        let coronaTestVC = CoronaTestViewController(nibName: String(describing: CoronaTestViewController.self), bundle: nil)
+        let navigationController = UINavigationController(rootViewController: coronaTestVC)
+        self.present(navigationController, animated: true, completion: nil)
+    }
+}
+
+extension SymptomsViewController: DiaryEntryViewDelegate {
+
+    func didClickEntry() {
+        self.present(DiaryEntryDetailViewController(), animated: true)
+    }
+
 }
