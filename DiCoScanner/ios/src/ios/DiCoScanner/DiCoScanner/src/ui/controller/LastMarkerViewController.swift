@@ -41,6 +41,8 @@ class LastMarkerViewController: UIViewController {
     @objc private func setLastUpdateLabel() {
         if let newest = dataSource?.first {
             lastMarkerTimestampLabel.text = newest.lastUpdateString()
+        } else {
+            lastMarkerTimestampLabel.text = "Dein Standort wurde noch nicht getrackt."
         }
     }
 
