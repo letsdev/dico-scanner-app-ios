@@ -17,8 +17,9 @@ class MarkerViewController: UIViewController {
     @IBOutlet weak var markButtonContainerView: UIView!
     @IBOutlet weak var lastMarkerView: UIView!
     @IBOutlet weak var mapKitView: MKMapView!
-
     @IBOutlet weak var lastMakerViewHeightConstraint: NSLayoutConstraint!
+
+    private var buttonStateController: ButtonStateController?
 
     private let lastMarkVC = LastMarkerViewController()
 
@@ -33,9 +34,8 @@ class MarkerViewController: UIViewController {
         }
     }
     private static let animationDuration: TimeInterval = 0.2
-    private static let animationDurationButton: TimeInterval = 0.5
 
-    private let locationProvider = LocationProvider()
+    private var locationProvider: LocationProvider?
 
     private let markerDao = MarkerDao()
 
@@ -43,11 +43,12 @@ class MarkerViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Markierungen"
 
-        locationProvider.delegate = self
+        locationProvider = LocationProvider()
+        locationProvider?.delegate = self
+
+        locationProvider?.fetchLocation(mode: .map)
 
         mapKitView.setVisibleMapRect(MKMapRect(x: 0, y: 0, width: 25000, height: 25000), animated: true)
-
-        markButton.titleLabel?.text = "Markierung setzen"
 
         lastMarkVC.view.frame = lastMarkerView.bounds
         lastMarkerView.addSubview(lastMarkVC.view)
@@ -62,25 +63,18 @@ class MarkerViewController: UIViewController {
         lastMarkVC.lastMarkerHeaderView.isUserInteractionEnabled = true
         lastMarkVC.lastMarkerHeaderView.addGestureRecognizer(panGesture)
 
-        self.markButton.tintColor = UIColor(named: "AppGreyBackground")
-
-        setButtonAnimation(state: .normal)
+        buttonStateController = ButtonStateController(button: markButton)
     }
 
     @IBAction func markButtonTapped(_ sender: Any) {
-        locationProvider.currentLocation()
-        self.setButtonAnimation(state: .progress)
+        locationProvider?.fetchLocation(mode: .marker)
     }
 
     @objc func draggedView(_ sender: UIPanGestureRecognizer) {
         handleViewDragging(sender: sender)
     }
-}
 
-extension MarkerViewController: LocationProviderDelegate {
-    func received(location: CLLocation) {
-        mapKitView.setCenter(location.coordinate, animated: true)
-
+    private func saveAndSyncLocation(location: CLLocation) {
         let marker = markerDao.newEntity()
         marker.eventDate = Date()
         marker.lat = location.coordinate.latitude
@@ -91,12 +85,34 @@ extension MarkerViewController: LocationProviderDelegate {
 
         DatabaseManager.shared.saveContext()
         markerDao.markObjectForSync(object: marker)
+    }
+}
 
-        lastMarkVC.reloadData()
+extension MarkerViewController: LocationProviderDelegate {
+    func didReceiveLocationUpdate(location: CLLocation, locationMode: LocationProvider.LocationMode) {
+        if locationMode == .marker {
+            saveAndSyncLocation(location: location)
+            lastMarkVC.reloadData()
+            buttonStateController?.setButtonAnimation(state: .success)
+        } else if locationMode == .map {
+            mapKitView.setCenter(location.coordinate, animated: true)
+        }
+    }
 
-        self.setButtonAnimation(state: .success)
-        os_log("Received location long/lat: %d / %d", location.coordinate.latitude.description,
-                location.coordinate.longitude.binade.description)
+    func didGrantAuthorization(locationMode: LocationProvider.LocationMode) {
+        buttonStateController?.setButtonAnimation(state: .normal)
+    }
+
+    func didStartLocationUpdate(locationMode: LocationProvider.LocationMode) {
+        if locationMode == .marker {
+            buttonStateController?.setButtonAnimation(state: .progress)
+        }
+    }
+
+    func didFailLocationUpdate(_: Error, locationMode: LocationProvider.LocationMode) {
+        if locationMode == .marker {
+            buttonStateController?.setButtonAnimation(state: .failure)
+        }
     }
 }
 
@@ -132,79 +148,5 @@ extension MarkerViewController {
         } else {
             return self.view.safeAreaLayoutGuide.layoutFrame.height - minHeightMarkButton
         }
-    }
-}
-
-extension MarkerViewController {
-
-    enum ButtonState {
-        case normal
-        case progress
-        case failure
-        case success
-    }
-
-    private func setButtonAnimation(state: ButtonState) {
-        self.markButton.layer.removeAllAnimations()
-        switch (state) {
-        case .normal:
-            buttonNormal()
-        case .progress:
-            buttonProgress()
-        case .success:
-            buttonSuccess()
-        case .failure:
-            buttonFailure()
-        }
-    }
-
-    private func buttonNormal() {
-        self.markButton.alpha = 1
-        self.markButton.layer.borderColor = UIColor(named: "AppDarkBlue")!.cgColor
-        animateToColor(colorName: "AppDarkBlue45")
-    }
-
-    private func buttonProgress() {
-        // TODO: Use method animateToColor with optional options and completion
-        self.markButton.titleLabel?.text = "Markierung wird gesetzt..."
-        self.markButton.layer.borderColor = UIColor(named: "AppOrange")!.cgColor
-        UIView.animate(withDuration: MarkerViewController.animationDurationButton, delay: 0.0,
-                animations: {
-                    self.markButton.backgroundColor = UIColor(named: "AppOrange")
-                }, completion: { b in
-            UIView.animate(withDuration: MarkerViewController.animationDurationButton + 0.25, delay: 0.0,
-                    options: [.autoreverse, .repeat, .curveEaseInOut, .allowUserInteraction],
-                    animations: {
-                        self.markButton.alpha = 0.75
-                    })
-        })
-    }
-
-    private func buttonSuccess() {
-        self.markButton.alpha = 1
-        self.markButton.titleLabel?.text = "Markierung gesetzt."
-        self.markButton.layer.borderColor = UIColor(named: "AppGreen")!.cgColor
-        UIView.animate(withDuration: MarkerViewController.animationDurationButton, delay: 0.0,
-                options: [.allowUserInteraction],
-                animations: {
-                    self.markButton.backgroundColor = UIColor(named: "AppGreen")
-                }, completion: { b in
-
-        })
-    }
-
-    private func buttonFailure() {
-        self.markButton.alpha = 1
-        self.markButton.titleLabel?.text = "Markierung fehlgeschlagen."
-        self.markButton.layer.borderColor = UIColor(named: "AppRed")!.cgColor
-        animateToColor(colorName: "AppRed")
-    }
-
-    private func animateToColor(colorName: String) {
-        UIView.animate(withDuration: MarkerViewController.animationDurationButton, delay: 0.0,
-                options: .allowUserInteraction,
-                animations: { () -> Void in
-                    self.markButton.backgroundColor = UIColor(named: colorName)
-                })
     }
 }

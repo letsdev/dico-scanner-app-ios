@@ -22,6 +22,7 @@
 		29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD99460BD6EC84122302EE /* BaseDao.swift */; };
 		360131BD8B8F3F5632343187 /* LocationProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */; };
 		3601357A224E006EA0DE23C6 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360132EB1A6E05520CDBCE3C /* LocationProvider.swift */; };
+		36013B6575A41425E495E583 /* ButtonStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601320E1A836CBE270C3F9B /* ButtonStateController.swift */; };
 		36013CAD1FD909AADEBD2A17 /* DiaryEntryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360136BCF480A84B3D49648D /* DiaryEntryViewDelegate.swift */; };
 		36013CB43F23F90880575A49 /* DateFormatter+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */; };
 		A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06932425AA1500D62CAF /* DiaryEntryView.xib */; };
@@ -81,6 +82,7 @@
 		29BD9E606104F85659D58A42 /* MarkerPostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerPostRequest.swift; sourceTree = "<group>"; };
 		29BD9FB52888BBA281507503 /* MarkerDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerDao.swift; sourceTree = "<group>"; };
 		360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Localization.swift"; sourceTree = "<group>"; };
+		3601320E1A836CBE270C3F9B /* ButtonStateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStateController.swift; sourceTree = "<group>"; };
 		360132EB1A6E05520CDBCE3C /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProviderDelegate.swift; sourceTree = "<group>"; };
 		360136BCF480A84B3D49648D /* DiaryEntryViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntryViewDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */,
 				E28583AE2425B63B00C6BE16 /* Marker+UiModel.swift */,
 				E2B04A52242676B600CD043E /* SymptomDiaryEntry+UiModel.swift */,
+				3601320E1A836CBE270C3F9B /* ButtonStateController.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				29BD903B8514E18517A05543 /* SyncManager.swift in Sources */,
 				29BD95BD9208C8629C9C621A /* SymptomDiaryPostRequest.swift in Sources */,
 				D09DBA69AB09CCDCD7FF3C19 /* PresentedViewControllerDelegate.swift in Sources */,
+				36013B6575A41425E495E583 /* ButtonStateController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
