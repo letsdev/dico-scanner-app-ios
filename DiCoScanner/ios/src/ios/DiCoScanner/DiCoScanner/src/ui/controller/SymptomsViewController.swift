@@ -54,7 +54,9 @@ class SymptomsViewController: UIViewController, PresentedViewControllerDelegate 
     }
 
     @objc func onDidSyncSymptomDiaryEntry(_ notification:Notification) {
-        setupSymptomsDiaryEntries()
+        DispatchQueue.main.async {
+            self.setupSymptomsDiaryEntries()
+        }
     }
 
     private func setupSymptomsDiaryEntries() {
