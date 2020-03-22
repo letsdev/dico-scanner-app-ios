@@ -37,7 +37,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S2Y-rT-fOX">
-                    <rect key="frame" x="20" y="109" width="374" height="676"/>
+                    <rect key="frame" x="20" y="173.5" width="374" height="611.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmw-vV-Jrd" userLabel="Lower Border View">
@@ -93,29 +93,38 @@
                         <constraint firstItem="sLU-gz-Drg" firstAttribute="top" secondItem="FFD-WD-Sy4" secondAttribute="top" constant="20" symbolic="YES" id="idU-bc-UGU"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folgende Symptome wurden dokumentiert:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyc-is-93d">
+                    <rect key="frame" x="20" y="118" width="374" height="45.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" name="AppGreyBackground"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XJ6-0h-FPO" secondAttribute="trailing" id="0EH-48-pDP"/>
+                <constraint firstItem="XJ6-0h-FPO" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0EH-48-pDP"/>
                 <constraint firstItem="dmw-vV-Jrd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="32t-UB-QXP"/>
                 <constraint firstAttribute="bottom" secondItem="FFD-WD-Sy4" secondAttribute="bottom" id="40w-sO-D50"/>
                 <constraint firstItem="S2Y-rT-fOX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="54k-5P-dXg"/>
                 <constraint firstAttribute="trailing" secondItem="dmw-vV-Jrd" secondAttribute="trailing" id="90E-Y2-Ofb"/>
                 <constraint firstItem="dmw-vV-Jrd" firstAttribute="top" secondItem="S2Y-rT-fOX" secondAttribute="bottom" id="9t4-2s-tqD"/>
                 <constraint firstItem="XJ6-0h-FPO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AjN-7A-cNC"/>
-                <constraint firstItem="hlT-sm-rLq" firstAttribute="bottom" secondItem="S2Y-rT-fOX" secondAttribute="top" id="Do1-YA-gSl"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="S2Y-rT-fOX" secondAttribute="trailing" constant="20" id="H3S-RF-3nR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FFD-WD-Sy4" secondAttribute="trailing" id="RhC-08-oJN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nyc-is-93d" secondAttribute="trailing" constant="20" id="Gua-iM-WKl"/>
+                <constraint firstItem="S2Y-rT-fOX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-20" id="H3S-RF-3nR"/>
+                <constraint firstItem="FFD-WD-Sy4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="RhC-08-oJN"/>
                 <constraint firstItem="hlT-sm-rLq" firstAttribute="top" secondItem="XJ6-0h-FPO" secondAttribute="bottom" id="YTo-xs-ayj"/>
                 <constraint firstItem="sLU-gz-Drg" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-10" id="au9-ar-1at"/>
+                <constraint firstItem="Nyc-is-93d" firstAttribute="top" secondItem="hlT-sm-rLq" secondAttribute="top" constant="10" id="c3q-r9-eKA"/>
                 <constraint firstItem="XJ6-0h-FPO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ckx-t3-tXd"/>
                 <constraint firstItem="FFD-WD-Sy4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ctP-BL-P3k"/>
+                <constraint firstItem="S2Y-rT-fOX" firstAttribute="top" secondItem="Nyc-is-93d" secondAttribute="bottom" constant="10" id="hT9-Vz-WhA"/>
                 <constraint firstItem="FFD-WD-Sy4" firstAttribute="top" secondItem="dmw-vV-Jrd" secondAttribute="bottom" id="iZB-sv-Fwe"/>
-                <constraint firstAttribute="trailing" secondItem="hlT-sm-rLq" secondAttribute="trailing" id="qs2-cI-6Gd"/>
+                <constraint firstItem="hlT-sm-rLq" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="qs2-cI-6Gd"/>
+                <constraint firstItem="Nyc-is-93d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="rPp-Jp-BmX"/>
                 <constraint firstItem="hlT-sm-rLq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xm1-S0-2uP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="133" y="159"/>
+            <point key="canvasLocation" x="131.8840579710145" y="158.70535714285714"/>
         </view>
     </objects>
     <resources>
