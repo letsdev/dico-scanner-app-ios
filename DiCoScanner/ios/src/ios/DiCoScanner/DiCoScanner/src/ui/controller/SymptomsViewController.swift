@@ -10,6 +10,7 @@ import UIKit
 
 class SymptomsViewController: UIViewController, PresentedViewControllerDelegate {
 
+    @IBOutlet var coronaTestResultHeaderLabel: UILabel!
     @IBOutlet var coronaTestResultLabel: UILabel!
     @IBOutlet var coronaTestButton: UIButton!
     @IBOutlet var startSymptomsTestButton: UIButton!
@@ -120,7 +121,7 @@ class SymptomsViewController: UIViewController, PresentedViewControllerDelegate 
             let formatter = DateFormatter()
             formatter.dateFormat = "dd.MM.yyyy"
             let coronaTestDate = formatter.string(from: coronaTestResult!.testDate!)
-            coronaTestResultLabel.text = coronaTestResultLabel.text! + " (\(coronaTestDate))"
+            coronaTestResultHeaderLabel.text = coronaTestResultHeaderLabel.text! + " \(coronaTestDate)"
         } else {
             coronaTestResultLabel.text = "-"
             coronaTestResultLabel.textColor = UIColor.black
