@@ -56,7 +56,7 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func loadSymptomList() {
-        symptomList = SymptomDao().findAll()
+        symptomList = SymptomDao().findAllSortByName()
     }
 
     func setupSymptomsTableView() {
@@ -72,14 +72,15 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
         
         storeSymptomDiaryEntry()
         
-        //self.symptomsTestDelegate.didEndPresentation(presentedViewController: self)
-        //self.dismiss(animated: true, completion: nil)
+        self.symptomsTestDelegate.didEndPresentation(presentedViewController: self)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func storeSymptomDiaryEntry() {
         let dao = SymptomDiaryEntryDao()
         let symptomDiaryEntry = dao.newEntity()
         symptomDiaryEntry.entryDate = Date()
+        symptomDiaryEntry.areYouSick = SymptomDiaryEntryDao.DiaryTestResult.pending.rawValue
         symptomDiaryEntry.addToSymptom(NSSet(array: selectedSymptomList!))
         
         DatabaseManager.shared.saveContext()

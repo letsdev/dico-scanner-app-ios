@@ -40,7 +40,9 @@ class DiaryEntryDetailViewController: UIViewController {
 
     private func setupResultLabel() {
         resultLabel.text = entry?.resultLabel()
-        if (entry?.areYouSick ?? false) {
+        
+        let areYouSickResult = SymptomDiaryEntryDao.DiaryTestResult(rawValue: entry!.areYouSick)
+        if (areYouSickResult == .positive) {
             resultLabel.textColor = UIColor(named: "AppGreen")
         } else {
             resultLabel.textColor = UIColor(named: "AppRed")

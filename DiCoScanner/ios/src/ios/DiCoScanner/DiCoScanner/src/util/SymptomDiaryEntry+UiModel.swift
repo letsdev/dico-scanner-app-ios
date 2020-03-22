@@ -18,10 +18,16 @@ extension SymptomDiaryEntry {
     }
     
     func resultLabel() -> String {
-        if self.areYouSick {
-            return "Keine COVID-19 Anzeichen*"
-        } else {
+
+        switch (SymptomDiaryEntryDao.DiaryTestResult(rawValue: self.areYouSick)) {
+        case .positive:
             return "Anzeichen für COVID-19*"
+        case .negative:
+            return "Keine COVID-19 Anzeichen*"
+        case .pending:
+            return "Ergebnis wird ermittelt..."
+        default:
+            return ""
         }
     }
 }

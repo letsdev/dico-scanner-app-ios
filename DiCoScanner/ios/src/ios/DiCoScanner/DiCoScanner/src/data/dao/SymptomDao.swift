@@ -11,7 +11,7 @@ import CoreData
 class SymptomDao: BaseDao<Symptom> {
 
     internal func findAllSortByName() -> [Symptom]? {
-        findAll(sortBy: NSSortDescriptor(key: "name", ascending: true))
+        findAll(sortBy: NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare)))
     }
 
 }
