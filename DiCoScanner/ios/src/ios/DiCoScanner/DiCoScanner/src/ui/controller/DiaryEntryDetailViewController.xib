@@ -68,7 +68,7 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                     <color key="tintColor" name="AppRed"/>
-                                    <state key="normal" image="trash" catalog="system"/>
+                                    <state key="normal" image="ic_trash_red"/>
                                     <connections>
                                         <action selector="deleteButtonTapped:" destination="-1" eventType="touchUpInside" id="q1x-sS-t8a"/>
                                     </connections>
@@ -117,7 +117,7 @@
         </view>
     </objects>
     <resources>
-        <image name="trash" catalog="system" width="60" height="64"/>
+        <image name="ic_trash_red" width="24" height="24"/>
         <namedColor name="AppGreyBackground">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
