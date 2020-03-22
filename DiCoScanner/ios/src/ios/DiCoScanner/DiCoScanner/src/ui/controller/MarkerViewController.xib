@@ -15,6 +15,7 @@
                 <outlet property="lastMarkerView" destination="kc1-t6-SPh" id="5kg-xX-pOY"/>
                 <outlet property="mapKitView" destination="0Z1-Rf-fc3" id="N6A-Wo-EKs"/>
                 <outlet property="markButton" destination="nZG-9w-sZc" id="ckZ-Ng-4I2"/>
+                <outlet property="markButtonContainerView" destination="smj-k2-HAJ" id="VMr-cZ-YVC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,13 +25,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0Z1-Rf-fc3">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="726"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
                 </mapView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smj-k2-HAJ">
-                    <rect key="frame" x="0.0" y="44" width="414" height="682"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="725"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZG-9w-sZc">
-                            <rect key="frame" x="50" y="301" width="314" height="80"/>
+                            <rect key="frame" x="50" y="322.5" width="314" height="80"/>
                             <color key="backgroundColor" name="AppDarkBlue45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="mg1-ch-tUX"/>
@@ -67,10 +68,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kc1-t6-SPh">
-                    <rect key="frame" x="0.0" y="734" width="414" height="128"/>
+                    <rect key="frame" x="0.0" y="777" width="414" height="85"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="128" id="zaL-S4-3Fd"/>
+                        <constraint firstAttribute="height" constant="85" id="zaL-S4-3Fd"/>
                     </constraints>
                 </view>
             </subviews>

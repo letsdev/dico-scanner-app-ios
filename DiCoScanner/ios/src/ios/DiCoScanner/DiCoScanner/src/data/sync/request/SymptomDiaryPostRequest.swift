@@ -14,7 +14,7 @@ class SymptomDiaryPostRequest: BaseRequest, Request {
     }
 
     func url() -> URL {
-        URL(string: "\(baseUrl)/rest/symptoms")!
+        URL(string: "\(baseUrl)/rest/symptom")!
     }
 
     func httpMethod() -> String {

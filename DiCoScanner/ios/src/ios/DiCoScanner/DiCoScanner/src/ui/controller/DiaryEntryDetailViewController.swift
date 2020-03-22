@@ -8,19 +8,54 @@
 
 import UIKit
 
+protocol DiaryEntryDetailViewControllerDelegate {
+
+    func deleteButtonTapped(_: DiaryEntryDetailViewController, _: SymptomDiaryEntry?)
+}
+
 class DiaryEntryDetailViewController: UIViewController {
 
     @IBOutlet weak var headerContainerView: UIView!
     @IBOutlet weak var symptomsTableView: UITableView!
+    @IBOutlet weak var resultLabel: UILabel!
 
     var entry: SymptomDiaryEntry?
+
+    var delegate: DiaryEntryDetailViewControllerDelegate?
 
     private let symptomDao = SymptomDao()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupHeaderView()
+        setupTableView()
+        setupResultLabel()
 
+        SymptomGetRequest().send { result in
+            if (result) {
+                self.symptomsTableView.reloadData()
+            }
+        }
+    }
+
+    private func setupResultLabel() {
+        resultLabel.text = entry?.resultLabel()
+        if (entry?.areYouSick ?? false) {
+            resultLabel.textColor = UIColor(named: "AppGreen")
+        } else {
+            resultLabel.textColor = UIColor(named: "AppRed")
+        }
+    }
+
+    private func setupTableView() {
+        symptomsTableView.dataSource = self
+        symptomsTableView.register(UINib(nibName: "SymptomsTableViewCell", bundle: Bundle.main),
+                forCellReuseIdentifier: "SymptomsTableViewCell")
+    }
+
+    private func setupHeaderView() {
         let headerView = DiaryEntryView()
+        headerView.diaryEntry = entry
         headerContainerView.addSubview(headerView)
         headerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -29,10 +64,11 @@ class DiaryEntryDetailViewController: UIViewController {
             headerView.topAnchor.constraint(equalTo: headerContainerView.topAnchor),
             headerView.bottomAnchor.constraint(lessThanOrEqualTo: headerContainerView.bottomAnchor)
         ])
+    }
 
-        symptomsTableView.dataSource = self
-        symptomsTableView.register(UINib(nibName: "SymptomsTableViewCell", bundle: Bundle.main),
-                forCellReuseIdentifier: "SymptomsTableViewCell")
+
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        delegate?.deleteButtonTapped(self, entry)
     }
 }
 

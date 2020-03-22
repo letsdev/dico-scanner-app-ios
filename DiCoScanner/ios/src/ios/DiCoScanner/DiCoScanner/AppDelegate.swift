@@ -21,21 +21,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         registerForPushNotifications()
         // TODO remove all below
-//        DatabaseManager.shared.insertDummyData()
-//        os_log("Found number of symptoms: %i", SymptomDao().countAll())
-//        let all = MarkerDao().findAll()
-//        if let all = all {
-//            for marker in all {
-//               MarkerDao().markObjectForSync(object: marker)
-//            }
-//        }
+        DatabaseManager.shared.insertDummyData()
+        os_log("Found number of symptoms: %i", SymptomDao().countAll())
+        let all = MarkerDao().findAll()
+        if let all = all {
+            for marker in all {
+                MarkerDao().markObjectForSync(object: marker)
+            }
+        }
         // end remove
+
+        SymptomGetRequest().send { result in
+            if (result) {
+                let all = SymptomDao().findAll()
+                let count = all?.count ?? 0
+                os_log("Fetched Symptoms count: %d", count)
+            }
+        }
+
         return true
     }
 
     func registerForPushNotifications() {
         #if targetEnvironment(simulator)
-            return
+        return
         #endif
 
         let libraryDirectory = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
@@ -44,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 libraryPath: libraryDirectory)
 
         #if DEBUG
-            pushConfiguration?.setSandboxMode(true)
+        pushConfiguration?.setSandboxMode(true)
         #endif
 
         pushConfiguration?.setBaseUrlWith("https://letspush.com/")
