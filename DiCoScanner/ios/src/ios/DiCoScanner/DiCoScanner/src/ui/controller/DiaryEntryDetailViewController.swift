@@ -24,6 +24,22 @@ class DiaryEntryDetailViewController: UIViewController {
 
     private let symptomDao = SymptomDao()
 
+    private var dataSource: [Symptom]? {
+        get {
+            let name = symptomDao.findAllSortByName()
+
+            let contained = name?.filter { (symptom: Symptom) in
+                (entry?.symptom?.contains(symptom) ?? false)
+            } ?? []
+
+            let notcontained = name?.filter { (symptom: Symptom) in
+                !(entry?.symptom?.contains(symptom) ?? false)
+            } ?? []
+
+            return contained + notcontained
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -77,7 +93,7 @@ class DiaryEntryDetailViewController: UIViewController {
 
 extension DiaryEntryDetailViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        symptomDao.countAll()
+        dataSource?.count ?? 0
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,12 +102,11 @@ extension DiaryEntryDetailViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let symptom = symptomDao.findAllSortByName()?[indexPath.row]
-        
+        let symptom = dataSource?[indexPath.row]
+
         if let uuid = symptom?.uuid {
             cell.symtpomIconImageView.image = UIImage.image(symptomId: uuid)
         }
-
         cell.symptomNameLabel.text = symptom?.name
 
         if (entry?.symptom?.contains(symptom) ?? false) {
