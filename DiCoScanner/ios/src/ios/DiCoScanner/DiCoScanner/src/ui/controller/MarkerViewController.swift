@@ -92,7 +92,7 @@ extension MarkerViewController: LocationProviderDelegate {
         DatabaseManager.shared.saveContext()
         markerDao.markObjectForSync(object: marker)
 
-        lastMarkVC.lastMarkerTableView.reloadData()
+        lastMarkVC.reloadData()
 
         self.setButtonAnimation(state: .success)
         os_log("Received location long/lat: %d / %d", location.coordinate.latitude.description,

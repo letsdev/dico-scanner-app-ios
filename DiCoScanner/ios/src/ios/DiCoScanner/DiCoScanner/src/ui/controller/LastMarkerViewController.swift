@@ -17,17 +17,36 @@ class LastMarkerViewController: UIViewController {
 
     private let dao = MarkerDao()
 
+    private var dataSource: [Marker]? {
+        get {
+            dao.findAllByDate()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         lastMarkerHeader.text = "Meine letzten Markierungen"
-        lastMarkerTimestampLabel.text = "Dein Standort wurde zuletzt vor 14 Minuten getrackt"
+        setLastUpdateLabel()
 
         lastMarkerTableView.dataSource = self
         lastMarkerTableView.register(UINib(nibName: "LastMarkerTableViewCell", bundle: Bundle.main),
                 forCellReuseIdentifier: "LastMarkerTableViewCell")
+
+        Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(setLastUpdateLabel), userInfo: nil,
+                repeats: true)
     }
 
+    @objc private func setLastUpdateLabel() {
+        if let newest = dataSource?.first {
+            lastMarkerTimestampLabel.text = newest.lastUpdateString()
+        }
+    }
+
+    func reloadData() {
+        lastMarkerTableView.reloadData()
+        setLastUpdateLabel()
+    }
 }
 
 extension LastMarkerViewController: UITableViewDataSource {
@@ -43,7 +62,7 @@ extension LastMarkerViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let all = dao.findAllByDate();
+        let all = dataSource;
         if let all = all {
             let marker = all[indexPath.row]
             if let eventDate = marker.eventDate {
@@ -63,10 +82,12 @@ extension LastMarkerViewController: UITableViewDataSource {
                           forRowAt indexPath: IndexPath) {
 
         if editingStyle == .delete {
-            let all = dao.findAllByDate();
+            let all = dataSource;
             if let deleteMarker = all?[indexPath.row] {
                 dao.delete(object: deleteMarker)
+                DatabaseManager.shared.saveContext()
                 tableView.deleteRows(at: [indexPath], with: .fade)
+                setLastUpdateLabel()
             }
         }
     }
