@@ -55,6 +55,8 @@
 		D09DB320DFFFF2BBA649D716 /* AppInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DBEB42EB27DEB3D67F50B /* AppInfoItem.swift */; };
 		D09DB9717168EF3332468C6E /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DB338E249562BDF7C9865 /* NotificationNames.swift */; };
 		D09DBA69AB09CCDCD7FF3C19 /* PresentedViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DB3D6544E6512763AF00E /* PresentedViewControllerDelegate.swift */; };
+		E24175D72427C4830070520F /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24175D52427C4830070520F /* WebViewViewController.swift */; };
+		E24175D82427C4830070520F /* WebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24175D62427C4830070520F /* WebViewViewController.xib */; };
 		E242409C24265BF40072C3E1 /* DiaryEntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */; };
 		E242409D24265BF40072C3E1 /* DiaryEntryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */; };
 		E24240A024265DAE0072C3E1 /* SymptomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242409E24265DAE0072C3E1 /* SymptomsTableViewCell.swift */; };
@@ -128,6 +130,8 @@
 		D09DB3D6544E6512763AF00E /* PresentedViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedViewControllerDelegate.swift; sourceTree = "<group>"; };
 		D09DBEB42EB27DEB3D67F50B /* AppInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoItem.swift; sourceTree = "<group>"; };
 		D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DiCoScanner-Bridging-Header.h"; sourceTree = "<group>"; };
+		E24175D52427C4830070520F /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		E24175D62427C4830070520F /* WebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewViewController.xib; sourceTree = "<group>"; };
 		E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryDetailViewController.swift; sourceTree = "<group>"; };
 		E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryEntryDetailViewController.xib; sourceTree = "<group>"; };
 		E242409E24265DAE0072C3E1 /* SymptomsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsTableViewCell.swift; sourceTree = "<group>"; };
@@ -281,6 +285,8 @@
 				E25D1B3624277CEA0085A7FA /* OnboardingViewController.swift */,
 				E25D1B3724277CEA0085A7FA /* OnboardingViewController.xib */,
 				3601364B9022D7C477292190 /* OnBoardingDelegate.swift */,
+				E24175D52427C4830070520F /* WebViewViewController.swift */,
+				E24175D62427C4830070520F /* WebViewViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -443,6 +449,7 @@
 			files = (
 				A40D069C2426220300D62CAF /* LDLetspushFramework.bundle in Resources */,
 				E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */,
+				E24175D82427C4830070520F /* WebViewViewController.xib in Resources */,
 				A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */,
 				E25D1B3924277CEA0085A7FA /* OnboardingViewController.xib in Resources */,
 				E28583A524257ED600C6BE16 /* LastMarkerViewController.xib in Resources */,
@@ -494,6 +501,7 @@
 				A40D06B224265F5B00D62CAF /* CoronaTestViewController.swift in Sources */,
 				E28583AF2425B63B00C6BE16 /* Marker+UiModel.swift in Sources */,
 				36013CAD1FD909AADEBD2A17 /* DiaryEntryViewDelegate.swift in Sources */,
+				E24175D72427C4830070520F /* WebViewViewController.swift in Sources */,
 				29BD9473DAB79227727C64D7 /* SymptomGetRequest.swift in Sources */,
 				29BD9CE6870A1900A0F70B20 /* CoronaTestPostRequest.swift in Sources */,
 				29BD9D25EF0D745C26C5D0EA /* CoronaTestResultDao.swift in Sources */,

@@ -22,18 +22,21 @@ class TabBarViewController: UITabBarController {
         markerNavigationController.tabBarItem.selectedImage = UIImage(named: "ic_tabbar_position_active")
         markerNavigationController.tabBarItem.image = UIImage(named: "ic_tabbar_position_normal")
         markerNavigationController.tabBarItem.title = "Markierungen"
+        markerNavigationController.navigationBar.tintColor = UIColor(named: "AppTabBarTint")
 
         let symptomsNavigationController = UINavigationController(rootViewController: SymptomsViewController())
         let symptomsVC = symptomsNavigationController
         symptomsNavigationController.tabBarItem.selectedImage = UIImage(named: "ic_tabbar_symptoms_active")
         symptomsNavigationController.tabBarItem.image = UIImage(named: "ic_tabbar_symptoms_normal")
         symptomsNavigationController.tabBarItem.title = "Symptome"
+        symptomsNavigationController.navigationBar.tintColor = UIColor(named: "AppTabBarTint")
 
         let appInfoNavigationController = UINavigationController(rootViewController: AppInfoViewController())
         let appInfoVC = appInfoNavigationController
         appInfoNavigationController.tabBarItem.selectedImage = UIImage(named: "ic_tabbar_info_active")
         appInfoNavigationController.tabBarItem.image = UIImage(named: "ic_tabbar_info_normal")
         appInfoNavigationController.tabBarItem.title = "App-Info"
+        appInfoNavigationController.navigationBar.tintColor = UIColor(named: "AppTabBarTint")
 
         self.viewControllers = [markerVC, symptomsVC, appInfoVC]
     }
