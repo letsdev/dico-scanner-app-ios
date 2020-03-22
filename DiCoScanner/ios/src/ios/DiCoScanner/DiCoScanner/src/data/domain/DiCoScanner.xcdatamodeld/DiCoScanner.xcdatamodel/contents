@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G3020" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CoronaTestResult" representedClassName="CoronaTestResult" syncable="YES" codeGenerationType="class">
-        <attribute name="result" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="result" optional="YES" attributeType="String"/>
         <attribute name="testDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Marker" representedClassName="Marker" syncable="YES" codeGenerationType="class">
@@ -14,6 +14,7 @@
     </entity>
     <entity name="Symptom" representedClassName="Symptom" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="String"/>
         <relationship name="diary" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SymptomDiaryEntry" inverseName="symptom" inverseEntity="SymptomDiaryEntry"/>
     </entity>
     <entity name="SymptomDiaryEntry" representedClassName="SymptomDiaryEntry" syncable="YES" codeGenerationType="class">
@@ -21,10 +22,16 @@
         <attribute name="entryDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="symptom" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Symptom" inverseName="diary" inverseEntity="Symptom"/>
     </entity>
+    <entity name="Sync" representedClassName="Sync" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="refObjectId" optional="YES" attributeType="URI"/>
+        <attribute name="syncState" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <elements>
         <element name="CoronaTestResult" positionX="295.609375" positionY="156.296875" width="128" height="73"/>
         <element name="Marker" positionX="135.828125" positionY="157.40625" width="128" height="133"/>
-        <element name="Symptom" positionX="-26.8984375" positionY="-8.73046875" width="128" height="73"/>
+        <element name="Symptom" positionX="-26.8984375" positionY="-8.73046875" width="128" height="88"/>
         <element name="SymptomDiaryEntry" positionX="187.87109375" positionY="-8.7109375" width="128" height="88"/>
+        <element name="Sync" positionX="135" positionY="117" width="128" height="88"/>
     </elements>
 </model>

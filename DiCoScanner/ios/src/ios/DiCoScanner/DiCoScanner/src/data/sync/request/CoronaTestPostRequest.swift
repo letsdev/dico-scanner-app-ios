@@ -18,7 +18,7 @@ class CoronaTestPostRequest: BaseRequest, Request {
     }
 
     func url() -> URL {
-        URL(string: "\(baseUrl)/test")!
+        URL(string: "\(baseUrl)/test/sendResult")!
     }
 
     func httpMethod() -> String {
@@ -26,7 +26,7 @@ class CoronaTestPostRequest: BaseRequest, Request {
     }
 
     func body() -> [String: Any]? {
-        convertToJSON(managedObject: testResult)
+        convertToJSON(managedObject: testResult, keyReplacer: ["testDate": "timestamp"])
     }
 
     func receivedData(data: Data) {
@@ -37,6 +37,6 @@ class CoronaTestPostRequest: BaseRequest, Request {
         guard let deviceId = deviceId else {
             return nil
         }
-        return ["X-ATT-DeviceId": deviceId]
+        return ["X-ATT-DeviceId": deviceId, "Content-Type": "application/json"]
     }
 }

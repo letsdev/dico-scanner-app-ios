@@ -26,19 +26,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let all = MarkerDao().findAll()
         if let all = all {
             for marker in all {
-                let request = MarkerRequest(marker: marker)
-                request.send { result in
-                    os_log("Did send request: %i", result)
-                }
+                MarkerDao().markObjectForSync(object: marker)
             }
         }
         // end remove
+
+        SymptomGetRequest().send { result in
+            if (result) {
+                let all = SymptomDao().findAll()
+                let count = all?.count ?? 0
+                os_log("Fetched Symptoms count: %d", count)
+            }
+        }
+
         return true
     }
 
     func registerForPushNotifications() {
         #if targetEnvironment(simulator)
-            return
+        return
         #endif
 
         let libraryDirectory = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
@@ -47,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 libraryPath: libraryDirectory)
 
         #if DEBUG
-            pushConfiguration?.setSandboxMode(true)
+        pushConfiguration?.setSandboxMode(true)
         #endif
 
         pushConfiguration?.setBaseUrlWith("https://letspush.com/")

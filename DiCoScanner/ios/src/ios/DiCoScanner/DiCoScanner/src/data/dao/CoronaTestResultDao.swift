@@ -8,10 +8,10 @@
 import Foundation
 
 class CoronaTestResultDao : BaseDao<CoronaTestResult> {
-    enum CoronaTestResultState: Int32 {
-        case positive
-        case negative
-        case pending
+    enum CoronaTestResultState: String {
+        case positive = "IS_POSITIVE"
+        case negative = "IS_NEGATIVE"
+        case pending = "INITIALIZED"
     }
 
     func findLatest() -> CoronaTestResult? {

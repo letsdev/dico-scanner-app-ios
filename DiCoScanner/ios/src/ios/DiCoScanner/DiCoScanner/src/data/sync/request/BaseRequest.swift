@@ -64,7 +64,11 @@ class BaseRequest {
                 request.addValue(header.value, forHTTPHeaderField: header.key)
             }
         }
-
+        if let data = request.httpBody, let bodyString = String(data: data, encoding: .utf8) {
+            os_log("Sending Request with body: %@", bodyString)
+        } else {
+            os_log("Sending Request with body: nil body")
+        }
         dataTask = defaultRequestSession.dataTask(with: request) { [weak self] data, response, error in
             let success = error == nil
             if let error = error {
@@ -95,11 +99,17 @@ class BaseRequest {
                 var key = attribute.key
 
                 // replace the attribute key name with a different key in json
-                if keyReplacer != nil && keyReplacer?.keys.contains(key) ?? false {
+                if keyReplacer != nil && keyReplacer?.keys.contains("\(key)") ?? false {
                     key = keyReplacer![key]!
                 }
 
-                if let value = value as? Date {
+                if let values = value as? [Any] {
+                    for arrayValue in values {
+                        if let arrayValue = arrayValue as? NSManagedObject {
+                            jsonDict[key] = convertToJSON(managedObject: arrayValue, keyReplacer: keyReplacer)
+                        }
+                    }
+                } else if let value = value as? Date {
                     let formatter = ISO8601DateFormatter()
                     let string = formatter.string(from: value)
                     jsonDict[key] = string

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SymptomsTestViewController" customModule="CO_Scan" customModuleProvider="target">
+            <connections>
+                <outlet property="symptomsTableView" destination="dwe-1m-x1N" id="g86-6S-LoN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wähle hier deine aktuellen Symptome aus:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-74-K7f">
+                    <rect key="frame" x="16" y="60" width="382" height="45.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dwe-1m-x1N">
+                    <rect key="frame" x="16" y="121.5" width="382" height="724.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" name="AppGreyBackground"/>
+            <constraints>
+                <constraint firstItem="dwe-1m-x1N" firstAttribute="trailing" secondItem="6pZ-74-K7f" secondAttribute="trailing" id="Th0-z9-96a"/>
+                <constraint firstItem="6pZ-74-K7f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="VSD-1z-fWd"/>
+                <constraint firstItem="dwe-1m-x1N" firstAttribute="top" secondItem="6pZ-74-K7f" secondAttribute="bottom" constant="16" id="eHe-ve-HAT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dwe-1m-x1N" secondAttribute="bottom" constant="16" id="ixg-cl-G3o"/>
+                <constraint firstItem="6pZ-74-K7f" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="mXV-mE-EUj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6pZ-74-K7f" secondAttribute="trailing" constant="16" id="rk0-kc-k1U"/>
+                <constraint firstItem="dwe-1m-x1N" firstAttribute="leading" secondItem="6pZ-74-K7f" secondAttribute="leading" id="v44-yE-nbL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="133" y="111"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="AppGreyBackground">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

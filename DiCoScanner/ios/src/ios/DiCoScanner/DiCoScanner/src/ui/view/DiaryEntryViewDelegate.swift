@@ -6,5 +6,5 @@
 import Foundation
 
 protocol DiaryEntryViewDelegate {
-    func didClickEntry()
+    func didClick(entry: SymptomDiaryEntry?)
 }

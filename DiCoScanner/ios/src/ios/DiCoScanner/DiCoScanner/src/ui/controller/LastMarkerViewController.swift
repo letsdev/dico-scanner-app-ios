@@ -10,30 +10,50 @@ import UIKit
 
 class LastMarkerViewController: UIViewController {
 
+    @IBOutlet weak var lastMarkerHeaderView: UIView!
     @IBOutlet weak var lastMarkerHeader: UILabel!
     @IBOutlet weak var lastMarkerTimestampLabel: UILabel!
     @IBOutlet weak var lastMarkerTableView: UITableView!
 
     private let dao = MarkerDao()
 
+    private var dataSource: [Marker]? {
+        get {
+            dao.findAllByDate()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         lastMarkerHeader.text = "Meine letzten Markierungen"
-        lastMarkerTimestampLabel.text = "Dein Standort wurde zuletzt vor 14 Minuten getrackt"
+        lastMarkerTimestampLabel.text = "Es wurden noch keine Markierungen gesetzt."
+        setLastUpdateLabel()
 
         lastMarkerTableView.dataSource = self
         lastMarkerTableView.register(UINib(nibName: "LastMarkerTableViewCell", bundle: Bundle.main),
                 forCellReuseIdentifier: "LastMarkerTableViewCell")
+
+        Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(setLastUpdateLabel), userInfo: nil,
+                repeats: true)
     }
 
+    @objc private func setLastUpdateLabel() {
+        if let newest = dataSource?.first {
+            lastMarkerTimestampLabel.text = newest.lastUpdateString()
+        }
+    }
+
+    func reloadData() {
+        lastMarkerTableView.reloadData()
+        setLastUpdateLabel()
+    }
 }
 
 extension LastMarkerViewController: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let all2 = dao.countAll()
-        return all2
+        dao.countAll()
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,7 +63,7 @@ extension LastMarkerViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let all = dao.findAll();
+        let all = dataSource;
         if let all = all {
             let marker = all[indexPath.row]
             if let eventDate = marker.eventDate {
@@ -53,5 +73,23 @@ extension LastMarkerViewController: UITableViewDataSource {
             cell.lastMarkerCoordinatesLabel.text = marker.coordinatesString()
         }
         return cell
+    }
+
+    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
+                          forRowAt indexPath: IndexPath) {
+
+        if editingStyle == .delete {
+            let all = dataSource;
+            if let deleteMarker = all?[indexPath.row] {
+                dao.delete(object: deleteMarker)
+                DatabaseManager.shared.saveContext()
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                setLastUpdateLabel()
+            }
+        }
     }
 }
