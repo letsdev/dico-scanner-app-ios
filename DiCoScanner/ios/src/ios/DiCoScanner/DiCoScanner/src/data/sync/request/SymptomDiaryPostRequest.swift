@@ -11,6 +11,7 @@ class SymptomDiaryPostRequest: BaseRequest, Request {
     init(symptomDiary: SymptomDiaryEntry) {
         self.symptomDiary = symptomDiary
         super.init()
+        setDelegate(delegate: self)
     }
 
     func url() -> URL {

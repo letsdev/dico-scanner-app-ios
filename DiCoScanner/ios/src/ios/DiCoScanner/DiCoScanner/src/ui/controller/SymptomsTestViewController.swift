@@ -11,6 +11,7 @@ import UIKit
 class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var symptomsTableView: UITableView!
     var symptomList: [Symptom]? = []
+    var selectedSymptomList: [Symptom]? = []
     
     public var symptomsTestDelegate: PresentedViewControllerDelegate
 
@@ -28,11 +29,17 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "aktuelle Symptome"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Abbrechen", style: .plain, target: self,
-                action: #selector(cancelTest))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Weiter", style: .plain, target: self,
-                action: #selector(finishSymptomsTest))
+        self.title = "Symptome dokumentieren"
+        
+        let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(title: "Abbrechen", style: .plain, target: self,
+        action: #selector(cancelTest))
+        leftBarButtonItem.tintColor = UIColor(named: "AppDarkBlue")
+        let rightBarButtonItem = UIBarButtonItem(title: "Speichern", style: .done, target: self,
+        action: #selector(finishSymptomsTest))
+        rightBarButtonItem.tintColor = UIColor(named: "AppDarkBlue")
+        
+        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
 
         setupSymptomsTableView()
     }
@@ -61,9 +68,23 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     @objc func finishSymptomsTest() {
-        self.symptomsTestDelegate.didEndPresentation(presentedViewController: self)
-
-        self.dismiss(animated: true, completion: nil)
+        self.navigationItem.rightBarButtonItem!.isEnabled = false
+        
+        storeSymptomDiaryEntry()
+        
+        //self.symptomsTestDelegate.didEndPresentation(presentedViewController: self)
+        //self.dismiss(animated: true, completion: nil)
+    }
+    
+    func storeSymptomDiaryEntry() {
+        let dao = SymptomDiaryEntryDao()
+        let symptomDiaryEntry = dao.newEntity()
+        symptomDiaryEntry.entryDate = Date()
+        symptomDiaryEntry.addToSymptom(NSSet(array: selectedSymptomList!))
+        
+        DatabaseManager.shared.saveContext()
+        
+        dao.markObjectForSync(object: symptomDiaryEntry)
     }
 
     @objc func cancelTest() {
@@ -74,12 +95,19 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .none
         }
+        
+        let deselectedSymptom = symptomList?[indexPath.row]
+        selectedSymptomList!.removeAll { (currentSymptom: Symptom) -> Bool in
+            currentSymptom.uuid == deselectedSymptom!.uuid
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .checkmark
-
         }
+
+        guard let selectedSymptom = symptomList?[indexPath.row] else { return }
+        selectedSymptomList?.append(selectedSymptom)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
