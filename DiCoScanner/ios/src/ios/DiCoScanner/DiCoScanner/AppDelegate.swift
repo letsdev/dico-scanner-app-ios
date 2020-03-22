@@ -99,6 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         LDPPushRegistration.sharedInstance().didReceiveRemoteNotification(getPushId(willPresent: notification),
                 with: UIApplication.shared.applicationState)
+        checkForNavigation(notification: notification)
         completionHandler([.badge, .sound, .alert])
     }
 
@@ -107,7 +108,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         LDPPushRegistration.sharedInstance().didReceiveRemoteNotification(getPushId(willPresent: response.notification),
                 with: UIApplication.shared.applicationState)
+        checkForNavigation(notification: response.notification)
         completionHandler()
+    }
+
+
+    func checkForNavigation(notification: UNNotification) {
+        var action: String? = nil
+        if let userInfo = notification.request.content.userInfo as? [String: AnyObject] {
+            action = userInfo["action"] as? String
+        }
+
+        if let action = action {
+            switch (action) {
+            case "testDetected":
+                navigateToCoronaTest()
+            case "dailySymptomsReminder":
+                navigateToSymptomTest()
+            default:
+                os_log("Received unknown action in push, do no navigation: %@", action)
+            }
+        }
+    }
+
+    func navigateToSymptomTest() {
+
+    }
+
+    func navigateToCoronaTest() {
+
     }
 }
 
