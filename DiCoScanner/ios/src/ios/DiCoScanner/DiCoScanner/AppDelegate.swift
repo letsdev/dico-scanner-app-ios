@@ -89,6 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         LDPPushRegistration.sharedInstance().didReceiveRemoteNotification(getPushId(willPresent: notification),
                 with: UIApplication.shared.applicationState)
+        checkForNavigation(notification: notification)
         completionHandler([.badge, .sound, .alert])
     }
 
@@ -97,7 +98,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         LDPPushRegistration.sharedInstance().didReceiveRemoteNotification(getPushId(willPresent: response.notification),
                 with: UIApplication.shared.applicationState)
+        checkForNavigation(notification: response.notification)
         completionHandler()
+    }
+
+
+    func checkForNavigation(notification: UNNotification) {
+        var action: String? = nil
+        if let userInfo = notification.request.content.userInfo as? [String: AnyObject] {
+            action = userInfo["ldpush_action"] as? String
+        }
+
+        if let action = action {
+            switch (action) {
+            case "testDetected":
+                navigateToCoronaTest()
+            case "dailySymptomsReminder":
+                navigateToSymptomTest()
+            default:
+                os_log("Received unknown action in push, do no navigation: %@", action)
+            }
+        }
+    }
+
+    func navigateToSymptomTest() {
+        let symptomsVC = prepareForDeeplink()
+        symptomsVC?.startSymptomsTest()
+    }
+
+    func navigateToCoronaTest() {
+        let symptomsVC = prepareForDeeplink()
+        symptomsVC?.startCoronaTest()
+    }
+
+    func prepareForDeeplink() -> SymptomsViewController? {
+        if (self.window!.rootViewController!.isKind(of: TabBarViewController.self)) {
+            let rootViewController = self.window!.rootViewController as! TabBarViewController
+            
+            if (rootViewController.selectedViewController?.presentedViewController != nil) {
+                rootViewController.selectedViewController!.presentedViewController!.dismiss(animated: false, completion: nil)
+            }
+
+            let navigationController = rootViewController.selectedViewController as! UINavigationController
+            if (!navigationController.viewControllers[0].isKind(of: SymptomsViewController.self)) {
+                rootViewController.selectedIndex = 1
+            }
+
+            return (rootViewController.selectedViewController as! UINavigationController).viewControllers[0] as! SymptomsViewController
+        }
+
+        return nil
     }
 }
 
