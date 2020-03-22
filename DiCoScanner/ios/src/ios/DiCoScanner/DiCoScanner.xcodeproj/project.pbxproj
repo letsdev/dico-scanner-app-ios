@@ -48,6 +48,7 @@
 		A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4D724256D9E00B294AF /* SymptomsViewController.swift */; };
 		A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4D824256D9E00B294AF /* SymptomsViewController.xib */; };
 		A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */; };
+		D09DB9717168EF3332468C6E /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DB338E249562BDF7C9865 /* NotificationNames.swift */; };
 		D09DBA69AB09CCDCD7FF3C19 /* PresentedViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DB3D6544E6512763AF00E /* PresentedViewControllerDelegate.swift */; };
 		E242409C24265BF40072C3E1 /* DiaryEntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */; };
 		E242409D24265BF40072C3E1 /* DiaryEntryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */; };
@@ -110,6 +111,7 @@
 		A481B4D724256D9E00B294AF /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
 		A481B4D824256D9E00B294AF /* SymptomsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsViewController.xib; sourceTree = "<group>"; };
 		A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
+		D09DB338E249562BDF7C9865 /* NotificationNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		D09DB3D6544E6512763AF00E /* PresentedViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedViewControllerDelegate.swift; sourceTree = "<group>"; };
 		D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DiCoScanner-Bridging-Header.h"; sourceTree = "<group>"; };
 		E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryDetailViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */,
 				E28583AE2425B63B00C6BE16 /* Marker+UiModel.swift */,
 				E2B04A52242676B600CD043E /* SymptomDiaryEntry+UiModel.swift */,
+				D09DB338E249562BDF7C9865 /* NotificationNames.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				29BD903B8514E18517A05543 /* SyncManager.swift in Sources */,
 				29BD95BD9208C8629C9C621A /* SymptomDiaryPostRequest.swift in Sources */,
 				D09DBA69AB09CCDCD7FF3C19 /* PresentedViewControllerDelegate.swift in Sources */,
+				D09DB9717168EF3332468C6E /* NotificationNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
