@@ -4,6 +4,7 @@
 
 import Foundation
 import os
+import CoreData
 
 class SymptomDiaryPostRequest: BaseRequest, Request {
 
@@ -24,17 +25,29 @@ class SymptomDiaryPostRequest: BaseRequest, Request {
     }
 
     func body() -> [String: Any]? {
-        convertToJSON(managedObject: symptomDiary,
-                keyReplacer: ["entryDate": "timestamp", "name": "nameDe"], keyInjector: { key, value in
-            if (key == "uuid") {
-                var dict: [String: Any] = [:]
-                if let id = value as? String {
-                    dict["id"] = Int(id)
+        var result = convertToJSON(managedObject: symptomDiary,
+                keyReplacer: ["entryDate": "timestamp"])
+
+        if let values = symptomDiary.symptom {
+            var array:[Any] = []
+            for arrayValue in values {
+                if let arrayValue = arrayValue as? NSManagedObject {
+                     array.append(convertToJSON(managedObject: arrayValue, keyReplacer: ["name": "nameDe"], keyInjector: { key, value in
+                         if (key == "uuid") {
+                             var dict: [String: Any] = [:]
+                             if let id = value as? String {
+                                 dict["id"] = Int(id)
+                             }
+                             return dict
+                         }
+                         return nil
+                     }))
                 }
-                return dict
             }
-            return nil
-        })
+            result["symptoms"] = array
+        }
+
+        return result
     }
 
     func additionalHeader() -> [String: String]? {
@@ -51,7 +64,7 @@ class SymptomDiaryPostRequest: BaseRequest, Request {
                 let sick = testResult["maybeInfected"] as! Bool
                 symptomDiary.areYouSick = (
                         sick ? SymptomDiaryEntryDao.DiaryTestResult.positive : SymptomDiaryEntryDao.DiaryTestResult.negative).rawValue
-                symptomDiary.hintText = testResult["text"] as? String
+                symptomDiary.hintText = testResult["message"] as? String
             }
         } catch {
             let nserror = error as NSError
