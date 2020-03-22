@@ -21,9 +21,9 @@ extension SymptomDiaryEntry {
 
         switch (SymptomDiaryEntryDao.DiaryTestResult(rawValue: self.areYouSick)) {
         case .positive:
-            return "Anzeichen für COVID-19*"
+            return self.hintText ?? "Anzeichen für COVID-19*"
         case .negative:
-            return "Keine COVID-19 Anzeichen*"
+            return self.hintText ?? "Keine COVID-19 Anzeichen*"
         case .pending:
             return "Ergebnis wird ermittelt..."
         default:
