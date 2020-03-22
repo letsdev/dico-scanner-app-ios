@@ -80,6 +80,7 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
         let dao = SymptomDiaryEntryDao()
         let symptomDiaryEntry = dao.newEntity()
         symptomDiaryEntry.entryDate = Date()
+        symptomDiaryEntry.areYouSick = SymptomDiaryEntryDao.DiaryTestResult.pending.rawValue
         symptomDiaryEntry.addToSymptom(NSSet(array: selectedSymptomList!))
         
         DatabaseManager.shared.saveContext()
