@@ -483,6 +483,7 @@
 				A40D069C2426220300D62CAF /* LDLetspushFramework.bundle in Resources */,
 				E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */,
 				E24175E42427D6690070520F /* data_privacy.html in Resources */,
+				E24175E22427D6690070520F /* style.min.css in Resources */,
 				E24175D82427C4830070520F /* WebViewViewController.xib in Resources */,
 				A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */,
 				E25D1B3924277CEA0085A7FA /* OnboardingViewController.xib in Resources */,
@@ -498,7 +499,6 @@
 				A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */,
 				E24240A124265DAE0072C3E1 /* SymptomsTableViewCell.xib in Resources */,
 				A40D06B724268EBA00D62CAF /* AppInfoViewController.xib in Resources */,
-				E24175E22427D6690070520F /* style.min.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
