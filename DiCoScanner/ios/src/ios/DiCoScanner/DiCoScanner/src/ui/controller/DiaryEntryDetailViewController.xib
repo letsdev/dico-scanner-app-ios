@@ -22,8 +22,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S2Y-rT-fOX">
-                    <rect key="frame" x="20" y="129.5" width="374" height="655.5"/>
+                    <rect key="frame" x="20" y="129.5" width="374" height="635.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmw-vV-Jrd" userLabel="Lower Border View">
                     <rect key="frame" x="0.0" y="785" width="414" height="1"/>
@@ -77,6 +82,11 @@
                         <constraint firstAttribute="trailing" secondItem="sLU-gz-Drg" secondAttribute="trailing" constant="20" symbolic="YES" id="MEt-jo-IzK"/>
                         <constraint firstItem="sLU-gz-Drg" firstAttribute="top" secondItem="FFD-WD-Sy4" secondAttribute="top" constant="20" symbolic="YES" id="idU-bc-UGU"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Folgende Symptome wurden dokumentiert:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyc-is-93d">
                     <rect key="frame" x="20" y="64" width="374" height="45.5"/>
@@ -91,7 +101,7 @@
                 <constraint firstAttribute="bottom" secondItem="FFD-WD-Sy4" secondAttribute="bottom" id="40w-sO-D50"/>
                 <constraint firstItem="S2Y-rT-fOX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="54k-5P-dXg"/>
                 <constraint firstAttribute="trailing" secondItem="dmw-vV-Jrd" secondAttribute="trailing" id="90E-Y2-Ofb"/>
-                <constraint firstItem="dmw-vV-Jrd" firstAttribute="top" secondItem="S2Y-rT-fOX" secondAttribute="bottom" id="9t4-2s-tqD"/>
+                <constraint firstItem="dmw-vV-Jrd" firstAttribute="top" secondItem="S2Y-rT-fOX" secondAttribute="bottom" constant="20" id="9t4-2s-tqD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nyc-is-93d" secondAttribute="trailing" constant="20" id="Gua-iM-WKl"/>
                 <constraint firstItem="S2Y-rT-fOX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-20" id="H3S-RF-3nR"/>
                 <constraint firstItem="FFD-WD-Sy4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="RhC-08-oJN"/>
