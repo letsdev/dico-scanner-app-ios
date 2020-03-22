@@ -53,8 +53,14 @@ internal class DatabaseManager {
                 entity.addToSymptom(symptom)
             }
             entity.entryDate = Date()
-            entity.areYouSick = SymptomDiaryEntryDao.DiaryTestResult.pending.rawValue
-            
+            entity.areYouSick = SymptomDiaryEntryDao.DiaryTestResult.positive.rawValue
+
+            let entity2 = SymptomDiaryEntryDao().newEntity()
+            if let symptom = symptoms?[0] {
+                entity2.addToSymptom(symptom)
+            }
+            entity2.entryDate = Date()
+            entity2.areYouSick = SymptomDiaryEntryDao.DiaryTestResult.negative.rawValue
         }
     }
 
