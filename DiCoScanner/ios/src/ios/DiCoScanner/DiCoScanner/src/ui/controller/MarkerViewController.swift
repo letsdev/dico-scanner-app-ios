@@ -94,9 +94,8 @@ extension MarkerViewController: LocationProviderDelegate {
             saveAndSyncLocation(location: location)
             lastMarkVC.reloadData()
             buttonStateController?.setButtonAnimation(state: .success)
-        } else if locationMode == .map {
-            mapKitView.setCenter(location.coordinate, animated: true)
         }
+        mapKitView.setCenter(location.coordinate, animated: true)
     }
 
     func didGrantAuthorization(locationMode: LocationProvider.LocationMode) {
