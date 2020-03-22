@@ -26,7 +26,7 @@ class SymptomsViewController: UIViewController, PresentedViewControllerDelegate 
         navigationController?.navigationBar.prefersLargeTitles = true
 
         setupCoronaTestButton()
-        
+
         setupCoronaTestResults()
 
         setupSymptomsTestButton()
@@ -101,16 +101,16 @@ class SymptomsViewController: UIViewController, PresentedViewControllerDelegate 
             coronaTestResultLabel.textColor = UIColor.black
         }
     }
-    
+
     func setupCoronaTestButton() {
         coronaTestButton.addTarget(self, action: #selector(self.handleCoronaTestButtonTap(_:)), for: .touchUpInside)
     }
-    
+
     func setupSymptomsTestButton() {
         startSymptomsTestButton.layer.borderColor = UIColor(named: "AppDarkBlue")!.cgColor
         startSymptomsTestButton.addTarget(self, action: #selector(self.handleSymptomsTestButtonTap(_:)), for: .touchUpInside)
     }
-    
+
     @objc func handleCoronaTestButtonTap(_ sender: UITapGestureRecognizer? = nil) {
       startCoronaTest()
     }
@@ -145,7 +145,8 @@ extension SymptomsViewController: DiaryEntryViewDelegate {
         let vc = DiaryEntryDetailViewController()
         vc.entry = entry
         vc.delegate = self
-        self.present(vc, animated: true)
+        let navigationController = UINavigationController(rootViewController: vc)
+        self.present(navigationController, animated: true)
     }
 }
 

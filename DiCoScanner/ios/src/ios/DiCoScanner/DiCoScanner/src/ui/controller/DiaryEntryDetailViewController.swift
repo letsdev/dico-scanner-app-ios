@@ -15,7 +15,6 @@ protocol DiaryEntryDetailViewControllerDelegate {
 
 class DiaryEntryDetailViewController: UIViewController {
 
-    @IBOutlet weak var headerContainerView: UIView!
     @IBOutlet weak var symptomsTableView: UITableView!
     @IBOutlet weak var resultLabel: UILabel!
 
@@ -27,15 +26,24 @@ class DiaryEntryDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupHeaderView()
         setupTableView()
         setupResultLabel()
+        setupNavigationBar()
 
         SymptomGetRequest().send { result in
             if (result) {
                 self.symptomsTableView.reloadData()
             }
         }
+    }
+
+    private func setupNavigationBar() {
+        let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(title: "Abbrechen", style: .plain, target: self,
+                action: #selector(cancelTest))
+        leftBarButtonItem.tintColor = UIColor(named: "AppDarkBlue")
+        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+
+        self.title = entry?.dateLabel()
     }
 
     private func setupResultLabel() {
@@ -53,17 +61,8 @@ class DiaryEntryDetailViewController: UIViewController {
                 forCellReuseIdentifier: "SymptomsTableViewCell")
     }
 
-    private func setupHeaderView() {
-        let headerView = DiaryEntryView()
-        headerView.diaryEntry = entry
-        headerContainerView.addSubview(headerView)
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            headerView.leadingAnchor.constraint(equalTo: headerContainerView.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: headerContainerView.trailingAnchor),
-            headerView.topAnchor.constraint(equalTo: headerContainerView.topAnchor),
-            headerView.bottomAnchor.constraint(lessThanOrEqualTo: headerContainerView.bottomAnchor)
-        ])
+    @objc private func cancelTest() {
+        self.dismiss(animated: true)
     }
 
 
