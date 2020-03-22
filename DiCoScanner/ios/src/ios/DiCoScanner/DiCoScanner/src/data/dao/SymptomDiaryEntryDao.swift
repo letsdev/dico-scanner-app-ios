@@ -8,7 +8,7 @@
 import Foundation
 
 class SymptomDiaryEntryDao: BaseDao<SymptomDiaryEntry> {
-    enum DiaryTestResult: Int32 {
+    enum DiaryTestResult : Int32 {
         case positive
         case negative
         case pending
