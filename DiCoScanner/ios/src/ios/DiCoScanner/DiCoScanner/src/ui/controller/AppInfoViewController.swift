@@ -10,8 +10,8 @@ import UIKit
 
 class AppInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var appInfoTableView: UITableView!
-    private var appInfoSections: [String] = ["ALLGEMEIN", "RECHTLICHE HINWEISE"]
-    private var appInfoItems: [[AppInfoItem]] = [[AppInfoItem(identifier: "push", displayName: "Push Benachrichtigungen"), AppInfoItem(identifier: "websites", displayName: "Hilfreiche Websites"), AppInfoItem(identifier: "infografik", displayName: "Infografik")], [AppInfoItem(identifier: "terms", displayName: "Nutzungsbedingungen"), AppInfoItem(identifier: "privacy", displayName: "Datenschutzrichtlinie"), AppInfoItem(identifier: "conditions", displayName: "Bedingungen"), AppInfoItem(identifier: "imprint", displayName: "Impressum"), AppInfoItem(identifier: "about", displayName: "Über die App")]]
+    private var appInfoSections: [String] = ["ALLGEMEIN"]
+    private var appInfoItems: [[AppInfoItem]] = [[AppInfoItem(identifier: "imprint", displayName: "Impressum", localUrl: "imprint"), AppInfoItem(identifier: "data_privacy", displayName: "Datenschutz", localUrl: "data_privacy")]]
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -57,6 +57,9 @@
 		D09DBA69AB09CCDCD7FF3C19 /* PresentedViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DB3D6544E6512763AF00E /* PresentedViewControllerDelegate.swift */; };
 		E24175D72427C4830070520F /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24175D52427C4830070520F /* WebViewViewController.swift */; };
 		E24175D82427C4830070520F /* WebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24175D62427C4830070520F /* WebViewViewController.xib */; };
+		E24175E22427D6690070520F /* style.min.css in Resources */ = {isa = PBXBuildFile; fileRef = E24175DF2427D6690070520F /* style.min.css */; };
+		E24175E32427D6690070520F /* imprint.html in Resources */ = {isa = PBXBuildFile; fileRef = E24175E02427D6690070520F /* imprint.html */; };
+		E24175E42427D6690070520F /* data_privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = E24175E12427D6690070520F /* data_privacy.html */; };
 		E242409C24265BF40072C3E1 /* DiaryEntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */; };
 		E242409D24265BF40072C3E1 /* DiaryEntryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */; };
 		E24240A024265DAE0072C3E1 /* SymptomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242409E24265DAE0072C3E1 /* SymptomsTableViewCell.swift */; };
@@ -132,6 +135,9 @@
 		D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DiCoScanner-Bridging-Header.h"; sourceTree = "<group>"; };
 		E24175D52427C4830070520F /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		E24175D62427C4830070520F /* WebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewViewController.xib; sourceTree = "<group>"; };
+		E24175DF2427D6690070520F /* style.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.min.css; sourceTree = "<group>"; };
+		E24175E02427D6690070520F /* imprint.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = imprint.html; sourceTree = "<group>"; };
+		E24175E12427D6690070520F /* data_privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = data_privacy.html; sourceTree = "<group>"; };
 		E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryDetailViewController.swift; sourceTree = "<group>"; };
 		E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryEntryDetailViewController.xib; sourceTree = "<group>"; };
 		E242409E24265DAE0072C3E1 /* SymptomsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsTableViewCell.swift; sourceTree = "<group>"; };
@@ -332,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				A40D069A2426210600D62CAF /* DiCoScanner.entitlements */,
+				E24175DC2427D6690070520F /* assets */,
 				2E9797E6242562EA005CE79F /* src */,
 				A481B4C02425623500B294AF /* AppDelegate.swift */,
 				A481B4CC2425623600B294AF /* Assets.xcassets */,
@@ -358,6 +365,32 @@
 				D09DB3D6544E6512763AF00E /* PresentedViewControllerDelegate.swift */,
 			);
 			path = protocol;
+			sourceTree = "<group>";
+		};
+		E24175DC2427D6690070520F /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				E24175DD2427D6690070520F /* html */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		E24175DD2427D6690070520F /* html */ = {
+			isa = PBXGroup;
+			children = (
+				E24175DE2427D6690070520F /* css */,
+				E24175E02427D6690070520F /* imprint.html */,
+				E24175E12427D6690070520F /* data_privacy.html */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
+		E24175DE2427D6690070520F /* css */ = {
+			isa = PBXGroup;
+			children = (
+				E24175DF2427D6690070520F /* style.min.css */,
+			);
+			path = css;
 			sourceTree = "<group>";
 		};
 		E28583A62425806300C6BE16 /* cell */ = {
@@ -449,6 +482,7 @@
 			files = (
 				A40D069C2426220300D62CAF /* LDLetspushFramework.bundle in Resources */,
 				E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */,
+				E24175E42427D6690070520F /* data_privacy.html in Resources */,
 				E24175D82427C4830070520F /* WebViewViewController.xib in Resources */,
 				A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */,
 				E25D1B3924277CEA0085A7FA /* OnboardingViewController.xib in Resources */,
@@ -457,12 +491,14 @@
 				E242409D24265BF40072C3E1 /* DiaryEntryDetailViewController.xib in Resources */,
 				A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */,
 				A481B4CD2425623600B294AF /* Assets.xcassets in Resources */,
+				E24175E32427D6690070520F /* imprint.html in Resources */,
 				E28583AA2425807300C6BE16 /* LastMarkerTableViewCell.xib in Resources */,
 				A40D06BB2426D25F00D62CAF /* SymptomsTestViewController.xib in Resources */,
 				A40D06B324265F5B00D62CAF /* CoronaTestViewController.xib in Resources */,
 				A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */,
 				E24240A124265DAE0072C3E1 /* SymptomsTableViewCell.xib in Resources */,
 				A40D06B724268EBA00D62CAF /* AppInfoViewController.xib in Resources */,
+				E24175E22427D6690070520F /* style.min.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
