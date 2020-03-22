@@ -11,6 +11,7 @@ import UIKit
 class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var symptomsTableView: UITableView!
     var symptomList: [Symptom]? = []
+    var selectedSymptomList: [Symptom]? = []
     
     public var symptomsTestDelegate: PresentedViewControllerDelegate
 
@@ -61,9 +62,23 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     @objc func finishSymptomsTest() {
-        self.symptomsTestDelegate.didEndPresentation(presentedViewController: self)
-
-        self.dismiss(animated: true, completion: nil)
+        self.navigationItem.rightBarButtonItem!.isEnabled = false
+        
+        storeSymptomDiaryEntry()
+        
+        //self.symptomsTestDelegate.didEndPresentation(presentedViewController: self)
+        //self.dismiss(animated: true, completion: nil)
+    }
+    
+    func storeSymptomDiaryEntry() {
+        let dao = SymptomDiaryEntryDao()
+        let symptomDiaryEntry = dao.newEntity()
+        symptomDiaryEntry.entryDate = Date()
+        symptomDiaryEntry.addToSymptom(NSSet(array: selectedSymptomList!))
+        
+        DatabaseManager.shared.saveContext()
+        
+        dao.markObjectForSync(object: symptomDiaryEntry)
     }
 
     @objc func cancelTest() {
@@ -74,12 +89,19 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .none
         }
+        
+        let deselectedSymptom = symptomList?[indexPath.row]
+        selectedSymptomList!.removeAll { (currentSymptom: Symptom) -> Bool in
+            currentSymptom.uuid == deselectedSymptom!.uuid
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .checkmark
-
         }
+
+        guard let selectedSymptom = symptomList?[indexPath.row] else { return }
+        selectedSymptomList?.append(selectedSymptom)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
