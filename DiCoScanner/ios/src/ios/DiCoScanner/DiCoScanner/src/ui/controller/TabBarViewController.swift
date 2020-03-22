@@ -10,6 +10,8 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
+    let userDefaultsSkipOnboardingKey = "skipOnboarding"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,5 +36,29 @@ class TabBarViewController: UITabBarController {
         appInfoNavigationController.tabBarItem.title = "App-Info"
 
         self.viewControllers = [markerVC, symptomsVC, appInfoVC]
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if !UserDefaults.standard.bool(forKey: userDefaultsSkipOnboardingKey) {
+            showOnboarding()
+        }
+    }
+
+    private func showOnboarding() {
+        let object = OnboardingViewController()
+
+        object.delegate = self
+        self.present(object, animated: true)
+    }
+}
+
+extension TabBarViewController: OnBoardingDelegate {
+
+    func didClickContinue(_ viewController: UIViewController) {
+        viewController.dismiss(animated: true)
+
+        UserDefaults.standard.set(true, forKey: userDefaultsSkipOnboardingKey)
     }
 }
