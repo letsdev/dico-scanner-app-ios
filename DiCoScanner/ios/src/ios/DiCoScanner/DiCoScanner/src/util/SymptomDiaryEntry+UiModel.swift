@@ -24,6 +24,8 @@ extension SymptomDiaryEntry {
             return "Anzeichen für COVID-19*"
         case .negative:
             return "Keine COVID-19 Anzeichen*"
+        case .pending
+            return "Ergebnis wird ermittelt..."
         default:
             return ""
         }
