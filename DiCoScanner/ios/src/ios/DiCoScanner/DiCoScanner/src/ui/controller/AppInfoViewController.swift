@@ -18,7 +18,6 @@ class AppInfoViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         self.title = "App-Info"
         navigationController?.navigationBar.prefersLargeTitles = true
-        gationController?.navigationBar.backgroundColor = UIColor.white
 
         setupAppInfoTableView()
     }
