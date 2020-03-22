@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol CoronaTestViewControllerDelegate: class {
-    func didCompleteCoronaTest()
-}
-
 class CoronaTestViewController: UIViewController {
     @IBOutlet var coronaTestPositiveResultSwitch: UISwitch!
     @IBOutlet var coronaTestPendingResultSwitch: UISwitch!
@@ -19,10 +15,10 @@ class CoronaTestViewController: UIViewController {
     @IBOutlet var coronaTestDateTextField: UITextField!
     let coronaTestDatePicker = UIDatePicker()
     var coronaTestResult = CoronaTestResultDao.CoronaTestResultState.pending
-    public var coronaTestDelegate: CoronaTestViewControllerDelegate
+    public var coronaTestDelegate: PresentedViewControllerDelegate
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?,
-         coronaTestDelegate: CoronaTestViewControllerDelegate) {
+         coronaTestDelegate: PresentedViewControllerDelegate) {
         self.coronaTestDelegate = coronaTestDelegate
 
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -35,9 +31,10 @@ class CoronaTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "SARS-CoV-2-Schnelltest"
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Fertig", style: .plain, target: self,
+        self.title = "SARS-CoV-2-Test"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Abbrechen", style: .plain, target: self,
+                                                                action: #selector(cancelTest))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Speichern", style: .plain, target: self,
                 action: #selector(finishCoronaTest))
         self.navigationItem.rightBarButtonItem!.isEnabled = false
 
@@ -51,7 +48,7 @@ class CoronaTestViewController: UIViewController {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let selectedDateButton = UIBarButtonItem(title: "Fertig", style: .plain, target: self,
+        let selectedDateButton = UIBarButtonItem(title: "Speichern", style: .plain, target: self,
                 action: #selector(selectedDate));
 
         toolbar.setItems([spaceButton, selectedDateButton], animated: false)
@@ -126,6 +123,10 @@ class CoronaTestViewController: UIViewController {
 
         dao.markObjectForSync(object: testResult)
 
-        self.coronaTestDelegate.didCompleteCoronaTest()
+        self.coronaTestDelegate.didEndPresentation(presentedViewController: self)
+    }
+
+    @objc func cancelTest() {
+       self.dismiss(animated: true, completion: nil)
     }
 }

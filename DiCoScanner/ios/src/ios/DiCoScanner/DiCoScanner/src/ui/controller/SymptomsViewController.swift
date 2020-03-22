@@ -8,12 +8,14 @@
 
 import UIKit
 
-class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate {
+class SymptomsViewController: UIViewController, PresentedViewControllerDelegate {
 
     @IBOutlet var coronaTestResultLabel: UILabel!
+    @IBOutlet var coronaTestButton: UIButton!
     @IBOutlet var startSymptomsTestButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var coronaTestResultContainer: UIView!
+    @IBOutlet weak var symptomsDiaryContainerView: UIView!
 
     private let symptomDiaryDao = SymptomDiaryEntryDao()
 
@@ -23,6 +25,8 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
         self.title = "Symptome"
         navigationController?.navigationBar.prefersLargeTitles = true
 
+        setupCoronaTestButton()
+        
         setupCoronaTestResults()
 
         setupSymptomsTestButton()
@@ -31,6 +35,9 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
     }
 
     private func setupSymptomsDiaryEntries() {
+        containerView.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
 
         var arrangedSubviews: [DiaryEntryView] = []
 
@@ -40,6 +47,13 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
             diaryEntryView.diaryEntry = diaryEntry
             arrangedSubviews.append(diaryEntryView)
         }
+
+        guard arrangedSubviews.count > 0 else {
+            symptomsDiaryContainerView.isHidden = true
+            return
+        }
+
+        symptomsDiaryContainerView.isHidden = false
 
         let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
         containerView.addSubview(stackView)
@@ -64,14 +78,14 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
             switch (CoronaTestResultDao.CoronaTestResultState(rawValue: coronaTestResult!.result!)) {
             case .positive:
                 coronaTestResultLabel.text = "Positiv"
-                coronaTestResultLabel.textColor = UIColor(named: "AppGreen")
+                coronaTestResultLabel.textColor = UIColor(named: "AppRed")
                 break
             case .negative:
                 coronaTestResultLabel.text = "Negativ"
-                coronaTestResultLabel.textColor = UIColor(named: "AppRed")
+                coronaTestResultLabel.textColor = UIColor(named: "AppGreen")
                 break
             case .pending:
-                coronaTestResultLabel.text = "Ausstehend"
+                coronaTestResultLabel.text = "Ergebnis ausstehend"
                 coronaTestResultLabel.textColor = UIColor(named: "AppOrange")
                 break
             default:
@@ -86,18 +100,19 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
             coronaTestResultLabel.text = "-"
             coronaTestResultLabel.textColor = UIColor.black
         }
-
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self,
-                action: #selector(self.handleCoronaTestResultsTap(_:)))
-        coronaTestResultContainer.addGestureRecognizer(tapGestureRecognizer)
     }
-
+    
+    func setupCoronaTestButton() {
+        coronaTestButton.addTarget(self, action: #selector(self.handleCoronaTestButtonTap(_:)), for: .touchUpInside)
+    }
+    
     func setupSymptomsTestButton() {
-        startSymptomsTestButton.layer.borderColor = UIColor.black.cgColor
+        startSymptomsTestButton.layer.borderColor = UIColor(named: "AppDarkBlue")!.cgColor
+        startSymptomsTestButton.addTarget(self, action: #selector(self.handleSymptomsTestButtonTap(_:)), for: .touchUpInside)
     }
-
-    @objc func handleCoronaTestResultsTap(_ sender: UITapGestureRecognizer? = nil) {
-        startCoronaTest()
+    
+    @objc func handleCoronaTestButtonTap(_ sender: UITapGestureRecognizer? = nil) {
+      startCoronaTest()
     }
 
     func startCoronaTest() {
@@ -107,8 +122,21 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
         self.present(navigationController, animated: true, completion: nil)
     }
 
-    func didCompleteCoronaTest() {
-        self.setupCoronaTestResults()
+    @objc func handleSymptomsTestButtonTap(_ sender: UITapGestureRecognizer? = nil) {
+        startSymptomsTest()
+    }
+
+    func startSymptomsTest() {
+        let symptomsTestVC = SymptomsTestViewController(nibName: String(describing: SymptomsTestViewController.self),
+                bundle: nil, symptomsTestDelegate: self)
+        let navigationController = UINavigationController(rootViewController: symptomsTestVC)
+        self.present(navigationController, animated: true, completion: nil)
+    }
+
+    func didEndPresentation(presentedViewController: UIViewController) {
+        if (presentedViewController.isKind(of: CoronaTestViewController.self)) {
+            self.setupCoronaTestResults()
+        }
     }
 }
 
@@ -116,6 +144,19 @@ extension SymptomsViewController: DiaryEntryViewDelegate {
     func didClick(entry: SymptomDiaryEntry?) {
         let vc = DiaryEntryDetailViewController()
         vc.entry = entry
+        vc.delegate = self
         self.present(vc, animated: true)
+    }
+}
+
+extension SymptomsViewController: DiaryEntryDetailViewControllerDelegate {
+    func deleteButtonTapped(_ controller: DiaryEntryDetailViewController, _ entry: SymptomDiaryEntry?) {
+        controller.dismiss(animated: true)
+
+        if let entry = entry {
+            SymptomDiaryEntryDao().delete(object: entry)
+        }
+
+        setupSymptomsDiaryEntries()
     }
 }

@@ -14,6 +14,7 @@ import MapKit
 class MarkerViewController: UIViewController {
 
     @IBOutlet weak var markButton: UIButton!
+    @IBOutlet weak var markButtonContainerView: UIView!
     @IBOutlet weak var lastMarkerView: UIView!
     @IBOutlet weak var mapKitView: MKMapView!
 
@@ -21,11 +22,19 @@ class MarkerViewController: UIViewController {
 
     private let lastMarkVC = LastMarkerViewController()
 
-    private let minHeightMarkButton: CGFloat = 250
-    private let minHeightLastMarkerView: CGFloat = 100 // TODO: Fix it
+    private var minHeightMarkButton: CGFloat {
+        get {
+            markButton.frame.height + 40
+        }
+    }
+    private var minHeightLastMarkerView: CGFloat {
+        get {
+            lastMarkVC.lastMarkerHeaderView.frame.height
+        }
+    }
     private static let animationDuration: TimeInterval = 0.2
     private static let animationDurationButton: TimeInterval = 0.5
-    
+
     private let locationProvider = LocationProvider()
 
     private let markerDao = MarkerDao()
@@ -40,11 +49,18 @@ class MarkerViewController: UIViewController {
 
         markButton.titleLabel?.text = "Markierung setzen"
 
+        lastMarkVC.view.frame = lastMarkerView.bounds
         lastMarkerView.addSubview(lastMarkVC.view)
+        NSLayoutConstraint.activate([
+            lastMarkVC.view.leadingAnchor.constraint(equalTo: lastMarkerView.leadingAnchor),
+            lastMarkVC.view.trailingAnchor.constraint(equalTo: lastMarkerView.trailingAnchor),
+            lastMarkVC.view.topAnchor.constraint(equalTo: lastMarkerView.topAnchor),
+            lastMarkVC.view.bottomAnchor.constraint(lessThanOrEqualTo: lastMarkerView.bottomAnchor)
+        ])
 
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(MarkerViewController.draggedView(_:)))
-        lastMarkerView.isUserInteractionEnabled = true
-        lastMarkerView.addGestureRecognizer(panGesture)
+        lastMarkVC.lastMarkerHeaderView.isUserInteractionEnabled = true
+        lastMarkVC.lastMarkerHeaderView.addGestureRecognizer(panGesture)
 
         self.markButton.tintColor = UIColor(named: "AppGreyBackground")
 
@@ -76,7 +92,7 @@ extension MarkerViewController: LocationProviderDelegate {
         DatabaseManager.shared.saveContext()
         markerDao.markObjectForSync(object: marker)
 
-        lastMarkVC.lastMarkerTableView.reloadData()
+        lastMarkVC.reloadData()
 
         self.setButtonAnimation(state: .success)
         os_log("Received location long/lat: %d / %d", location.coordinate.latitude.description,
@@ -88,9 +104,9 @@ extension MarkerViewController {
     private func handleViewDragging(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: self.view)
         let newHeightMakerView = lastMakerViewHeightConstraint.constant - translation.y
-        let newHeightMarkButton = self.view.bounds.height - newHeightMakerView
+        let newHeightMarkButton = markButtonContainerView.frame.height + translation.y
 
-        if newHeightMarkButton >= minHeightMarkButton && newHeightMakerView >= minHeightLastMarkerView {
+        if newHeightMarkButton >= minHeightMarkButton && newHeightMakerView >= lastMarkVC.lastMarkerHeaderView.frame.height {
             lastMakerViewHeightConstraint.constant -= translation.y
         }
 
@@ -112,9 +128,9 @@ extension MarkerViewController {
 
     private func determineRestingPosition(velocity: CGPoint) -> CGFloat {
         if velocity.y > 0 {
-            return minHeightLastMarkerView
+            return lastMarkVC.lastMarkerHeaderView.bounds.height
         } else {
-            return self.view.bounds.height - minHeightMarkButton
+            return self.view.safeAreaLayoutGuide.layoutFrame.height - minHeightMarkButton
         }
     }
 }

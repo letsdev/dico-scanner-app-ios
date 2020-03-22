@@ -14,6 +14,14 @@ extension SymptomDiaryEntry {
             return ""
         }
         
-        return DateFormatter.localizedString(for: date)
+        return "Test vom \(DateFormatter.localizedString(for: date))"
+    }
+    
+    func resultLabel() -> String {
+        if self.areYouSick {
+            return "Keine COVID-19 Anzeichen*"
+        } else {
+            return "Anzeichen für COVID-19*"
+        }
     }
 }

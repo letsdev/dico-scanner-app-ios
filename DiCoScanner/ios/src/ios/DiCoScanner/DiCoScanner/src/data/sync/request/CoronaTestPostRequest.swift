@@ -37,6 +37,6 @@ class CoronaTestPostRequest: BaseRequest, Request {
         guard let deviceId = deviceId else {
             return nil
         }
-        return ["X-ATT-DeviceId": deviceId]
+        return ["X-ATT-DeviceId": deviceId, "Content-Type": "application/json"]
     }
 }

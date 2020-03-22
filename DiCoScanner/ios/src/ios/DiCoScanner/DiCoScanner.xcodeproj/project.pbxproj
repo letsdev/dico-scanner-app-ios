@@ -39,6 +39,8 @@
 		A40D06AF24262B2E00D62CAF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06AE24262B2E00D62CAF /* libc++.tbd */; };
 		A40D06B224265F5B00D62CAF /* CoronaTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40D06B024265F5B00D62CAF /* CoronaTestViewController.swift */; };
 		A40D06B324265F5B00D62CAF /* CoronaTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */; };
+		A40D06BA2426D25F00D62CAF /* SymptomsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40D06B82426D25F00D62CAF /* SymptomsTestViewController.swift */; };
+		A40D06BB2426D25F00D62CAF /* SymptomsTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06B92426D25F00D62CAF /* SymptomsTestViewController.xib */; };
 		A481B4C12425623500B294AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C02425623500B294AF /* AppDelegate.swift */; };
 		A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C92425623500B294AF /* DiCoScanner.xcdatamodeld */; };
 		A481B4CD2425623600B294AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A481B4CC2425623600B294AF /* Assets.xcassets */; };
@@ -46,6 +48,7 @@
 		A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4D724256D9E00B294AF /* SymptomsViewController.swift */; };
 		A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4D824256D9E00B294AF /* SymptomsViewController.xib */; };
 		A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */; };
+		D09DBA69AB09CCDCD7FF3C19 /* PresentedViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DB3D6544E6512763AF00E /* PresentedViewControllerDelegate.swift */; };
 		E242409C24265BF40072C3E1 /* DiaryEntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */; };
 		E242409D24265BF40072C3E1 /* DiaryEntryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */; };
 		E24240A024265DAE0072C3E1 /* SymptomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242409E24265DAE0072C3E1 /* SymptomsTableViewCell.swift */; };
@@ -96,7 +99,9 @@
 		A40D06AE24262B2E00D62CAF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A40D06B024265F5B00D62CAF /* CoronaTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaTestViewController.swift; sourceTree = "<group>"; };
 		A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoronaTestViewController.xib; sourceTree = "<group>"; };
-		A481B4BD2425623500B294AF /* DiCoScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiCoScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A40D06B82426D25F00D62CAF /* SymptomsTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsTestViewController.swift; sourceTree = "<group>"; };
+		A40D06B92426D25F00D62CAF /* SymptomsTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsTestViewController.xib; sourceTree = "<group>"; };
+		A481B4BD2425623500B294AF /* CO Scan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CO Scan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A481B4C02425623500B294AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A481B4CA2425623500B294AF /* DiCoScanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiCoScanner.xcdatamodel; sourceTree = "<group>"; };
 		A481B4CC2425623600B294AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +110,7 @@
 		A481B4D724256D9E00B294AF /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
 		A481B4D824256D9E00B294AF /* SymptomsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsViewController.xib; sourceTree = "<group>"; };
 		A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
+		D09DB3D6544E6512763AF00E /* PresentedViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedViewControllerDelegate.swift; sourceTree = "<group>"; };
 		D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DiCoScanner-Bridging-Header.h"; sourceTree = "<group>"; };
 		E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryDetailViewController.swift; sourceTree = "<group>"; };
 		E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryEntryDetailViewController.xib; sourceTree = "<group>"; };
@@ -243,6 +249,8 @@
 				A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */,
 				E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */,
 				E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */,
+				A40D06B82426D25F00D62CAF /* SymptomsTestViewController.swift */,
+				A40D06B92426D25F00D62CAF /* SymptomsTestViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -253,6 +261,7 @@
 				E28583A62425806300C6BE16 /* cell */,
 				A481B4DB2425A69500B294AF /* view */,
 				36013B2860E50B41AAEE60C2 /* controller */,
+				D09DB6469C6F6FFC74608B80 /* protocol */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -270,7 +279,7 @@
 		A481B4BE2425623500B294AF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A481B4BD2425623500B294AF /* DiCoScanner.app */,
+				A481B4BD2425623500B294AF /* CO Scan.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -297,6 +306,14 @@
 				360136BCF480A84B3D49648D /* DiaryEntryViewDelegate.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		D09DB6469C6F6FFC74608B80 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D09DB3D6544E6512763AF00E /* PresentedViewControllerDelegate.swift */,
+			);
+			path = protocol;
 			sourceTree = "<group>";
 		};
 		E28583A62425806300C6BE16 /* cell */ = {
@@ -345,7 +362,7 @@
 			);
 			name = DiCoScanner;
 			productName = DiCoScanner;
-			productReference = A481B4BD2425623500B294AF /* DiCoScanner.app */;
+			productReference = A481B4BD2425623500B294AF /* CO Scan.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -395,6 +412,7 @@
 				A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */,
 				A481B4CD2425623600B294AF /* Assets.xcassets in Resources */,
 				E28583AA2425807300C6BE16 /* LastMarkerTableViewCell.xib in Resources */,
+				A40D06BB2426D25F00D62CAF /* SymptomsTestViewController.xib in Resources */,
 				A40D06B324265F5B00D62CAF /* CoronaTestViewController.xib in Resources */,
 				A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */,
 				E24240A124265DAE0072C3E1 /* SymptomsTableViewCell.xib in Resources */,
@@ -416,6 +434,7 @@
 				A481B4C12425623500B294AF /* AppDelegate.swift in Sources */,
 				E28583A02425683000C6BE16 /* MarkerViewController.swift in Sources */,
 				A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */,
+				A40D06BA2426D25F00D62CAF /* SymptomsTestViewController.swift in Sources */,
 				A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */,
 				E28BA0F22425666A00AF3CF2 /* TabBarViewController.swift in Sources */,
 				E242409C24265BF40072C3E1 /* DiaryEntryDetailViewController.swift in Sources */,
@@ -439,6 +458,7 @@
 				29BD9CA020B40DEA5988249B /* SyncDao.swift in Sources */,
 				29BD903B8514E18517A05543 /* SyncManager.swift in Sources */,
 				29BD95BD9208C8629C9C621A /* SymptomDiaryPostRequest.swift in Sources */,
+				D09DBA69AB09CCDCD7FF3C19 /* PresentedViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,7 +607,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.letsdev.DiCoScanner;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "CO Scan";
 				PROVISIONING_PROFILE_SPECIFIER = "DiCoScanner Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "DiCoScanner/DiCoScanner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -612,7 +632,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.letsdev.DiCoScanner;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "CO Scan";
 				PROVISIONING_PROFILE_SPECIFIER = "DiCoScanner AppStore";
 				SWIFT_OBJC_BRIDGING_HEADER = "DiCoScanner/DiCoScanner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
