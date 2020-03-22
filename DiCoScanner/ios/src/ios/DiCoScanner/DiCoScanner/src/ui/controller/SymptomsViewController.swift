@@ -26,11 +26,34 @@ class SymptomsViewController: UIViewController, PresentedViewControllerDelegate 
         navigationController?.navigationBar.prefersLargeTitles = true
 
         setupCoronaTestButton()
-        
-        setupCoronaTestResults()
 
         setupSymptomsTestButton()
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        setupCoronaTestResults()
+
+        setupSymptomsDiaryEntries()
+        setupSymptomDiaryEntrySyncObserver()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        removeSymptomDiaryEntrySyncObserver()
+    }
+
+    private func setupSymptomDiaryEntrySyncObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidSyncSymptomDiaryEntry(_:)), name: .didSyncSymptomDiaryEntry, object: nil)
+    }
+
+    private func removeSymptomDiaryEntrySyncObserver() {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    @objc func onDidSyncSymptomDiaryEntry(_ notification:Notification) {
         setupSymptomsDiaryEntries()
     }
 
