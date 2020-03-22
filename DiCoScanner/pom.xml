@@ -4,7 +4,7 @@
 
     <groupId>de.letsdev</groupId>
     <artifactId>DiCoScanner-Parent</artifactId>
-    <version>0.6</version>
+    <version>0.6-SNAPSHOT</version>
     <name>DiCoScanner</name>
     <packaging>pom</packaging>
 
@@ -27,7 +27,7 @@
         <url>${const.scm.url}</url>
         <connection>${const.scm.connection}</connection>
         <developerConnection>${const.scm.developerConnection}</developerConnection>
-        <tag>version-0.6</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <!-- organization -->
