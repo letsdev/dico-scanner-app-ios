@@ -27,6 +27,7 @@ class LastMarkerViewController: UIViewController {
         super.viewDidLoad()
 
         lastMarkerHeader.text = "Meine letzten Markierungen"
+        lastMarkerTimestampLabel.text = "Es wurden noch keine Markierungen gesetzt."
         setLastUpdateLabel()
 
         lastMarkerTableView.dataSource = self
