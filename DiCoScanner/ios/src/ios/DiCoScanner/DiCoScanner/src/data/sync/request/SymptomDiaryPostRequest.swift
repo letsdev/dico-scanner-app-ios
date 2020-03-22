@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import os
 
 class SymptomDiaryPostRequest: BaseRequest, Request {
 
@@ -15,7 +16,7 @@ class SymptomDiaryPostRequest: BaseRequest, Request {
     }
 
     func url() -> URL {
-        URL(string: "\(baseUrl)/rest/symptom")!
+        URL(string: "\(baseUrl)/rest/symptomDiary")!
     }
 
     func httpMethod() -> String {
@@ -24,7 +25,16 @@ class SymptomDiaryPostRequest: BaseRequest, Request {
 
     func body() -> [String: Any]? {
         convertToJSON(managedObject: symptomDiary,
-                keyReplacer: ["entryDate": "timestamp", "name": "name_de", "uuid": "id"])
+                keyReplacer: ["entryDate": "timestamp", "name": "nameDe"], keyInjector: { key, value in
+            if (key == "uuid") {
+                var dict: [String: Any] = [:]
+                if let id = value as? String {
+                    dict["id"] = Int(id)
+                }
+                return dict
+            }
+            return nil
+        })
     }
 
     func additionalHeader() -> [String: String]? {
@@ -35,5 +45,6 @@ class SymptomDiaryPostRequest: BaseRequest, Request {
     }
 
     func receivedData(data: Data) {
+        os_log("Received Data: %@", String(data: data, encoding: .utf8)!)
     }
 }

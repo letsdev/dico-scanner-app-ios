@@ -93,28 +93,46 @@ class BaseRequest {
     }
 
     internal func convertToJSON(managedObject: NSManagedObject, keyReplacer: [String: String]?) -> [String: Any] {
+        convertToJSON(managedObject: managedObject, keyReplacer: keyReplacer, keyInjector: nil)
+    }
+
+    internal func convertToJSON(managedObject: NSManagedObject, keyReplacer: [String: String]?,
+                                keyInjector: ((String, Any) -> [String: Any]?)?) -> [String: Any] {
         var jsonDict: [String: Any] = [:]
         for attribute in managedObject.entity.attributesByName {
             if let value = managedObject.value(forKey: attribute.key) {
                 var key = attribute.key
 
-                // replace the attribute key name with a different key in json
-                if keyReplacer != nil && keyReplacer?.keys.contains("\(key)") ?? false {
-                    key = keyReplacer![key]!
-                }
-
-                if let values = value as? [Any] {
-                    for arrayValue in values {
-                        if let arrayValue = arrayValue as? NSManagedObject {
-                            jsonDict[key] = convertToJSON(managedObject: arrayValue, keyReplacer: keyReplacer)
+                var handled = false
+                if let injector = keyInjector {
+                    let result = injector(key, value)
+                    if let result = result {
+                        handled = true
+                        for localKey in result {
+                            jsonDict[localKey.key] = localKey.value
                         }
                     }
-                } else if let value = value as? Date {
-                    let formatter = ISO8601DateFormatter()
-                    let string = formatter.string(from: value)
-                    jsonDict[key] = string
-                } else {
-                    jsonDict[key] = value
+                }
+
+                if (!handled) {
+                    // replace the attribute key name with a different key in json
+                    if keyReplacer != nil && keyReplacer?.keys.contains("\(key)") ?? false {
+                        key = keyReplacer![key]!
+                    }
+
+                    if let values = value as? [Any] {
+                        for arrayValue in values {
+                            if let arrayValue = arrayValue as? NSManagedObject {
+                                jsonDict[key] = convertToJSON(managedObject: arrayValue, keyReplacer: keyReplacer)
+                            }
+                        }
+                    } else if let value = value as? Date {
+                        let formatter = ISO8601DateFormatter()
+                        let string = formatter.string(from: value)
+                        jsonDict[key] = string
+                    } else {
+                        jsonDict[key] = value
+                    }
                 }
             }
         }

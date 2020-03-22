@@ -8,6 +8,12 @@
 import Foundation
 
 class SymptomDiaryEntryDao: BaseDao<SymptomDiaryEntry> {
+    enum DiaryTestResult {
+        case positive
+        case negative
+        case pending
+    }
+
 
     func findAllByDate() -> [SymptomDiaryEntry]? {
         findAll(sortBy: NSSortDescriptor(key: "entryDate", ascending: false))
