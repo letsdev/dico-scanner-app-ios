@@ -36,12 +36,13 @@ class SymptomGetRequest: BaseRequest, Request {
                         if let id = symptom["id"] as? Int {
                             let uuid = String(id)
                             object = dao.findByUUID(uuid: uuid)
+
+                            if object == nil {
+                                object = dao.newEntity()
+                            }
+                            object?.uuid = uuid
+                            object?.name = symptom["nameDe"] as? String
                         }
-                        
-                        if object == nil {
-                            object = dao.newEntity()
-                        }
-                        object?.name = symptom["nameDe"] as? String
                     }
                     DatabaseManager.shared.saveContext()
             } else {
