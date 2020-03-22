@@ -56,7 +56,7 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func loadSymptomList() {
-        symptomList = SymptomDao().findAll()
+        symptomList = SymptomDao().findAllSortByName()
     }
 
     func setupSymptomsTableView() {
