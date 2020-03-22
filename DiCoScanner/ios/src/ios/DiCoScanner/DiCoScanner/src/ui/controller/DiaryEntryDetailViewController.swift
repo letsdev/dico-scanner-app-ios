@@ -87,9 +87,9 @@ extension DiaryEntryDetailViewController: UITableViewDataSource {
         cell.symptomNameLabel.text = symptom?.name
 
         if (entry?.symptom?.contains(symptom) ?? false) {
-            cell.symptomStatusImageView.image = UIImage(named: "ic_tabbar_symptoms_active")
+            cell.symptomStatusImageView.image = UIImage(named: "ic_selected")
         } else {
-            cell.symptomStatusImageView.image = UIImage(named: "ic_tabbar_symptoms_normal")
+            cell.symptomStatusImageView.image = UIImage(named: "ic_not_selected")
         }
 
         return cell
