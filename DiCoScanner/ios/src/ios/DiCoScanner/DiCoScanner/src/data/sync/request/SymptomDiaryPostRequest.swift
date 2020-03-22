@@ -65,6 +65,8 @@ class SymptomDiaryPostRequest: BaseRequest, Request {
                 symptomDiary.areYouSick = (
                         sick ? SymptomDiaryEntryDao.DiaryTestResult.positive : SymptomDiaryEntryDao.DiaryTestResult.negative).rawValue
                 symptomDiary.hintText = testResult["message"] as? String
+                DatabaseManager.shared.saveContext()
+                NotificationCenter.default.post(name: Notification.Name.didSyncSymptomDiaryEntry, object: nil)
             }
         } catch {
             let nserror = error as NSError

@@ -31,20 +31,20 @@ class SymptomGetRequest: BaseRequest, Request {
         do {
             if let symptoms = try JSONSerialization.jsonObject(with: data) as? [[String: Any]] {
                 let dao = SymptomDao()
-                    for symptom in symptoms {
-                        var object: Symptom? = nil
-                        if let id = symptom["id"] as? Int {
-                            let uuid = String(id)
-                            object = dao.findByUUID(uuid: uuid)
+                for symptom in symptoms {
+                    var object: Symptom? = nil
+                    if let id = symptom["id"] as? Int {
+                        let uuid = String(id)
+                        object = dao.findByUUID(uuid: uuid)
 
-                            if object == nil {
-                                object = dao.newEntity()
-                            }
-                            object?.uuid = uuid
-                            object?.name = symptom["nameDe"] as? String
+                        if object == nil {
+                            object = dao.newEntity()
                         }
+                        object?.uuid = uuid
+                        object?.name = symptom["nameDe"] as? String
                     }
-                    DatabaseManager.shared.saveContext()
+                }
+                DatabaseManager.shared.saveContext()
             } else {
                 os_log("Can't parse json data.")
             }
