@@ -92,8 +92,6 @@ extension DiaryEntryDetailViewController: UITableViewDataSource {
             cell.symptomStatusImageView.image = UIImage(named: "ic_tabbar_symptoms_normal")
         }
 
-        cell.symptomIconImageView.image = UIImage(named: "ic_info")
-
         return cell
     }
 }

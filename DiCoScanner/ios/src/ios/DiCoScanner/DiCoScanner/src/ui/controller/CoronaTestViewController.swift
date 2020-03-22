@@ -32,10 +32,15 @@ class CoronaTestViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "SARS-CoV-2-Test"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Abbrechen", style: .plain, target: self,
-                                                                action: #selector(cancelTest))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Speichern", style: .plain, target: self,
-                action: #selector(finishCoronaTest))
+        
+        let leftBarButtonItem = UIBarButtonItem(title: "Abbrechen", style: .plain, target: self,
+        action: #selector(cancelTest))
+        leftBarButtonItem.tintColor = UIColor(named: "AppDarkBlue")
+        let rightBarButtonItem = UIBarButtonItem(title: "Speichern", style: .done, target: self,
+        action: #selector(finishCoronaTest))
+        rightBarButtonItem.tintColor = UIColor(named: "AppDarkBlue")
+        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
         self.navigationItem.rightBarButtonItem!.isEnabled = false
 
         setupTestResults()

@@ -29,11 +29,17 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "aktuelle Symptome"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Abbrechen", style: .plain, target: self,
-                action: #selector(cancelTest))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Weiter", style: .plain, target: self,
-                action: #selector(finishSymptomsTest))
+        self.title = "Symptome dokumentieren"
+        
+        let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(title: "Abbrechen", style: .plain, target: self,
+        action: #selector(cancelTest))
+        leftBarButtonItem.tintColor = UIColor(named: "AppDarkBlue")
+        let rightBarButtonItem = UIBarButtonItem(title: "Speichern", style: .done, target: self,
+        action: #selector(finishSymptomsTest))
+        rightBarButtonItem.tintColor = UIColor(named: "AppDarkBlue")
+        
+        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
 
         setupSymptomsTableView()
     }
