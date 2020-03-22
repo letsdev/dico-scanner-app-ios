@@ -46,6 +46,8 @@ class MarkerViewController: UIViewController {
         locationProvider = LocationProvider()
         locationProvider?.delegate = self
 
+        locationProvider?.fetchLocation(mode: .map)
+
         mapKitView.setVisibleMapRect(MKMapRect(x: 0, y: 0, width: 25000, height: 25000), animated: true)
 
         lastMarkVC.view.frame = lastMarkerView.bounds
@@ -65,7 +67,7 @@ class MarkerViewController: UIViewController {
     }
 
     @IBAction func markButtonTapped(_ sender: Any) {
-        locationProvider?.currentLocation()
+        locationProvider?.fetchLocation(mode: .marker)
     }
 
     @objc func draggedView(_ sender: UIPanGestureRecognizer) {
@@ -87,24 +89,30 @@ class MarkerViewController: UIViewController {
 }
 
 extension MarkerViewController: LocationProviderDelegate {
+    func didReceiveLocationUpdate(location: CLLocation, locationMode: LocationProvider.LocationMode) {
+        if locationMode == .marker {
+            saveAndSyncLocation(location: location)
+            lastMarkVC.reloadData()
+            buttonStateController?.setButtonAnimation(state: .success)
+        } else if locationMode == .map {
+            mapKitView.setCenter(location.coordinate, animated: true)
+        }
+    }
 
-    func didGrantAuthorization() {
+    func didGrantAuthorization(locationMode: LocationProvider.LocationMode) {
         buttonStateController?.setButtonAnimation(state: .normal)
     }
 
-    func didReceiveLocationUpdate(location: CLLocation) {
-        saveAndSyncLocation(location: location)
-        lastMarkVC.reloadData()
-        mapKitView.setCenter(location.coordinate, animated: true)
-        buttonStateController?.setButtonAnimation(state: .success)
+    func didStartLocationUpdate(locationMode: LocationProvider.LocationMode) {
+        if locationMode == .marker {
+            buttonStateController?.setButtonAnimation(state: .progress)
+        }
     }
 
-    func didStartLocationUpdate() {
-        buttonStateController?.setButtonAnimation(state: .progress)
-    }
-
-    func didFailLocationUpdate(_ error: Error) {
-        buttonStateController?.setButtonAnimation(state: .failure)
+    func didFailLocationUpdate(_: Error, locationMode: LocationProvider.LocationMode) {
+        if locationMode == .marker {
+            buttonStateController?.setButtonAnimation(state: .failure)
+        }
     }
 }
 

@@ -9,22 +9,31 @@ import os
 
 class LocationProvider: NSObject {
 
+    public enum LocationMode {
+        case undefined
+        case marker
+        case map
+    }
+
     private let manager = CLLocationManager()
     var delegate: LocationProviderDelegate?
+
+    private var locationMode: LocationMode = .undefined
 
     override init() {
         super.init()
         manager.delegate = self
     }
 
-    func currentLocation() {
+    func fetchLocation(mode: LocationMode) {
+        locationMode = mode
         guard CLLocationManager.authorizationStatus() == .authorizedWhenInUse else {
             manager.requestWhenInUseAuthorization()
             return
         }
 
         manager.requestLocation()
-        delegate?.didStartLocationUpdate()
+        delegate?.didStartLocationUpdate(locationMode: locationMode)
     }
 }
 
@@ -36,17 +45,18 @@ extension LocationProvider: CLLocationManagerDelegate {
             return
         }
 
-        delegate?.didReceiveLocationUpdate(location: lastLocation)
+        delegate?.didReceiveLocationUpdate(location: lastLocation, locationMode: locationMode)
+        locationMode = .undefined
     }
 
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         os_log("Did fail with error: %@", error.localizedDescription)
-        delegate?.didFailLocationUpdate(error)
+        delegate?.didFailLocationUpdate(error, locationMode: locationMode)
     }
 
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status != .denied {
-            delegate?.didGrantAuthorization()
+            delegate?.didGrantAuthorization(locationMode: locationMode)
         }
     }
 }
