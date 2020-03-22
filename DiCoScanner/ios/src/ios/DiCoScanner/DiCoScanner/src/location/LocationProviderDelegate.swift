@@ -7,5 +7,8 @@ import Foundation
 import CoreLocation
 
 protocol LocationProviderDelegate {
-    func received(location: CLLocation)
+    func didReceiveLocationUpdate(location: CLLocation, locationMode: LocationProvider.LocationMode)
+    func didGrantAuthorization(locationMode: LocationProvider.LocationMode)
+    func didStartLocationUpdate(locationMode: LocationProvider.LocationMode)
+    func didFailLocationUpdate(_: Error, locationMode: LocationProvider.LocationMode)
 }

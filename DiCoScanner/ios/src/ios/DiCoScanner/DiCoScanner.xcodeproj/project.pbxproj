@@ -22,6 +22,7 @@
 		29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD99460BD6EC84122302EE /* BaseDao.swift */; };
 		360131BD8B8F3F5632343187 /* LocationProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */; };
 		3601357A224E006EA0DE23C6 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360132EB1A6E05520CDBCE3C /* LocationProvider.swift */; };
+		36013B6575A41425E495E583 /* ButtonStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601320E1A836CBE270C3F9B /* ButtonStateController.swift */; };
 		36013CAD1FD909AADEBD2A17 /* DiaryEntryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360136BCF480A84B3D49648D /* DiaryEntryViewDelegate.swift */; };
 		36013CB43F23F90880575A49 /* DateFormatter+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */; };
 		A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06932425AA1500D62CAF /* DiaryEntryView.xib */; };
@@ -39,6 +40,8 @@
 		A40D06AF24262B2E00D62CAF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A40D06AE24262B2E00D62CAF /* libc++.tbd */; };
 		A40D06B224265F5B00D62CAF /* CoronaTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40D06B024265F5B00D62CAF /* CoronaTestViewController.swift */; };
 		A40D06B324265F5B00D62CAF /* CoronaTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */; };
+		A40D06B624268EBA00D62CAF /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40D06B424268EBA00D62CAF /* AppInfoViewController.swift */; };
+		A40D06B724268EBA00D62CAF /* AppInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06B524268EBA00D62CAF /* AppInfoViewController.xib */; };
 		A40D06BA2426D25F00D62CAF /* SymptomsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40D06B82426D25F00D62CAF /* SymptomsTestViewController.swift */; };
 		A40D06BB2426D25F00D62CAF /* SymptomsTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A40D06B92426D25F00D62CAF /* SymptomsTestViewController.xib */; };
 		A481B4C12425623500B294AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4C02425623500B294AF /* AppDelegate.swift */; };
@@ -48,6 +51,7 @@
 		A481B4D924256D9E00B294AF /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4D724256D9E00B294AF /* SymptomsViewController.swift */; };
 		A481B4DA24256D9E00B294AF /* SymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A481B4D824256D9E00B294AF /* SymptomsViewController.xib */; };
 		A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */; };
+		D09DB320DFFFF2BBA649D716 /* AppInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DBEB42EB27DEB3D67F50B /* AppInfoItem.swift */; };
 		D09DBA69AB09CCDCD7FF3C19 /* PresentedViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DB3D6544E6512763AF00E /* PresentedViewControllerDelegate.swift */; };
 		E242409C24265BF40072C3E1 /* DiaryEntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */; };
 		E242409D24265BF40072C3E1 /* DiaryEntryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */; };
@@ -81,6 +85,7 @@
 		29BD9E606104F85659D58A42 /* MarkerPostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerPostRequest.swift; sourceTree = "<group>"; };
 		29BD9FB52888BBA281507503 /* MarkerDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerDao.swift; sourceTree = "<group>"; };
 		360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Localization.swift"; sourceTree = "<group>"; };
+		3601320E1A836CBE270C3F9B /* ButtonStateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStateController.swift; sourceTree = "<group>"; };
 		360132EB1A6E05520CDBCE3C /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProviderDelegate.swift; sourceTree = "<group>"; };
 		360136BCF480A84B3D49648D /* DiaryEntryViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntryViewDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +104,8 @@
 		A40D06AE24262B2E00D62CAF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A40D06B024265F5B00D62CAF /* CoronaTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaTestViewController.swift; sourceTree = "<group>"; };
 		A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoronaTestViewController.xib; sourceTree = "<group>"; };
+		A40D06B424268EBA00D62CAF /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
+		A40D06B524268EBA00D62CAF /* AppInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInfoViewController.xib; sourceTree = "<group>"; };
 		A40D06B82426D25F00D62CAF /* SymptomsTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsTestViewController.swift; sourceTree = "<group>"; };
 		A40D06B92426D25F00D62CAF /* SymptomsTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsTestViewController.xib; sourceTree = "<group>"; };
 		A481B4BD2425623500B294AF /* CO Scan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CO Scan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +118,7 @@
 		A481B4D824256D9E00B294AF /* SymptomsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsViewController.xib; sourceTree = "<group>"; };
 		A481B4DC2425A6C900B294AF /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
 		D09DB3D6544E6512763AF00E /* PresentedViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedViewControllerDelegate.swift; sourceTree = "<group>"; };
+		D09DBEB42EB27DEB3D67F50B /* AppInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoItem.swift; sourceTree = "<group>"; };
 		D09DBEEB1F3E7500771D88C0 /* DiCoScanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DiCoScanner-Bridging-Header.h"; sourceTree = "<group>"; };
 		E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryDetailViewController.swift; sourceTree = "<group>"; };
 		E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryEntryDetailViewController.xib; sourceTree = "<group>"; };
@@ -186,6 +194,7 @@
 		2E9797E724256300005CE79F /* data */ = {
 			isa = PBXGroup;
 			children = (
+				A467EA1D242778B9008C20A3 /* container */,
 				2E9797E924256317005CE79F /* dao */,
 				2E9797E824256308005CE79F /* domain */,
 				29BD9BEB4EDADF2C6A9E1962 /* sync */,
@@ -221,6 +230,7 @@
 				360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */,
 				E28583AE2425B63B00C6BE16 /* Marker+UiModel.swift */,
 				E2B04A52242676B600CD043E /* SymptomDiaryEntry+UiModel.swift */,
+				3601320E1A836CBE270C3F9B /* ButtonStateController.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -249,6 +259,8 @@
 				A40D06B124265F5B00D62CAF /* CoronaTestViewController.xib */,
 				E242409A24265BF40072C3E1 /* DiaryEntryDetailViewController.swift */,
 				E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */,
+				A40D06B424268EBA00D62CAF /* AppInfoViewController.swift */,
+				A40D06B524268EBA00D62CAF /* AppInfoViewController.xib */,
 				A40D06B82426D25F00D62CAF /* SymptomsTestViewController.swift */,
 				A40D06B92426D25F00D62CAF /* SymptomsTestViewController.xib */,
 			);
@@ -264,6 +276,14 @@
 				D09DB6469C6F6FFC74608B80 /* protocol */,
 			);
 			path = ui;
+			sourceTree = "<group>";
+		};
+		A467EA1D242778B9008C20A3 /* container */ = {
+			isa = PBXGroup;
+			children = (
+				D09DBEB42EB27DEB3D67F50B /* AppInfoItem.swift */,
+			);
+			path = container;
 			sourceTree = "<group>";
 		};
 		A481B4B42425623500B294AF = {
@@ -416,6 +436,7 @@
 				A40D06B324265F5B00D62CAF /* CoronaTestViewController.xib in Resources */,
 				A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */,
 				E24240A124265DAE0072C3E1 /* SymptomsTableViewCell.xib in Resources */,
+				A40D06B724268EBA00D62CAF /* AppInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +467,7 @@
 				E2B04A53242676B600CD043E /* SymptomDiaryEntry+UiModel.swift in Sources */,
 				29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */,
 				29BD9A3B4F51135C94742C5D /* BaseRequest.swift in Sources */,
+				A40D06B624268EBA00D62CAF /* AppInfoViewController.swift in Sources */,
 				29BD92191B3D84E566FFB53A /* MarkerPostRequest.swift in Sources */,
 				36013CB43F23F90880575A49 /* DateFormatter+Localization.swift in Sources */,
 				A40D06B224265F5B00D62CAF /* CoronaTestViewController.swift in Sources */,
@@ -459,6 +481,8 @@
 				29BD903B8514E18517A05543 /* SyncManager.swift in Sources */,
 				29BD95BD9208C8629C9C621A /* SymptomDiaryPostRequest.swift in Sources */,
 				D09DBA69AB09CCDCD7FF3C19 /* PresentedViewControllerDelegate.swift in Sources */,
+				36013B6575A41425E495E583 /* ButtonStateController.swift in Sources */,
+				D09DB320DFFFF2BBA649D716 /* AppInfoItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

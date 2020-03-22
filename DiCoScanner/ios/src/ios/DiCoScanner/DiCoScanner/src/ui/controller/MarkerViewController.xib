@@ -9,12 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MarkerViewController" customModule="DiCoScanner" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MarkerViewController" customModule="CO_Scan" customModuleProvider="target">
             <connections>
                 <outlet property="lastMakerViewHeightConstraint" destination="zaL-S4-3Fd" id="UCf-lN-7Vj"/>
                 <outlet property="lastMarkerView" destination="kc1-t6-SPh" id="5kg-xX-pOY"/>
                 <outlet property="mapKitView" destination="0Z1-Rf-fc3" id="N6A-Wo-EKs"/>
-                <outlet property="markButton" destination="nZG-9w-sZc" id="ckZ-Ng-4I2"/>
+                <outlet property="markButton" destination="nZG-9w-sZc" id="Wht-0F-P87"/>
                 <outlet property="markButtonContainerView" destination="smj-k2-HAJ" id="VMr-cZ-YVC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,23 +30,16 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smj-k2-HAJ">
                     <rect key="frame" x="0.0" y="44" width="414" height="725"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZG-9w-sZc">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZG-9w-sZc">
                             <rect key="frame" x="50" y="322.5" width="314" height="80"/>
                             <color key="backgroundColor" name="AppDarkBlue45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="mg1-ch-tUX"/>
                             </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                             <color key="tintColor" name="AppWhite"/>
                             <state key="normal">
-                                <attributedString key="attributedTitle">
-                                    <fragment content="Markierung setzen">
-                                        <attributes>
-                                            <color key="NSColor" name="AppWhite"/>
-                                            <font key="NSFont" metaFont="system" size="20"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <color key="titleColor" name="AppWhite"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="40"/>

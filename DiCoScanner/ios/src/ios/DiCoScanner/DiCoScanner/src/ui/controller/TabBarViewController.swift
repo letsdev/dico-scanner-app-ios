@@ -27,6 +27,12 @@ class TabBarViewController: UITabBarController {
         symptomsNavigationController.tabBarItem.image = UIImage(named: "ic_tabbar_symptoms_normal")
         symptomsNavigationController.tabBarItem.title = "Symptome"
 
-        self.viewControllers = [markerVC, symptomsVC]
+        let appInfoNavigationController = UINavigationController(rootViewController: AppInfoViewController())
+        let appInfoVC = appInfoNavigationController
+        appInfoNavigationController.tabBarItem.selectedImage = UIImage(named: "ic_tabbar_info_active")
+        appInfoNavigationController.tabBarItem.image = UIImage(named: "ic_tabbar_info_normal")
+        appInfoNavigationController.tabBarItem.title = "App-Info"
+
+        self.viewControllers = [markerVC, symptomsVC, appInfoVC]
     }
 }
