@@ -14,7 +14,7 @@ extension UIImage {
         if let id = symptomId, let image = UIImage(named: "ic_symptom_\(id)") {
             return image
         } else {
-            return UIImage(named: "ic_symptom_default") // TODO
+            return UIImage(named: "ic_symptom_default")
         }
     }
     
