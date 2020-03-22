@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate {
+class SymptomsViewController: UIViewController, PresentedViewControllerDelegate {
 
     @IBOutlet var coronaTestResultLabel: UILabel!
     @IBOutlet var coronaTestButton: UIButton!
@@ -100,10 +100,6 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
             coronaTestResultLabel.text = "-"
             coronaTestResultLabel.textColor = UIColor.black
         }
-
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self,
-                action: #selector(self.handleCoronaTestResultsTap(_:)))
-        coronaTestResultContainer.addGestureRecognizer(tapGestureRecognizer)
     }
     
     func setupCoronaTestButton() {
@@ -112,14 +108,7 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
     
     func setupSymptomsTestButton() {
         startSymptomsTestButton.layer.borderColor = UIColor(named: "AppDarkBlue")!.cgColor
-    }
-
-    @objc func handleSymptomsTestButtonTap(_ sender: UITapGestureRecognizer? = nil) {
-       
-    }
-    
-    @objc func handleCoronaTestResultsTap(_ sender: UITapGestureRecognizer? = nil) {
-        
+        startSymptomsTestButton.addTarget(self, action: #selector(self.handleSymptomsTestButtonTap(_:)), for: .touchUpInside)
     }
     
     @objc func handleCoronaTestButtonTap(_ sender: UITapGestureRecognizer? = nil) {
@@ -133,8 +122,21 @@ class SymptomsViewController: UIViewController, CoronaTestViewControllerDelegate
         self.present(navigationController, animated: true, completion: nil)
     }
 
-    func didCompleteCoronaTest() {
-        self.setupCoronaTestResults()
+    @objc func handleSymptomsTestButtonTap(_ sender: UITapGestureRecognizer? = nil) {
+        startSymptomsTest()
+    }
+
+    func startSymptomsTest() {
+        let symptomsTestVC = SymptomsTestViewController(nibName: String(describing: SymptomsTestViewController.self),
+                bundle: nil, symptomsTestDelegate: self)
+        let navigationController = UINavigationController(rootViewController: symptomsTestVC)
+        self.present(navigationController, animated: true, completion: nil)
+    }
+
+    func didEndPresentation(presentedViewController: UIViewController) {
+        if (presentedViewController.isKind(of: CoronaTestViewController.self)) {
+            self.setupCoronaTestResults()
+        }
     }
 }
 
