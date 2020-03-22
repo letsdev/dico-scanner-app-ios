@@ -9,10 +9,12 @@ class AppInfoItem {
     var identifier: String
     var displayName: String
     var url: String?
+    var localUrl: String?
 
-    init(identifier: String, displayName: String, url: String? = nil) {
+    init(identifier: String, displayName: String, url: String? = nil, localUrl: String? = nil) {
         self.identifier = identifier
         self.displayName = displayName
         self.url = url
+        self.localUrl = localUrl
     }
 }
