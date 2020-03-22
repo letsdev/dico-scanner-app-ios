@@ -10,6 +10,7 @@ import UIKit
 
 class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var symptomsTableView: UITableView!
+    var symptomList: [Symptom]? = []
     
     public var symptomsTestDelegate: PresentedViewControllerDelegate
 
@@ -36,11 +37,27 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
         setupSymptomsTableView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        SymptomGetRequest().send { result in
+            if (result) {
+                self.loadSymptomList()
+                self.symptomsTableView.reloadData()
+            }
+        }
+    }
+    
+    func loadSymptomList() {
+        symptomList = SymptomDao().findAll()
+    }
+
     func setupSymptomsTableView() {
+        loadSymptomList()
+        
         symptomsTableView.delegate = self
         symptomsTableView.dataSource = self
         symptomsTableView.tableFooterView = UIView()
-        symptomsTableView.heightAnchor.constraint(equalToConstant: symptomsTableView.contentSize.height).isActive = true
     }
 
     @objc func finishSymptomsTest() {
@@ -53,8 +70,20 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
         self.dismiss(animated: true, completion: nil)
     }
 
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .none
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .checkmark
+
+        }
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        return symptomList?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,17 +93,18 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
             cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: String(describing: UITableViewCell.self))
         }
 
-        cell = setupSymptomCell(symptomCell: cell!)
+        cell = setupSymptomCell(symptomCell: cell!, symptom: (symptomList?[indexPath.row])!)
 
         return cell!
     }
     
-    func setupSymptomCell(symptomCell: UITableViewCell) -> UITableViewCell {
+    func setupSymptomCell(symptomCell: UITableViewCell, symptom: Symptom) -> UITableViewCell {
         symptomCell.preservesSuperviewLayoutMargins = false
         symptomCell.separatorInset = UIEdgeInsets.zero
         symptomCell.layoutMargins = UIEdgeInsets.zero
+        symptomCell.selectionStyle = .none
         
-        symptomCell.textLabel?.text = "hi"
+        symptomCell.textLabel?.text = symptom.name
         symptomCell.imageView?.image = UIImage(named: "ic_info")
         
         return symptomCell
