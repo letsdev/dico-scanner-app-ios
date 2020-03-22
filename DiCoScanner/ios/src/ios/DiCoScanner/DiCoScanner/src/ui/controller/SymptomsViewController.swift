@@ -141,7 +141,7 @@ class SymptomsViewController: UIViewController, PresentedViewControllerDelegate 
       startCoronaTest()
     }
 
-    func startCoronaTest() {
+    public func startCoronaTest() {
         let coronaTestVC = CoronaTestViewController(nibName: String(describing: CoronaTestViewController.self),
                 bundle: nil, coronaTestDelegate: self)
         let navigationController = UINavigationController(rootViewController: coronaTestVC)
@@ -152,7 +152,7 @@ class SymptomsViewController: UIViewController, PresentedViewControllerDelegate 
         startSymptomsTest()
     }
 
-    func startSymptomsTest() {
+    public func startSymptomsTest() {
         let symptomsTestVC = SymptomsTestViewController(nibName: String(describing: SymptomsTestViewController.self),
                 bundle: nil, symptomsTestDelegate: self)
         let navigationController = UINavigationController(rootViewController: symptomsTestVC)

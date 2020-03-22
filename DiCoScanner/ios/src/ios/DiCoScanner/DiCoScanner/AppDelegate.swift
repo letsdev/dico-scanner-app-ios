@@ -116,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func checkForNavigation(notification: UNNotification) {
         var action: String? = nil
         if let userInfo = notification.request.content.userInfo as? [String: AnyObject] {
-            action = userInfo["action"] as? String
+            action = userInfo["ldpush_action"] as? String
         }
 
         if let action = action {
@@ -132,11 +132,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     func navigateToSymptomTest() {
-
+        let symptomsVC = prepareForDeeplink()
+        symptomsVC?.startSymptomsTest()
     }
 
     func navigateToCoronaTest() {
+        let symptomsVC = prepareForDeeplink()
+        symptomsVC?.startCoronaTest()
+    }
 
+    func prepareForDeeplink() -> SymptomsViewController? {
+        if (self.window!.rootViewController!.isKind(of: TabBarViewController.self)) {
+            let rootViewController = self.window!.rootViewController as! TabBarViewController
+            
+            if (rootViewController.selectedViewController?.presentedViewController != nil) {
+                rootViewController.selectedViewController!.presentedViewController!.dismiss(animated: false, completion: nil)
+            }
+
+            let navigationController = rootViewController.selectedViewController as! UINavigationController
+            if (!navigationController.viewControllers[0].isKind(of: SymptomsViewController.self)) {
+                rootViewController.selectedIndex = 1
+            }
+
+            return (rootViewController.selectedViewController as! UINavigationController).viewControllers[0] as! SymptomsViewController
+        }
+
+        return nil
     }
 }
 
