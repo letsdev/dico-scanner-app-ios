@@ -14,9 +14,11 @@ class DiaryEntryView: UIView {
     var diaryEntry: SymptomDiaryEntry? {
         didSet {
             self.testDateLabel.text = diaryEntry?.dateLabel()
+            setupTestResultLabel()
         }
     }
     @IBOutlet weak var testDateLabel: UILabel!
+    @IBOutlet var testResultLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,6 +30,11 @@ class DiaryEntryView: UIView {
         super.init(coder: aDecoder)
 
         setupXib()
+    }
+
+    private func setupTestResultLabel() {
+        testResultLabel.textColor = diaryEntry!.resultLabelColor()
+        testResultLabel.text = diaryEntry!.resultLabel()
     }
 
     private func setupXib() {

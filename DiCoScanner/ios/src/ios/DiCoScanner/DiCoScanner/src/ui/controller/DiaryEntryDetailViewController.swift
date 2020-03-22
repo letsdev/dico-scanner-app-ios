@@ -64,15 +64,7 @@ class DiaryEntryDetailViewController: UIViewController {
 
     private func setupResultLabel() {
         resultLabel.text = entry?.resultLabel()
-        
-        let areYouSickResult = SymptomDiaryEntryDao.DiaryTestResult(rawValue: entry!.areYouSick)
-        if (areYouSickResult == .positive) {
-            resultLabel.textColor = UIColor(named: "AppRed")
-        } else if (areYouSickResult == .negative) {
-            resultLabel.textColor = UIColor(named: "AppGreen")
-        } else {
-            resultLabel.textColor = UIColor.black
-        }
+        resultLabel.textColor = entry?.resultLabelColor()
     }
 
     private func setupTableView() {

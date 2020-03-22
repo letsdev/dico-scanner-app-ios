@@ -30,4 +30,15 @@ extension SymptomDiaryEntry {
             return ""
         }
     }
+
+    func resultLabelColor() -> UIColor {
+        let areYouSickResult = SymptomDiaryEntryDao.DiaryTestResult(rawValue: self.areYouSick)
+        if (areYouSickResult == .positive) {
+            return UIColor(named: "AppRed")!
+        } else if (areYouSickResult == .negative) {
+            return UIColor(named: "AppGreen")!
+        }
+
+        return UIColor.black
+    }
 }
