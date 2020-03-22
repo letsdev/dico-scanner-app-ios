@@ -53,7 +53,7 @@ internal class DatabaseManager {
                 entity.addToSymptom(symptom)
             }
             entity.entryDate = Date()
-            entity.areYouSick = false
+            entity.areYouSick = SymptomDiaryEntryDao.DiaryTestResult.pending.rawValue
             
         }
     }
