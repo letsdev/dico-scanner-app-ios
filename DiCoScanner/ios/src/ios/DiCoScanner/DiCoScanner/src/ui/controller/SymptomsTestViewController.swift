@@ -72,8 +72,8 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
         
         storeSymptomDiaryEntry()
         
-        //self.symptomsTestDelegate.didEndPresentation(presentedViewController: self)
-        //self.dismiss(animated: true, completion: nil)
+        self.symptomsTestDelegate.didEndPresentation(presentedViewController: self)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func storeSymptomDiaryEntry() {

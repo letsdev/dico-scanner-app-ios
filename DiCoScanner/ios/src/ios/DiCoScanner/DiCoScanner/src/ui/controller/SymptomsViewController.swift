@@ -136,6 +136,8 @@ class SymptomsViewController: UIViewController, PresentedViewControllerDelegate 
     func didEndPresentation(presentedViewController: UIViewController) {
         if (presentedViewController.isKind(of: CoronaTestViewController.self)) {
             self.setupCoronaTestResults()
+        } else if (presentedViewController.isKind(of: SymptomsTestViewController.self)) {
+            self.setupSymptomsDiaryEntries()
         }
     }
 }
