@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FunctionTutorialViewController" customModule="CO_Scan" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_tabbar_position_active" translatesAutoresizingMaskIntoConstraints="NO" id="AgZ-j6-p07">
+                    <rect key="frame" x="132" y="97" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="AgZ-j6-p07" secondAttribute="height" multiplier="1:1" id="d83-Ic-5Df"/>
+                        <constraint firstAttribute="height" constant="150" id="efJ-d1-BPg"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucs-T0-DDU">
+                    <rect key="frame" x="20" y="326" width="374" height="436"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <string key="text">Du kannst bei CO-Scan selbst Markierungen setzen, wenn du dich zum Beispiel beim Einkaufen in einer größeren Menschenmenge aufhältst. Eine Push Benachrichtigung wird dich informieren, sobald sich eine mit COVID-19 infizierte Person zeitgleich an dem selben Ort wie du aufgehaten hast.
+
+Und auch anderst herum kannst du (anonym) deine Mitmenschen über eine Selbstdiagnose darüber informieren, wenn du COVID-19 Symptome aufweist und sich andere Personen bei dir infizieren könnten.</string>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEu-Ge-Uax">
+                    <rect key="frame" x="20" y="782" width="374" height="60"/>
+                    <color key="backgroundColor" name="AppDarkBlue"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Ngf-wB-ojQ"/>
+                    </constraints>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wie funktioniert &quot;CO-Scan&quot;?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjr-69-pgb">
+                    <rect key="frame" x="20" y="282" width="374" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vjr-69-pgb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="65y-pj-0VQ"/>
+                <constraint firstItem="tEu-Ge-Uax" firstAttribute="top" secondItem="Ucs-T0-DDU" secondAttribute="bottom" constant="20" id="J2c-bR-nPT"/>
+                <constraint firstItem="AgZ-j6-p07" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="JQT-2o-SQa"/>
+                <constraint firstItem="AgZ-j6-p07" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="53" id="Ulb-GF-Kuf"/>
+                <constraint firstItem="tEu-Ge-Uax" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="V6k-lu-cyq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ucs-T0-DDU" secondAttribute="trailing" constant="20" id="b6A-YR-6wl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tEu-Ge-Uax" secondAttribute="trailing" constant="20" id="eVe-3Q-o8a"/>
+                <constraint firstItem="Ucs-T0-DDU" firstAttribute="top" secondItem="vjr-69-pgb" secondAttribute="bottom" constant="20" id="pjG-h1-T5b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vjr-69-pgb" secondAttribute="trailing" constant="20" id="uYx-G5-ZMW"/>
+                <constraint firstItem="Ucs-T0-DDU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="xWO-iY-Bxx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tEu-Ge-Uax" secondAttribute="bottom" constant="20" id="xsj-Oo-CgF"/>
+                <constraint firstItem="vjr-69-pgb" firstAttribute="top" secondItem="AgZ-j6-p07" secondAttribute="bottom" constant="35" id="yxM-0z-ty3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="140.57971014492756" y="153.34821428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_tabbar_position_active" width="25" height="25"/>
+        <namedColor name="AppDarkBlue">
+            <color red="0.1803921568627451" green="0.31764705882352939" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

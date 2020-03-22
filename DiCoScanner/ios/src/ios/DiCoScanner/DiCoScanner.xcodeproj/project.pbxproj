@@ -60,6 +60,8 @@
 		E24240A124265DAE0072C3E1 /* SymptomsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E242409F24265DAE0072C3E1 /* SymptomsTableViewCell.xib */; };
 		E25D1B3824277CEA0085A7FA /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25D1B3624277CEA0085A7FA /* OnboardingViewController.swift */; };
 		E25D1B3924277CEA0085A7FA /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E25D1B3724277CEA0085A7FA /* OnboardingViewController.xib */; };
+		E25D1B3C24278C050085A7FA /* FunctionTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25D1B3A24278C050085A7FA /* FunctionTutorialViewController.swift */; };
+		E25D1B3D24278C050085A7FA /* FunctionTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E25D1B3B24278C050085A7FA /* FunctionTutorialViewController.xib */; };
 		E28583A02425683000C6BE16 /* MarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285839E2425683000C6BE16 /* MarkerViewController.swift */; };
 		E28583A12425683000C6BE16 /* MarkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E285839F2425683000C6BE16 /* MarkerViewController.xib */; };
 		E28583A424257ED600C6BE16 /* LastMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */; };
@@ -130,6 +132,8 @@
 		E242409F24265DAE0072C3E1 /* SymptomsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsTableViewCell.xib; sourceTree = "<group>"; };
 		E25D1B3624277CEA0085A7FA /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E25D1B3724277CEA0085A7FA /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		E25D1B3A24278C050085A7FA /* FunctionTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionTutorialViewController.swift; sourceTree = "<group>"; };
+		E25D1B3B24278C050085A7FA /* FunctionTutorialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FunctionTutorialViewController.xib; sourceTree = "<group>"; };
 		E285839E2425683000C6BE16 /* MarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerViewController.swift; sourceTree = "<group>"; };
 		E285839F2425683000C6BE16 /* MarkerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerViewController.xib; sourceTree = "<group>"; };
 		E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMarkerViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 				E25D1B3624277CEA0085A7FA /* OnboardingViewController.swift */,
 				E25D1B3724277CEA0085A7FA /* OnboardingViewController.xib */,
 				3601364B9022D7C477292190 /* OnBoardingDelegate.swift */,
+				E25D1B3A24278C050085A7FA /* FunctionTutorialViewController.swift */,
+				E25D1B3B24278C050085A7FA /* FunctionTutorialViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -444,6 +450,7 @@
 				E28583AA2425807300C6BE16 /* LastMarkerTableViewCell.xib in Resources */,
 				A40D06BB2426D25F00D62CAF /* SymptomsTestViewController.xib in Resources */,
 				A40D06B324265F5B00D62CAF /* CoronaTestViewController.xib in Resources */,
+				E25D1B3D24278C050085A7FA /* FunctionTutorialViewController.xib in Resources */,
 				A40D06942425AA1500D62CAF /* DiaryEntryView.xib in Resources */,
 				E24240A124265DAE0072C3E1 /* SymptomsTableViewCell.xib in Resources */,
 				A40D06B724268EBA00D62CAF /* AppInfoViewController.xib in Resources */,
@@ -495,6 +502,7 @@
 				36013B6575A41425E495E583 /* ButtonStateController.swift in Sources */,
 				D09DB320DFFFF2BBA649D716 /* AppInfoItem.swift in Sources */,
 				3601355E6F27C28496E41F76 /* OnBoardingDelegate.swift in Sources */,
+				E25D1B3C24278C050085A7FA /* FunctionTutorialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
