@@ -29,19 +29,20 @@ class SymptomDiaryPostRequest: BaseRequest, Request {
                 keyReplacer: ["entryDate": "timestamp"])
 
         if let values = symptomDiary.symptom {
-            var array:[Any] = []
+            var array: [Any] = []
             for arrayValue in values {
                 if let arrayValue = arrayValue as? NSManagedObject {
-                     array.append(convertToJSON(managedObject: arrayValue, keyReplacer: ["name": "nameDe"], keyInjector: { key, value in
-                         if (key == "uuid") {
-                             var dict: [String: Any] = [:]
-                             if let id = value as? String {
-                                 dict["id"] = Int(id)
-                             }
-                             return dict
-                         }
-                         return nil
-                     }))
+                    array.append(convertToJSON(managedObject: arrayValue, keyReplacer: ["name": "nameDe"],
+                            keyInjector: { key, value in
+                                if (key == "uuid") {
+                                    var dict: [String: Any] = [:]
+                                    if let id = value as? String {
+                                        dict["id"] = Int(id)
+                                    }
+                                    return dict
+                                }
+                                return nil
+                            }))
                 }
             }
             result["symptoms"] = array
@@ -61,12 +62,14 @@ class SymptomDiaryPostRequest: BaseRequest, Request {
         os_log("Received Data: %@", String(data: data, encoding: .utf8)!)
         do {
             if let testResult = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                let sick = testResult["maybeInfected"] as! Bool
-                symptomDiary.areYouSick = (
-                        sick ? SymptomDiaryEntryDao.DiaryTestResult.positive : SymptomDiaryEntryDao.DiaryTestResult.negative).rawValue
-                symptomDiary.hintText = testResult["message"] as? String
-                DatabaseManager.shared.saveContext()
-                NotificationCenter.default.post(name: Notification.Name.didSyncSymptomDiaryEntry, object: nil)
+
+                if let sick = testResult["maybeInfected"] as? Bool {
+                    symptomDiary.areYouSick = (
+                            sick ? SymptomDiaryEntryDao.DiaryTestResult.positive : SymptomDiaryEntryDao.DiaryTestResult.negative).rawValue
+                    symptomDiary.hintText = testResult["message"] as? String
+                    DatabaseManager.shared.saveContext()
+                    NotificationCenter.default.post(name: Notification.Name.didSyncSymptomDiaryEntry, object: nil)
+                }
             }
         } catch {
             let nserror = error as NSError
