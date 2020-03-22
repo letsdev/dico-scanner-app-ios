@@ -24,26 +24,29 @@ class LocationProvider: NSObject {
         }
 
         manager.requestLocation()
+        delegate?.didStartLocationUpdate()
     }
 }
 
 extension LocationProvider: CLLocationManagerDelegate {
+
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let lastLocation = locations.last else {
             os_log("No location received")
             return
         }
 
-        delegate?.received(location: lastLocation)
+        delegate?.didReceiveLocationUpdate(location: lastLocation)
     }
 
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         os_log("Did fail with error: %@", error.localizedDescription)
+        delegate?.didFailLocationUpdate(error)
     }
 
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status != .denied {
-            manager.requestLocation()
+            delegate?.didGrantAuthorization()
         }
     }
 }
