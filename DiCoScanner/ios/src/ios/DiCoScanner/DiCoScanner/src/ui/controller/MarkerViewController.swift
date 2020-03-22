@@ -104,6 +104,10 @@ extension MarkerViewController: LocationProviderDelegate {
         locationProvider?.fetchLocation(mode: .map)
     }
 
+    func didDenyAuthorization(locationMode: LocationProvider.LocationMode) {
+        buttonStateController?.setButtonAnimation(state: .inactive)
+    }
+
     func didStartLocationUpdate(locationMode: LocationProvider.LocationMode) {
         if locationMode == .marker {
             buttonStateController?.setButtonAnimation(state: .progress)

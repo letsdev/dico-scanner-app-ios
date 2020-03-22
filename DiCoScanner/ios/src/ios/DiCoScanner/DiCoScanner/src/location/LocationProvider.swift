@@ -57,6 +57,8 @@ extension LocationProvider: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status != .denied {
             delegate?.didGrantAuthorization(locationMode: locationMode)
+        } else {
+            delegate?.didDenyAuthorization(locationMode: locationMode)
         }
     }
 }
