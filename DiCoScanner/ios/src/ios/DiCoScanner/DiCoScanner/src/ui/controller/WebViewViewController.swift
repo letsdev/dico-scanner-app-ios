@@ -8,13 +8,21 @@
 
 import UIKit
 import WebKit
+import os
 
 class WebViewViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
+    private var deferredRequest: URLRequest? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let request = self.deferredRequest {
+            webView.load(request)
+            self.deferredRequest = nil
+        }
+        
     }
 
     func loadUrl(urlString: String?) {
@@ -32,6 +40,8 @@ class WebViewViewController: UIViewController {
         if isViewLoaded {
             webView.load(urlRequest)
         } else {
+            deferredRequest = urlRequest
+            os_log("Oops!")
         }
     }
 
