@@ -21,6 +21,7 @@
 		29BD9D25EF0D745C26C5D0EA /* CoronaTestResultDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD9102CAEC325A370F12E2 /* CoronaTestResultDao.swift */; };
 		29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD99460BD6EC84122302EE /* BaseDao.swift */; };
 		360131BD8B8F3F5632343187 /* LocationProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */; };
+		3601355E6F27C28496E41F76 /* OnBoardingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601364B9022D7C477292190 /* OnBoardingDelegate.swift */; };
 		3601357A224E006EA0DE23C6 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360132EB1A6E05520CDBCE3C /* LocationProvider.swift */; };
 		36013B6575A41425E495E583 /* ButtonStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601320E1A836CBE270C3F9B /* ButtonStateController.swift */; };
 		36013CAD1FD909AADEBD2A17 /* DiaryEntryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360136BCF480A84B3D49648D /* DiaryEntryViewDelegate.swift */; };
@@ -54,6 +55,8 @@
 		E242409D24265BF40072C3E1 /* DiaryEntryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */; };
 		E24240A024265DAE0072C3E1 /* SymptomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242409E24265DAE0072C3E1 /* SymptomsTableViewCell.swift */; };
 		E24240A124265DAE0072C3E1 /* SymptomsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E242409F24265DAE0072C3E1 /* SymptomsTableViewCell.xib */; };
+		E25D1B3824277CEA0085A7FA /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25D1B3624277CEA0085A7FA /* OnboardingViewController.swift */; };
+		E25D1B3924277CEA0085A7FA /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E25D1B3724277CEA0085A7FA /* OnboardingViewController.xib */; };
 		E28583A02425683000C6BE16 /* MarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285839E2425683000C6BE16 /* MarkerViewController.swift */; };
 		E28583A12425683000C6BE16 /* MarkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E285839F2425683000C6BE16 /* MarkerViewController.xib */; };
 		E28583A424257ED600C6BE16 /* LastMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */; };
@@ -84,6 +87,7 @@
 		360130001043FCC74B9B5990 /* DateFormatter+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Localization.swift"; sourceTree = "<group>"; };
 		3601320E1A836CBE270C3F9B /* ButtonStateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStateController.swift; sourceTree = "<group>"; };
 		360132EB1A6E05520CDBCE3C /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		3601364B9022D7C477292190 /* OnBoardingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingDelegate.swift; sourceTree = "<group>"; };
 		36013661F6A442F9CD2B3AAE /* LocationProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProviderDelegate.swift; sourceTree = "<group>"; };
 		360136BCF480A84B3D49648D /* DiaryEntryViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntryViewDelegate.swift; sourceTree = "<group>"; };
 		A40D06932425AA1500D62CAF /* DiaryEntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryEntryView.xib; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 		E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryEntryDetailViewController.xib; sourceTree = "<group>"; };
 		E242409E24265DAE0072C3E1 /* SymptomsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsTableViewCell.swift; sourceTree = "<group>"; };
 		E242409F24265DAE0072C3E1 /* SymptomsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsTableViewCell.xib; sourceTree = "<group>"; };
+		E25D1B3624277CEA0085A7FA /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		E25D1B3724277CEA0085A7FA /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		E285839E2425683000C6BE16 /* MarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerViewController.swift; sourceTree = "<group>"; };
 		E285839F2425683000C6BE16 /* MarkerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerViewController.xib; sourceTree = "<group>"; };
 		E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMarkerViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +260,9 @@
 				E242409B24265BF40072C3E1 /* DiaryEntryDetailViewController.xib */,
 				A40D06B82426D25F00D62CAF /* SymptomsTestViewController.swift */,
 				A40D06B92426D25F00D62CAF /* SymptomsTestViewController.xib */,
+				E25D1B3624277CEA0085A7FA /* OnboardingViewController.swift */,
+				E25D1B3724277CEA0085A7FA /* OnboardingViewController.xib */,
+				3601364B9022D7C477292190 /* OnBoardingDelegate.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -409,6 +418,7 @@
 				A40D069C2426220300D62CAF /* LDLetspushFramework.bundle in Resources */,
 				E28BA0F32425666A00AF3CF2 /* TabBarViewController.xib in Resources */,
 				A481B4D02425623600B294AF /* LaunchScreen.storyboard in Resources */,
+				E25D1B3924277CEA0085A7FA /* OnboardingViewController.xib in Resources */,
 				E28583A524257ED600C6BE16 /* LastMarkerViewController.xib in Resources */,
 				E28583A12425683000C6BE16 /* MarkerViewController.xib in Resources */,
 				E242409D24265BF40072C3E1 /* DiaryEntryDetailViewController.xib in Resources */,
@@ -461,8 +471,10 @@
 				29BD9CA020B40DEA5988249B /* SyncDao.swift in Sources */,
 				29BD903B8514E18517A05543 /* SyncManager.swift in Sources */,
 				29BD95BD9208C8629C9C621A /* SymptomDiaryPostRequest.swift in Sources */,
+				E25D1B3824277CEA0085A7FA /* OnboardingViewController.swift in Sources */,
 				D09DBA69AB09CCDCD7FF3C19 /* PresentedViewControllerDelegate.swift in Sources */,
 				36013B6575A41425E495E583 /* ButtonStateController.swift in Sources */,
+				3601355E6F27C28496E41F76 /* OnBoardingDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
