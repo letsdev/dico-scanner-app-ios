@@ -117,9 +117,16 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))
+        
 
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: String(describing: UITableViewCell.self))
+        }
+
+        if (tableView.indexPathsForSelectedRows?.contains(indexPath) ?? false) {
+            cell?.accessoryType = .checkmark
+        } else {
+            cell?.accessoryType = .none
         }
 
         cell = setupSymptomCell(symptomCell: cell!, symptom: (symptomList?[indexPath.row])!)
@@ -134,7 +141,7 @@ class SymptomsTestViewController: UIViewController, UITableViewDelegate, UITable
         symptomCell.selectionStyle = .none
         
         symptomCell.textLabel?.text = symptom.name
-        symptomCell.imageView?.image = UIImage(named: "ic_info")
+        symptomCell.imageView?.image = UIImage.image(symptomId: symptom.uuid)
         
         return symptomCell
     }

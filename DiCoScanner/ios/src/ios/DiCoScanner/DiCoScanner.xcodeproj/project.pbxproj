@@ -61,6 +61,8 @@
 		E24240A124265DAE0072C3E1 /* SymptomsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E242409F24265DAE0072C3E1 /* SymptomsTableViewCell.xib */; };
 		E25D1B3824277CEA0085A7FA /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25D1B3624277CEA0085A7FA /* OnboardingViewController.swift */; };
 		E25D1B3924277CEA0085A7FA /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E25D1B3724277CEA0085A7FA /* OnboardingViewController.xib */; };
+		E25D1B3F2427A54F0085A7FA /* UIImage+SymptomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25D1B3E2427A54F0085A7FA /* UIImage+SymptomImage.swift */; };
+		E25D1B422427AF170085A7FA /* CoronaTestResult+UiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25D1B412427AF170085A7FA /* CoronaTestResult+UiModel.swift */; };
 		E28583A02425683000C6BE16 /* MarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285839E2425683000C6BE16 /* MarkerViewController.swift */; };
 		E28583A12425683000C6BE16 /* MarkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E285839F2425683000C6BE16 /* MarkerViewController.xib */; };
 		E28583A424257ED600C6BE16 /* LastMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */; };
@@ -132,6 +134,8 @@
 		E242409F24265DAE0072C3E1 /* SymptomsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymptomsTableViewCell.xib; sourceTree = "<group>"; };
 		E25D1B3624277CEA0085A7FA /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E25D1B3724277CEA0085A7FA /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		E25D1B3E2427A54F0085A7FA /* UIImage+SymptomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+SymptomImage.swift"; sourceTree = "<group>"; };
+		E25D1B412427AF170085A7FA /* CoronaTestResult+UiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoronaTestResult+UiModel.swift"; sourceTree = "<group>"; };
 		E285839E2425683000C6BE16 /* MarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerViewController.swift; sourceTree = "<group>"; };
 		E285839F2425683000C6BE16 /* MarkerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerViewController.xib; sourceTree = "<group>"; };
 		E28583A224257ED600C6BE16 /* LastMarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMarkerViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 				E2B04A52242676B600CD043E /* SymptomDiaryEntry+UiModel.swift */,
 				3601320E1A836CBE270C3F9B /* ButtonStateController.swift */,
 				D09DB338E249562BDF7C9865 /* NotificationNames.swift */,
+				E25D1B3E2427A54F0085A7FA /* UIImage+SymptomImage.swift */,
+				E25D1B412427AF170085A7FA /* CoronaTestResult+UiModel.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 				A481B4CB2425623500B294AF /* DiCoScanner.xcdatamodeld in Sources */,
 				E28583A92425807300C6BE16 /* LastMarkerTableViewCell.swift in Sources */,
 				E28583A424257ED600C6BE16 /* LastMarkerViewController.swift in Sources */,
+				E25D1B3F2427A54F0085A7FA /* UIImage+SymptomImage.swift in Sources */,
 				A481B4C12425623500B294AF /* AppDelegate.swift in Sources */,
 				E28583A02425683000C6BE16 /* MarkerViewController.swift in Sources */,
 				A481B4DE2425A6C900B294AF /* DiaryEntryView.swift in Sources */,
@@ -476,6 +483,7 @@
 				360131BD8B8F3F5632343187 /* LocationProviderDelegate.swift in Sources */,
 				29BD958E5A61B56A9AC99C23 /* DatabaseManager.swift in Sources */,
 				29BD96F68A6AA3A34A9EC7D3 /* SymptomDao.swift in Sources */,
+				E25D1B422427AF170085A7FA /* CoronaTestResult+UiModel.swift in Sources */,
 				29BD9EF51FA2178C22CCC4B7 /* BaseDao.swift in Sources */,
 				E2B04A53242676B600CD043E /* SymptomDiaryEntry+UiModel.swift in Sources */,
 				29BD900177FD17C9B6DF4341 /* MarkerDao.swift in Sources */,

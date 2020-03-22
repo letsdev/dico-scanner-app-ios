@@ -101,6 +101,7 @@ class SymptomsViewController: UIViewController, PresentedViewControllerDelegate 
         let coronaTestResult = dao.findLatest()
 
         if (coronaTestResult != nil) {
+            coronaTestResultContainer.isHidden = false
             switch (CoronaTestResultDao.CoronaTestResultState(rawValue: coronaTestResult!.result!)) {
             case .positive:
                 coronaTestResultLabel.text = "Positiv"
@@ -118,13 +119,9 @@ class SymptomsViewController: UIViewController, PresentedViewControllerDelegate 
                 break
             }
 
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd.MM.yyyy"
-            let coronaTestDate = formatter.string(from: coronaTestResult!.testDate!)
-            coronaTestResultHeaderLabel.text = coronaTestResultHeaderLabel.text! + " \(coronaTestDate)"
+            coronaTestResultHeaderLabel.text = coronaTestResult?.labelWithDate()
         } else {
-            coronaTestResultLabel.text = "-"
-            coronaTestResultLabel.textColor = UIColor.black
+            coronaTestResultContainer.isHidden = true
         }
     }
 

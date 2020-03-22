@@ -10,6 +10,7 @@ import UIKit
 
 class SymptomsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var symtpomIconImageView: UIImageView!
     @IBOutlet weak var symptomNameLabel: UILabel!
     @IBOutlet weak var symptomStatusImageView: UIImageView!
     
@@ -18,6 +19,13 @@ class SymptomsTableViewCell: UITableViewCell {
         
         symptomNameLabel.text = "Symptom"
         symptomStatusImageView.image = UIImage(named: "ic_symptoms")
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.accessoryType = .none
+        symptomNameLabel.text = nil
+        symptomStatusImageView.image = nil
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

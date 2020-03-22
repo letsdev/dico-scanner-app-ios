@@ -21,24 +21,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wähle hier deine aktuellen Symptome aus:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-74-K7f">
-                    <rect key="frame" x="16" y="60" width="382" height="45.5"/>
+                    <rect key="frame" x="20" y="64" width="374" height="45.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dwe-1m-x1N">
-                    <rect key="frame" x="16" y="121.5" width="382" height="724.5"/>
+                    <rect key="frame" x="20" y="129.5" width="374" height="712.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </tableView>
             </subviews>
             <color key="backgroundColor" name="AppGreyBackground"/>
             <constraints>
                 <constraint firstItem="dwe-1m-x1N" firstAttribute="trailing" secondItem="6pZ-74-K7f" secondAttribute="trailing" id="Th0-z9-96a"/>
-                <constraint firstItem="6pZ-74-K7f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="VSD-1z-fWd"/>
-                <constraint firstItem="dwe-1m-x1N" firstAttribute="top" secondItem="6pZ-74-K7f" secondAttribute="bottom" constant="16" id="eHe-ve-HAT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dwe-1m-x1N" secondAttribute="bottom" constant="16" id="ixg-cl-G3o"/>
-                <constraint firstItem="6pZ-74-K7f" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="mXV-mE-EUj"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6pZ-74-K7f" secondAttribute="trailing" constant="16" id="rk0-kc-k1U"/>
+                <constraint firstItem="6pZ-74-K7f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="VSD-1z-fWd"/>
+                <constraint firstItem="dwe-1m-x1N" firstAttribute="top" secondItem="6pZ-74-K7f" secondAttribute="bottom" constant="20" id="eHe-ve-HAT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dwe-1m-x1N" secondAttribute="bottom" constant="20" id="ixg-cl-G3o"/>
+                <constraint firstItem="6pZ-74-K7f" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="mXV-mE-EUj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6pZ-74-K7f" secondAttribute="trailing" constant="20" id="rk0-kc-k1U"/>
                 <constraint firstItem="dwe-1m-x1N" firstAttribute="leading" secondItem="6pZ-74-K7f" secondAttribute="leading" id="v44-yE-nbL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

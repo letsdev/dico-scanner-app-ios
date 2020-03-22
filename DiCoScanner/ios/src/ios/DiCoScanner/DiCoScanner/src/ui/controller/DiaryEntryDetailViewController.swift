@@ -87,6 +87,11 @@ extension DiaryEntryDetailViewController: UITableViewDataSource {
         }
 
         let symptom = symptomDao.findAllSortByName()?[indexPath.row]
+        
+        if let uuid = symptom?.uuid {
+            cell.symtpomIconImageView.image = UIImage.image(symptomId: uuid)
+        }
+
         cell.symptomNameLabel.text = symptom?.name
 
         if (entry?.symptom?.contains(symptom) ?? false) {
