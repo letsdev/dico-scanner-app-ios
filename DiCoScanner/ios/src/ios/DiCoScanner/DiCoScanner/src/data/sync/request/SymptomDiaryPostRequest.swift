@@ -46,5 +46,16 @@ class SymptomDiaryPostRequest: BaseRequest, Request {
 
     func receivedData(data: Data) {
         os_log("Received Data: %@", String(data: data, encoding: .utf8)!)
+        do {
+            if let testResult = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
+                let sick = testResult["maybeInfected"] as! Bool
+                symptomDiary.areYouSick = (
+                        sick ? SymptomDiaryEntryDao.DiaryTestResult.positive : SymptomDiaryEntryDao.DiaryTestResult.negative).rawValue
+                symptomDiary.hintText = testResult["text"] as? String
+            }
+        } catch {
+            let nserror = error as NSError
+            fatalError("Can't parso to json: Unresolved error \(nserror), \(nserror.userInfo)")
+        }
     }
 }
